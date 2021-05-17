@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -121,24 +120,22 @@
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="VoA-43-bPE" secondAttribute="bottom" id="4EI-K2-S8U"/>
-                                                                <constraint firstItem="VoA-43-bPE" firstAttribute="bottom" secondItem="hUK-D8-Kda" secondAttribute="bottomMargin" id="9S9-21-PAo"/>
-                                                                <constraint firstItem="VoA-43-bPE" firstAttribute="bottom" secondItem="hUK-D8-Kda" secondAttribute="bottomMargin" id="FEo-wB-0dp"/>
-                                                                <constraint firstItem="VoA-43-bPE" firstAttribute="bottom" secondItem="hUK-D8-Kda" secondAttribute="bottomMargin" id="H9Q-aw-kZN"/>
-                                                                <constraint firstItem="puu-x2-2nh" firstAttribute="top" secondItem="DoV-gk-PX7" secondAttribute="bottom" id="Hcb-3I-tHk"/>
-                                                                <constraint firstAttribute="bottom" secondItem="VoA-43-bPE" secondAttribute="bottom" id="OEs-dC-V6C"/>
-                                                                <constraint firstAttribute="bottom" secondItem="VoA-43-bPE" secondAttribute="bottom" id="Pe0-8F-Pj2"/>
-                                                                <constraint firstItem="VoA-43-bPE" firstAttribute="top" secondItem="Ynh-D6-KZw" secondAttribute="bottom" id="hRB-wl-iE2"/>
-                                                                <constraint firstItem="puu-x2-2nh" firstAttribute="top" secondItem="DoV-gk-PX7" secondAttribute="bottom" id="hbf-wW-43j"/>
-                                                                <constraint firstAttribute="bottom" secondItem="VoA-43-bPE" secondAttribute="bottom" id="o0x-wC-fY8"/>
-                                                                <constraint firstAttribute="bottom" secondItem="VoA-43-bPE" secondAttribute="bottom" id="o9i-ei-Bzd"/>
-                                                                <constraint firstItem="VoA-43-bPE" firstAttribute="top" secondItem="Ynh-D6-KZw" secondAttribute="bottom" id="oPe-JG-InC"/>
-                                                                <constraint firstItem="Ynh-D6-KZw" firstAttribute="top" secondItem="puu-x2-2nh" secondAttribute="bottom" id="qBF-0f-TLg"/>
-                                                                <constraint firstAttribute="bottom" secondItem="VoA-43-bPE" secondAttribute="bottom" id="qou-lt-xb1"/>
-                                                                <constraint firstItem="Ynh-D6-KZw" firstAttribute="top" secondItem="puu-x2-2nh" secondAttribute="bottom" id="tIF-AY-k26"/>
-                                                                <constraint firstItem="puu-x2-2nh" firstAttribute="top" secondItem="DoV-gk-PX7" secondAttribute="bottom" id="vxm-CT-Wl9"/>
-                                                                <constraint firstItem="Ynh-D6-KZw" firstAttribute="top" secondItem="puu-x2-2nh" secondAttribute="bottom" id="wCc-Hk-Yp3"/>
-                                                                <constraint firstItem="VoA-43-bPE" firstAttribute="top" secondItem="Ynh-D6-KZw" secondAttribute="bottom" id="y4Y-dw-Yfe"/>
+                                                                <constraint firstItem="Ynh-D6-KZw" firstAttribute="top" secondItem="puu-x2-2nh" secondAttribute="bottom" id="3Mw-sI-x1o"/>
+                                                                <constraint firstItem="DoV-gk-PX7" firstAttribute="top" secondItem="hUK-D8-Kda" secondAttribute="top" id="4bP-jr-Ddw"/>
+                                                                <constraint firstItem="VoA-43-bPE" firstAttribute="top" secondItem="Ynh-D6-KZw" secondAttribute="bottom" id="CIe-27-iiu"/>
+                                                                <constraint firstAttribute="bottom" secondItem="VoA-43-bPE" secondAttribute="bottom" id="CJo-3Y-LVV"/>
+                                                                <constraint firstItem="VoA-43-bPE" firstAttribute="top" secondItem="Ynh-D6-KZw" secondAttribute="bottom" id="Ire-ky-8FZ"/>
+                                                                <constraint firstItem="Ynh-D6-KZw" firstAttribute="leading" secondItem="hUK-D8-Kda" secondAttribute="leading" id="Lwy-uC-rsE"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Ynh-D6-KZw" secondAttribute="trailing" id="Rgn-av-zz6"/>
+                                                                <constraint firstAttribute="trailing" secondItem="DoV-gk-PX7" secondAttribute="trailing" id="aZN-4j-ZBa"/>
+                                                                <constraint firstItem="puu-x2-2nh" firstAttribute="top" secondItem="DoV-gk-PX7" secondAttribute="bottom" id="e1f-2Z-fvd"/>
+                                                                <constraint firstItem="VoA-43-bPE" firstAttribute="leading" secondItem="hUK-D8-Kda" secondAttribute="leading" id="gql-sP-aPW"/>
+                                                                <constraint firstItem="puu-x2-2nh" firstAttribute="top" secondItem="DoV-gk-PX7" secondAttribute="bottom" id="jxs-va-fGf"/>
+                                                                <constraint firstItem="puu-x2-2nh" firstAttribute="leading" secondItem="hUK-D8-Kda" secondAttribute="leading" id="m3o-1M-6mU"/>
+                                                                <constraint firstItem="DoV-gk-PX7" firstAttribute="leading" secondItem="hUK-D8-Kda" secondAttribute="leading" id="n6Q-zf-Ljp"/>
+                                                                <constraint firstItem="Ynh-D6-KZw" firstAttribute="top" secondItem="puu-x2-2nh" secondAttribute="bottom" id="rcT-v7-y9B"/>
+                                                                <constraint firstAttribute="trailing" secondItem="puu-x2-2nh" secondAttribute="trailing" id="scW-1c-0UN"/>
+                                                                <constraint firstAttribute="trailing" secondItem="VoA-43-bPE" secondAttribute="trailing" id="yS7-2L-PK9"/>
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
