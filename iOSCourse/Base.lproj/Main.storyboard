@@ -71,6 +71,15 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="0Cv-PK-U73" secondAttribute="bottom" id="0pa-WY-0kr"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="N0S-iu-jlb" secondAttribute="bottom" id="0sq-pG-o2B"/>
+                                                                        <constraint firstItem="0Cv-PK-U73" firstAttribute="top" secondItem="DoV-gk-PX7" secondAttribute="top" id="AbC-ah-Rdj"/>
+                                                                        <constraint firstItem="0Cv-PK-U73" firstAttribute="leading" secondItem="DoV-gk-PX7" secondAttribute="leading" id="Fvt-HV-Zhu"/>
+                                                                        <constraint firstItem="N0S-iu-jlb" firstAttribute="leading" secondItem="0Cv-PK-U73" secondAttribute="trailing" id="TRK-i8-pwf"/>
+                                                                        <constraint firstItem="N0S-iu-jlb" firstAttribute="top" secondItem="DoV-gk-PX7" secondAttribute="top" id="Vnq-eb-2Je"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="N0S-iu-jlb" secondAttribute="trailing" id="ytL-fh-yWn"/>
+                                                                    </constraints>
                                                                 </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст публикации" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puu-x2-2nh">
                                                                     <rect key="frame" x="0.0" y="20.5" width="414" height="21"/>
