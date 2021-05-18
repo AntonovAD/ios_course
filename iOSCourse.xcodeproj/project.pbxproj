@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4957597526540E7600DF4CED /* PostCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957597426540E7600DF4CED /* PostCardView.swift */; };
+		4957597826540EB600DF4CED /* PostCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4957597726540EB600DF4CED /* PostCardView.xib */; };
 		499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A8D6D26524202007543E7 /* AppDelegate.swift */; };
 		499A8D7226524202007543E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A8D7126524202007543E7 /* ViewController.swift */; };
 		499A8D7526524202007543E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7326524202007543E7 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4957597426540E7600DF4CED /* PostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardView.swift; sourceTree = "<group>"; };
+		4957597726540EB600DF4CED /* PostCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCardView.xib; sourceTree = "<group>"; };
 		499A8D6A26524202007543E7 /* iOSCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499A8D6D26524202007543E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499A8D7126524202007543E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4957597326540D7100DF4CED /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4957597626540E8500DF4CED /* PostCardView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4957597626540E8500DF4CED /* PostCardView */ = {
+			isa = PBXGroup;
+			children = (
+				4957597426540E7600DF4CED /* PostCardView.swift */,
+				4957597726540EB600DF4CED /* PostCardView.xib */,
+			);
+			path = PostCardView;
+			sourceTree = "<group>";
+		};
 		499A8D6126524202007543E7 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +75,7 @@
 		499A8D6C26524202007543E7 /* iOSCourse */ = {
 			isa = PBXGroup;
 			children = (
+				4957597326540D7100DF4CED /* Components */,
 				499A8D6D26524202007543E7 /* AppDelegate.swift */,
 				499A8D7126524202007543E7 /* ViewController.swift */,
 				499A8D7326524202007543E7 /* Main.storyboard */,
@@ -122,6 +144,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4957597826540EB600DF4CED /* PostCardView.xib in Resources */,
 				499A8D7A26524203007543E7 /* LaunchScreen.storyboard in Resources */,
 				499A8D7726524203007543E7 /* Assets.xcassets in Resources */,
 				499A8D7526524202007543E7 /* Main.storyboard in Resources */,
@@ -135,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4957597526540E7600DF4CED /* PostCardView.swift in Sources */,
 				499A8D7226524202007543E7 /* ViewController.swift in Sources */,
 				499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */,
 			);
