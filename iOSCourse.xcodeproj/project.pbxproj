@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4957597526540E7600DF4CED /* PostCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957597426540E7600DF4CED /* PostCardView.swift */; };
 		4957597826540EB600DF4CED /* PostCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4957597726540EB600DF4CED /* PostCardView.xib */; };
+		496E20DA26594C4C00EB5824 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496E20D926594C4C00EB5824 /* GradientView.swift */; };
+		496E20DC26594C5E00EB5824 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496E20DB26594C5E00EB5824 /* RoundedView.swift */; };
+		496E20DE26594C6A00EB5824 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496E20DD26594C6A00EB5824 /* RoundView.swift */; };
+		496E20E026594C7E00EB5824 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496E20DF26594C7E00EB5824 /* ShadowView.swift */; };
 		499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A8D6D26524202007543E7 /* AppDelegate.swift */; };
 		499A8D7226524202007543E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A8D7126524202007543E7 /* ViewController.swift */; };
 		499A8D7526524202007543E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7326524202007543E7 /* Main.storyboard */; };
@@ -19,6 +23,10 @@
 /* Begin PBXFileReference section */
 		4957597426540E7600DF4CED /* PostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardView.swift; sourceTree = "<group>"; };
 		4957597726540EB600DF4CED /* PostCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCardView.xib; sourceTree = "<group>"; };
+		496E20D926594C4C00EB5824 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		496E20DB26594C5E00EB5824 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		496E20DD26594C6A00EB5824 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		496E20DF26594C7E00EB5824 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		499A8D6A26524202007543E7 /* iOSCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499A8D6D26524202007543E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499A8D7126524202007543E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +64,25 @@
 			path = PostCardView;
 			sourceTree = "<group>";
 		};
+		496E20D726594BF000EB5824 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				496E20D826594BFA00EB5824 /* UI */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		496E20D826594BFA00EB5824 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				496E20D926594C4C00EB5824 /* GradientView.swift */,
+				496E20DB26594C5E00EB5824 /* RoundedView.swift */,
+				496E20DD26594C6A00EB5824 /* RoundView.swift */,
+				496E20DF26594C7E00EB5824 /* ShadowView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		499A8D6126524202007543E7 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +102,7 @@
 		499A8D6C26524202007543E7 /* iOSCourse */ = {
 			isa = PBXGroup;
 			children = (
+				496E20D726594BF000EB5824 /* Helpers */,
 				4957597326540D7100DF4CED /* Components */,
 				499A8D6D26524202007543E7 /* AppDelegate.swift */,
 				499A8D7126524202007543E7 /* ViewController.swift */,
@@ -159,8 +187,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4957597526540E7600DF4CED /* PostCardView.swift in Sources */,
+				496E20DE26594C6A00EB5824 /* RoundView.swift in Sources */,
 				499A8D7226524202007543E7 /* ViewController.swift in Sources */,
+				496E20DA26594C4C00EB5824 /* GradientView.swift in Sources */,
+				496E20DC26594C5E00EB5824 /* RoundedView.swift in Sources */,
 				499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */,
+				496E20E026594C7E00EB5824 /* ShadowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
