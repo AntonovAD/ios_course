@@ -12,7 +12,68 @@
         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pV6-F2-f4g" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
+                    <rect key="frame" x="12" y="12" width="872" height="390"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IhU-WI-GeT" customClass="GradientView" customModule="iOSCourse" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="872" height="390"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owI-D2-HYG">
+                                    <rect key="frame" x="0.0" y="0.0" width="872" height="390"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="owI-D2-HYG" firstAttribute="leading" secondItem="IhU-WI-GeT" secondAttribute="leading" id="4pz-6x-NWS"/>
+                                <constraint firstItem="owI-D2-HYG" firstAttribute="top" secondItem="IhU-WI-GeT" secondAttribute="top" id="Il2-2B-IL0"/>
+                                <constraint firstAttribute="bottom" secondItem="owI-D2-HYG" secondAttribute="bottom" id="OMo-Kz-sqN"/>
+                                <constraint firstAttribute="trailing" secondItem="owI-D2-HYG" secondAttribute="trailing" id="nGk-gn-7Ik"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                    <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                    <color key="value" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="IhU-WI-GeT" secondAttribute="bottom" id="4Lk-y5-HB9"/>
+                        <constraint firstItem="IhU-WI-GeT" firstAttribute="leading" secondItem="pV6-F2-f4g" secondAttribute="leading" id="D86-Da-kHe"/>
+                        <constraint firstItem="IhU-WI-GeT" firstAttribute="top" secondItem="pV6-F2-f4g" secondAttribute="top" id="Szm-6p-UUB"/>
+                        <constraint firstAttribute="trailing" secondItem="IhU-WI-GeT" secondAttribute="trailing" id="zf7-HM-4u7"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRightCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeftCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="pV6-F2-f4g" secondAttribute="trailing" constant="12" id="K6x-k7-njL"/>
+                <constraint firstItem="pV6-F2-f4g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="LGt-e7-qui"/>
+                <constraint firstItem="pV6-F2-f4g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="fl8-fm-XZY"/>
+                <constraint firstAttribute="bottom" secondItem="pV6-F2-f4g" secondAttribute="bottom" constant="12" id="hMB-qj-Pfi"/>
+            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
