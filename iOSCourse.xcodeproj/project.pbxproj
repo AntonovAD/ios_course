@@ -19,6 +19,12 @@
 		499A8D7526524202007543E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7326524202007543E7 /* Main.storyboard */; };
 		499A8D7726524203007543E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7626524203007543E7 /* Assets.xcassets */; };
 		499A8D7A26524203007543E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7826524203007543E7 /* LaunchScreen.storyboard */; };
+		49F05167265D59640069C1DB /* AuthScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49F05166265D59640069C1DB /* AuthScreenViewController.xib */; };
+		49F05169265D59C30069C1DB /* AuthScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F05168265D59C30069C1DB /* AuthScreenViewController.swift */; };
+		49F0516D265D61B20069C1DB /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0516B265D61B20069C1DB /* PostListViewController.swift */; };
+		49F0516E265D61B20069C1DB /* PostListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49F0516C265D61B20069C1DB /* PostListViewController.xib */; };
+		49F05172265D64E70069C1DB /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F05170265D64E70069C1DB /* PostViewController.swift */; };
+		49F05173265D64E70069C1DB /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49F05171265D64E70069C1DB /* PostViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +42,12 @@
 		499A8D7626524203007543E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		499A8D7926524203007543E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		499A8D7B26524203007543E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F05166265D59640069C1DB /* AuthScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthScreenViewController.xib; sourceTree = "<group>"; };
+		49F05168265D59C30069C1DB /* AuthScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewController.swift; sourceTree = "<group>"; };
+		49F0516B265D61B20069C1DB /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		49F0516C265D61B20069C1DB /* PostListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostListViewController.xib; sourceTree = "<group>"; };
+		49F05170265D64E70069C1DB /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		49F05171265D64E70069C1DB /* PostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +125,7 @@
 		499A8D6C26524202007543E7 /* iOSCourse */ = {
 			isa = PBXGroup;
 			children = (
+				49F05164265D591C0069C1DB /* Screens */,
 				496E20D726594BF000EB5824 /* Helpers */,
 				4957597326540D7100DF4CED /* Components */,
 				499A8D6D26524202007543E7 /* AppDelegate.swift */,
@@ -123,6 +136,43 @@
 				499A8D7B26524203007543E7 /* Info.plist */,
 			);
 			path = iOSCourse;
+			sourceTree = "<group>";
+		};
+		49F05164265D591C0069C1DB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				49F0516F265D64CE0069C1DB /* Post */,
+				49F0516A265D616E0069C1DB /* PostList */,
+				49F05165265D592E0069C1DB /* Auth */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		49F05165265D592E0069C1DB /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				49F05166265D59640069C1DB /* AuthScreenViewController.xib */,
+				49F05168265D59C30069C1DB /* AuthScreenViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		49F0516A265D616E0069C1DB /* PostList */ = {
+			isa = PBXGroup;
+			children = (
+				49F0516B265D61B20069C1DB /* PostListViewController.swift */,
+				49F0516C265D61B20069C1DB /* PostListViewController.xib */,
+			);
+			path = PostList;
+			sourceTree = "<group>";
+		};
+		49F0516F265D64CE0069C1DB /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				49F05170265D64E70069C1DB /* PostViewController.swift */,
+				49F05171265D64E70069C1DB /* PostViewController.xib */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,8 +235,11 @@
 			files = (
 				4957597826540EB600DF4CED /* PostCardView.xib in Resources */,
 				499A8D7A26524203007543E7 /* LaunchScreen.storyboard in Resources */,
+				49F0516E265D61B20069C1DB /* PostListViewController.xib in Resources */,
+				49F05167265D59640069C1DB /* AuthScreenViewController.xib in Resources */,
 				499A8D7726524203007543E7 /* Assets.xcassets in Resources */,
 				499A8D7526524202007543E7 /* Main.storyboard in Resources */,
+				49F05173265D64E70069C1DB /* PostViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,12 +252,15 @@
 			files = (
 				4957597526540E7600DF4CED /* PostCardView.swift in Sources */,
 				496E20DE26594C6A00EB5824 /* RoundView.swift in Sources */,
+				49F05169265D59C30069C1DB /* AuthScreenViewController.swift in Sources */,
 				499A8D7226524202007543E7 /* ViewController.swift in Sources */,
+				49F0516D265D61B20069C1DB /* PostListViewController.swift in Sources */,
 				496E20DA26594C4C00EB5824 /* GradientView.swift in Sources */,
 				496E20DC26594C5E00EB5824 /* RoundedView.swift in Sources */,
 				499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */,
 				496E20E026594C7E00EB5824 /* ShadowView.swift in Sources */,
 				496E20E32659592800EB5824 /* Utils.swift in Sources */,
+				49F05172265D64E70069C1DB /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
