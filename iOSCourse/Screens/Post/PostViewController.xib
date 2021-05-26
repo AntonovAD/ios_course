@@ -57,7 +57,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0lN-yX-apW" userLabel="Tags Stack View">
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0lN-yX-apW" userLabel="Tags Stack View">
                             <rect key="frame" x="32" y="524.5" width="288" height="32"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PeQ-Jp-e6r" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
@@ -152,7 +152,7 @@
                                 <constraint firstAttribute="height" constant="32" id="UUP-Wb-bgY"/>
                             </constraints>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="l1X-bd-GPV" userLabel="Likes Stack View">
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="l1X-bd-GPV" userLabel="Likes Stack View">
                             <rect key="frame" x="32" y="588.5" width="350" height="64"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kR-Dv-LvF" userLabel="Like View">
@@ -203,6 +203,7 @@
                                         <constraint firstItem="Jo0-nV-Lq6" firstAttribute="top" secondItem="5kR-Dv-LvF" secondAttribute="top" id="dye-kF-MOG"/>
                                         <constraint firstItem="CDU-P6-VUs" firstAttribute="centerY" secondItem="Jo0-nV-Lq6" secondAttribute="centerY" id="r1s-Ti-kAK"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CDU-P6-VUs" secondAttribute="bottom" id="uPa-Ls-Jwe"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CDU-P6-VUs" secondAttribute="trailing" id="wFc-2m-Jjh"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4KO-Sq-kKG" userLabel="Dislike View">
@@ -249,6 +250,7 @@
                                         <constraint firstItem="YJ9-cj-r4C" firstAttribute="leading" secondItem="4KO-Sq-kKG" secondAttribute="leading" id="5Ep-nx-CQ7"/>
                                         <constraint firstAttribute="bottom" secondItem="YJ9-cj-r4C" secondAttribute="bottom" id="BEL-9y-OVS"/>
                                         <constraint firstItem="W5A-MI-OWe" firstAttribute="centerY" secondItem="YJ9-cj-r4C" secondAttribute="centerY" id="Ciw-E1-EYH"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W5A-MI-OWe" secondAttribute="trailing" id="DU8-TA-5aj"/>
                                         <constraint firstItem="W5A-MI-OWe" firstAttribute="leading" secondItem="YJ9-cj-r4C" secondAttribute="trailing" constant="16" id="Oft-ZE-jGH"/>
                                         <constraint firstItem="W5A-MI-OWe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4KO-Sq-kKG" secondAttribute="top" id="aeP-8y-sbg"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="W5A-MI-OWe" secondAttribute="bottom" id="f1s-bW-hhR"/>
@@ -303,11 +305,12 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="bAT-8p-C4D" firstAttribute="leading" secondItem="pyg-CU-ZTo" secondAttribute="leading" constant="32" id="54s-rc-Vgm"/>
-                        <constraint firstAttribute="trailing" secondItem="l1X-bd-GPV" secondAttribute="trailing" constant="32" id="5bX-D5-LOE"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l1X-bd-GPV" secondAttribute="trailing" constant="32" id="5bX-D5-LOE"/>
                         <constraint firstItem="4fb-yv-pqb" firstAttribute="top" secondItem="9fy-gd-XSy" secondAttribute="bottom" constant="8" id="64J-DM-Yga"/>
                         <constraint firstItem="l1X-bd-GPV" firstAttribute="top" secondItem="0lN-yX-apW" secondAttribute="bottom" constant="32" id="7lh-oY-QKh"/>
                         <constraint firstAttribute="trailing" secondItem="9fy-gd-XSy" secondAttribute="trailing" constant="32" id="9zZ-Oj-qYt"/>
                         <constraint firstAttribute="trailing" secondItem="4fb-yv-pqb" secondAttribute="trailing" constant="32" id="OSQ-bN-gXJ"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0lN-yX-apW" secondAttribute="trailing" constant="32" id="PPj-oa-zIG"/>
                         <constraint firstItem="4fb-yv-pqb" firstAttribute="leading" secondItem="pyg-CU-ZTo" secondAttribute="leading" constant="32" id="Wz7-N9-TKU"/>
                         <constraint firstItem="9fy-gd-XSy" firstAttribute="leading" secondItem="pyg-CU-ZTo" secondAttribute="leading" constant="32" id="ZLG-b4-vIc"/>
                         <constraint firstItem="0lN-yX-apW" firstAttribute="leading" secondItem="pyg-CU-ZTo" secondAttribute="leading" constant="32" id="ZkI-Ed-z2B"/>
