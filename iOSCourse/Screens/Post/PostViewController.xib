@@ -148,16 +148,16 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="l1X-bd-GPV" userLabel="Likes Stack View">
-                            <rect key="frame" x="32" y="588.5" width="350" height="64"/>
+                            <rect key="frame" x="32" y="588.5" width="293.5" height="56"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kR-Dv-LvF" userLabel="Like View">
-                                    <rect key="frame" x="0.0" y="0.0" width="145" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="117" height="56"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jo0-nV-Lq6" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogx-Vn-a4s">
-                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -166,11 +166,11 @@
                                             <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Ogx-Vn-a4s" secondAttribute="trailing" id="1wA-fe-WXF"/>
-                                                <constraint firstAttribute="width" constant="64" id="EmQ-fL-jFM"/>
+                                                <constraint firstAttribute="width" constant="56" id="EmQ-fL-jFM"/>
                                                 <constraint firstItem="Ogx-Vn-a4s" firstAttribute="top" secondItem="Jo0-nV-Lq6" secondAttribute="top" id="F0h-VQ-xNN"/>
                                                 <constraint firstItem="Ogx-Vn-a4s" firstAttribute="leading" secondItem="Jo0-nV-Lq6" secondAttribute="leading" id="kUa-Hi-8RX"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ogx-Vn-a4s" secondAttribute="bottom" id="mRf-DK-M8R"/>
-                                                <constraint firstAttribute="height" constant="64" id="qpM-lv-hgh"/>
+                                                <constraint firstAttribute="height" constant="56" id="qpM-lv-hgh"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -183,7 +183,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-P6-VUs">
-                                            <rect key="frame" x="80" y="17.5" width="45" height="29"/>
+                                            <rect key="frame" x="72" y="13.5" width="45" height="29"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                             <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -198,17 +198,17 @@
                                         <constraint firstItem="Jo0-nV-Lq6" firstAttribute="top" secondItem="5kR-Dv-LvF" secondAttribute="top" id="dye-kF-MOG"/>
                                         <constraint firstItem="CDU-P6-VUs" firstAttribute="centerY" secondItem="Jo0-nV-Lq6" secondAttribute="centerY" id="r1s-Ti-kAK"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CDU-P6-VUs" secondAttribute="bottom" id="uPa-Ls-Jwe"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CDU-P6-VUs" secondAttribute="trailing" id="wFc-2m-Jjh"/>
+                                        <constraint firstAttribute="trailing" secondItem="CDU-P6-VUs" secondAttribute="trailing" id="wFc-2m-Jjh"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4KO-Sq-kKG" userLabel="Dislike View">
-                                    <rect key="frame" x="177" y="0.0" width="173" height="64"/>
+                                    <rect key="frame" x="149" y="0.0" width="144.5" height="56"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJ9-cj-r4C" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3u-OM-tFr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -216,12 +216,12 @@
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="64" id="0GL-LF-LBd"/>
+                                                <constraint firstAttribute="width" constant="56" id="0GL-LF-LBd"/>
                                                 <constraint firstAttribute="bottom" secondItem="s3u-OM-tFr" secondAttribute="bottom" id="5O8-2h-sOq"/>
                                                 <constraint firstAttribute="trailing" secondItem="s3u-OM-tFr" secondAttribute="trailing" id="9vs-dQ-JLL"/>
                                                 <constraint firstItem="s3u-OM-tFr" firstAttribute="leading" secondItem="YJ9-cj-r4C" secondAttribute="leading" id="NDQ-TZ-AJ7"/>
                                                 <constraint firstItem="s3u-OM-tFr" firstAttribute="top" secondItem="YJ9-cj-r4C" secondAttribute="top" id="bIX-FK-0bS"/>
-                                                <constraint firstAttribute="height" constant="64" id="xPL-ne-b8O"/>
+                                                <constraint firstAttribute="height" constant="56" id="xPL-ne-b8O"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="YES"/>
@@ -234,7 +234,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dislike" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5A-MI-OWe">
-                                            <rect key="frame" x="80" y="17.5" width="72.5" height="29"/>
+                                            <rect key="frame" x="72" y="13.5" width="72.5" height="29"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                             <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -245,7 +245,7 @@
                                         <constraint firstItem="YJ9-cj-r4C" firstAttribute="leading" secondItem="4KO-Sq-kKG" secondAttribute="leading" id="5Ep-nx-CQ7"/>
                                         <constraint firstAttribute="bottom" secondItem="YJ9-cj-r4C" secondAttribute="bottom" id="BEL-9y-OVS"/>
                                         <constraint firstItem="W5A-MI-OWe" firstAttribute="centerY" secondItem="YJ9-cj-r4C" secondAttribute="centerY" id="Ciw-E1-EYH"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W5A-MI-OWe" secondAttribute="trailing" id="DU8-TA-5aj"/>
+                                        <constraint firstAttribute="trailing" secondItem="W5A-MI-OWe" secondAttribute="trailing" id="DU8-TA-5aj"/>
                                         <constraint firstItem="W5A-MI-OWe" firstAttribute="leading" secondItem="YJ9-cj-r4C" secondAttribute="trailing" constant="16" id="Oft-ZE-jGH"/>
                                         <constraint firstItem="W5A-MI-OWe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4KO-Sq-kKG" secondAttribute="top" id="aeP-8y-sbg"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="W5A-MI-OWe" secondAttribute="bottom" id="f1s-bW-hhR"/>
@@ -255,7 +255,7 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAT-8p-C4D" userLabel="New Comment Input View" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
-                            <rect key="frame" x="32" y="684.5" width="350" height="48"/>
+                            <rect key="frame" x="32" y="676.5" width="350" height="48"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оставьте комментарий..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSV-qP-f3c">
                                     <rect key="frame" x="16" y="0.0" width="334" height="48"/>
