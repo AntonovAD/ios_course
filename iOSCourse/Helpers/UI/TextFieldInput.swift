@@ -52,7 +52,7 @@ class TextFieldInput: UITextField {
         }
     }
     
-    private var borderWidth: CGFloat = 2 {
+    private var borderWidth: CGFloat = 0 {
         didSet {
             updateLayer()
         }
@@ -121,6 +121,8 @@ class TextFieldInput: UITextField {
     }
     
     private func setBorder() {
+        borderStyle = .none
+        
         let corners: UIRectCorner = [
             .topRight,
             .topLeft,
