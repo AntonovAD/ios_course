@@ -155,7 +155,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="l1X-bd-GPV" userLabel="Likes Stack View">
                             <rect key="frame" x="32" y="588.5" width="350" height="64"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kR-Dv-LvF">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kR-Dv-LvF" userLabel="Like View">
                                     <rect key="frame" x="0.0" y="0.0" width="145" height="64"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jo0-nV-Lq6" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
@@ -188,7 +188,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-P6-VUs">
-                                            <rect key="frame" x="80" y="0.0" width="45" height="29"/>
+                                            <rect key="frame" x="80" y="17.5" width="45" height="29"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                             <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -196,13 +196,16 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Jo0-nV-Lq6" secondAttribute="bottom" id="0MY-lI-dGc"/>
                                         <constraint firstItem="CDU-P6-VUs" firstAttribute="leading" secondItem="Jo0-nV-Lq6" secondAttribute="trailing" constant="16" id="CwE-i8-h6T"/>
-                                        <constraint firstItem="CDU-P6-VUs" firstAttribute="top" secondItem="5kR-Dv-LvF" secondAttribute="top" id="RFc-3H-ATH"/>
+                                        <constraint firstItem="CDU-P6-VUs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5kR-Dv-LvF" secondAttribute="top" id="RFc-3H-ATH"/>
                                         <constraint firstItem="Jo0-nV-Lq6" firstAttribute="leading" secondItem="5kR-Dv-LvF" secondAttribute="leading" id="azf-EG-0Cf"/>
                                         <constraint firstItem="Jo0-nV-Lq6" firstAttribute="top" secondItem="5kR-Dv-LvF" secondAttribute="top" id="dye-kF-MOG"/>
+                                        <constraint firstItem="CDU-P6-VUs" firstAttribute="centerY" secondItem="Jo0-nV-Lq6" secondAttribute="centerY" id="r1s-Ti-kAK"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CDU-P6-VUs" secondAttribute="bottom" id="uPa-Ls-Jwe"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4KO-Sq-kKG">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4KO-Sq-kKG" userLabel="Dislike View">
                                     <rect key="frame" x="177" y="0.0" width="173" height="64"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJ9-cj-r4C" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
@@ -235,7 +238,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dislike" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5A-MI-OWe">
-                                            <rect key="frame" x="80" y="0.0" width="72.5" height="29"/>
+                                            <rect key="frame" x="80" y="17.5" width="72.5" height="29"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                             <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -244,16 +247,16 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="YJ9-cj-r4C" firstAttribute="leading" secondItem="4KO-Sq-kKG" secondAttribute="leading" id="5Ep-nx-CQ7"/>
+                                        <constraint firstAttribute="bottom" secondItem="YJ9-cj-r4C" secondAttribute="bottom" id="BEL-9y-OVS"/>
+                                        <constraint firstItem="W5A-MI-OWe" firstAttribute="centerY" secondItem="YJ9-cj-r4C" secondAttribute="centerY" id="Ciw-E1-EYH"/>
                                         <constraint firstItem="W5A-MI-OWe" firstAttribute="leading" secondItem="YJ9-cj-r4C" secondAttribute="trailing" constant="16" id="Oft-ZE-jGH"/>
-                                        <constraint firstItem="W5A-MI-OWe" firstAttribute="top" secondItem="4KO-Sq-kKG" secondAttribute="top" id="aeP-8y-sbg"/>
+                                        <constraint firstItem="W5A-MI-OWe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4KO-Sq-kKG" secondAttribute="top" id="aeP-8y-sbg"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="W5A-MI-OWe" secondAttribute="bottom" id="f1s-bW-hhR"/>
                                         <constraint firstItem="YJ9-cj-r4C" firstAttribute="top" secondItem="4KO-Sq-kKG" secondAttribute="top" id="uYi-TL-pjy"/>
                                     </constraints>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="64" id="sC5-GA-VHs"/>
-                            </constraints>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAT-8p-C4D" userLabel="New Comment Input View" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
                             <rect key="frame" x="32" y="684.5" width="350" height="48"/>
@@ -332,6 +335,25 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
+        </view>
+        <view contentMode="scaleToFill" id="7PS-OA-qei">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="equ-9K-pdb">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="equ-9K-pdb" firstAttribute="leading" secondItem="ItM-gV-Ynp" secondAttribute="leading" id="HcL-qL-qDq"/>
+                <constraint firstItem="ItM-gV-Ynp" firstAttribute="trailing" secondItem="equ-9K-pdb" secondAttribute="trailing" id="OPb-6C-cw7"/>
+                <constraint firstItem="equ-9K-pdb" firstAttribute="top" secondItem="ItM-gV-Ynp" secondAttribute="top" id="YM3-8j-o2m"/>
+                <constraint firstItem="ItM-gV-Ynp" firstAttribute="bottom" secondItem="equ-9K-pdb" secondAttribute="bottom" id="mk6-5T-9eG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ItM-gV-Ynp"/>
+            <point key="canvasLocation" x="888" y="125"/>
         </view>
     </objects>
 </document>
