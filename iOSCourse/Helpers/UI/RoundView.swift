@@ -6,7 +6,6 @@ import UIKit
 class RoundView: UIView {
     @IBInspectable var borderWidth: CGFloat = 0 {
         didSet {
-            
             updateLayer()
         }
     }

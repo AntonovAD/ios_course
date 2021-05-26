@@ -254,53 +254,30 @@
                                 </view>
                             </subviews>
                         </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAT-8p-C4D" userLabel="New Comment Input View" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Оставьте комментарий..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRk-cD-Oq7" userLabel="New Comment Input" customClass="TextFieldInput" customModule="iOSCourse" customModuleProvider="target">
                             <rect key="frame" x="32" y="676.5" width="350" height="48"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оставьте комментарий..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSV-qP-f3c">
-                                    <rect key="frame" x="16" y="0.0" width="334" height="48"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" name="App Secondary Fill Color"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="FSV-qP-f3c" secondAttribute="trailing" id="0lf-iB-PAa"/>
-                                <constraint firstItem="FSV-qP-f3c" firstAttribute="top" secondItem="bAT-8p-C4D" secondAttribute="top" id="2Sf-Cv-6FW"/>
-                                <constraint firstAttribute="bottom" secondItem="FSV-qP-f3c" secondAttribute="bottom" id="7hv-JA-fWG"/>
-                                <constraint firstItem="FSV-qP-f3c" firstAttribute="leading" secondItem="bAT-8p-C4D" secondAttribute="leading" constant="16" id="Sbi-Ns-2SJ"/>
-                                <constraint firstAttribute="height" constant="48" id="aLd-UM-v0K"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRightCorner" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeftCorner" value="YES"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="16"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bAT-8p-C4D" secondAttribute="bottom" id="1nT-C8-i9M"/>
-                        <constraint firstItem="bAT-8p-C4D" firstAttribute="leading" secondItem="pyg-CU-ZTo" secondAttribute="leading" constant="32" id="54s-rc-Vgm"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l1X-bd-GPV" secondAttribute="trailing" constant="32" id="5bX-D5-LOE"/>
                         <constraint firstItem="4fb-yv-pqb" firstAttribute="top" secondItem="9fy-gd-XSy" secondAttribute="bottom" constant="8" id="64J-DM-Yga"/>
                         <constraint firstItem="l1X-bd-GPV" firstAttribute="top" secondItem="0lN-yX-apW" secondAttribute="bottom" constant="32" id="7lh-oY-QKh"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9fy-gd-XSy" secondAttribute="trailing" constant="32" id="9zZ-Oj-qYt"/>
+                        <constraint firstItem="fRk-cD-Oq7" firstAttribute="leading" secondItem="pyg-CU-ZTo" secondAttribute="leading" constant="32" id="Iux-xD-VeV"/>
                         <constraint firstAttribute="trailing" secondItem="4fb-yv-pqb" secondAttribute="trailing" constant="32" id="OSQ-bN-gXJ"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0lN-yX-apW" secondAttribute="trailing" constant="32" id="PPj-oa-zIG"/>
                         <constraint firstItem="4fb-yv-pqb" firstAttribute="leading" secondItem="pyg-CU-ZTo" secondAttribute="leading" constant="32" id="Wz7-N9-TKU"/>
+                        <constraint firstAttribute="trailing" secondItem="fRk-cD-Oq7" secondAttribute="trailing" constant="32" id="XJk-uH-bBr"/>
+                        <constraint firstItem="fRk-cD-Oq7" firstAttribute="top" secondItem="l1X-bd-GPV" secondAttribute="bottom" constant="32" id="Yse-Hc-YGO"/>
                         <constraint firstItem="9fy-gd-XSy" firstAttribute="leading" secondItem="pyg-CU-ZTo" secondAttribute="leading" constant="32" id="ZLG-b4-vIc"/>
                         <constraint firstItem="0lN-yX-apW" firstAttribute="leading" secondItem="pyg-CU-ZTo" secondAttribute="leading" constant="32" id="ZkI-Ed-z2B"/>
                         <constraint firstItem="9fy-gd-XSy" firstAttribute="top" secondItem="R3z-zz-vvM" secondAttribute="bottom" constant="16" id="gkh-Go-d9t"/>
                         <constraint firstItem="0lN-yX-apW" firstAttribute="top" secondItem="4fb-yv-pqb" secondAttribute="bottom" constant="16" id="hDi-RY-56A"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fRk-cD-Oq7" secondAttribute="bottom" id="hY7-Uo-E9H"/>
                         <constraint firstItem="R3z-zz-vvM" firstAttribute="leading" secondItem="pyg-CU-ZTo" secondAttribute="leading" constant="32" id="j2s-1v-w6O"/>
-                        <constraint firstAttribute="trailing" secondItem="bAT-8p-C4D" secondAttribute="trailing" constant="32" id="mT5-oF-e5K"/>
-                        <constraint firstItem="bAT-8p-C4D" firstAttribute="top" secondItem="l1X-bd-GPV" secondAttribute="bottom" constant="32" id="pnM-wY-Ick"/>
                         <constraint firstAttribute="trailing" secondItem="R3z-zz-vvM" secondAttribute="trailing" constant="32" id="pod-PY-9lv"/>
                         <constraint firstItem="l1X-bd-GPV" firstAttribute="leading" secondItem="pyg-CU-ZTo" secondAttribute="leading" constant="32" id="sZg-fu-wgp"/>
                         <constraint firstItem="R3z-zz-vvM" firstAttribute="top" secondItem="pyg-CU-ZTo" secondAttribute="top" constant="32" id="wUk-TU-k2K"/>
