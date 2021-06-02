@@ -69,6 +69,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="32" id="3lb-gE-9Z0"/>
                                                                             <constraint firstItem="klT-gH-OTd" firstAttribute="top" secondItem="uM4-Uh-64V" secondAttribute="top" id="3z8-PB-9Wn"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="5aP-Hw-6m3"/>
                                                                             <constraint firstAttribute="bottom" secondItem="klT-gH-OTd" secondAttribute="bottom" id="6rc-cR-kDP"/>
                                                                             <constraint firstItem="klT-gH-OTd" firstAttribute="leading" secondItem="uM4-Uh-64V" secondAttribute="leading" constant="8" id="B30-3f-fEh"/>
                                                                             <constraint firstAttribute="trailing" secondItem="klT-gH-OTd" secondAttribute="trailing" constant="8" id="Tzj-xW-aNh"/>
@@ -95,6 +96,7 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="82M-6a-aa1"/>
                                                                             <constraint firstAttribute="height" constant="32" id="90A-lh-wYR"/>
                                                                             <constraint firstAttribute="trailing" secondItem="6mL-cO-che" secondAttribute="trailing" constant="8" id="Jcz-RR-bbg"/>
                                                                             <constraint firstItem="6mL-cO-che" firstAttribute="top" secondItem="k15-rC-g7t" secondAttribute="top" id="bmp-WO-5jn"/>
@@ -217,7 +219,7 @@
                                                                         <rect key="frame" x="0.0" y="43.5" width="184" height="43.5"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="B8B-A2-fr5">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="174" height="32"/>
+                                                                                <rect key="frame" x="10" y="0.0" width="174" height="32"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoD-9u-s48" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="59.5" height="32"/>
@@ -282,8 +284,8 @@
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="B8B-A2-fr5" secondAttribute="bottom" id="6b0-Yr-4pD"/>
-                                                                            <constraint firstItem="B8B-A2-fr5" firstAttribute="leading" secondItem="SLX-aY-KOV" secondAttribute="leading" id="6sR-gO-vt1"/>
-                                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="B8B-A2-fr5" secondAttribute="trailing" id="xaa-GQ-wy3"/>
+                                                                            <constraint firstItem="B8B-A2-fr5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SLX-aY-KOV" secondAttribute="leading" id="6sR-gO-vt1"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="B8B-A2-fr5" secondAttribute="trailing" id="xaa-GQ-wy3"/>
                                                                             <constraint firstItem="B8B-A2-fr5" firstAttribute="top" secondItem="SLX-aY-KOV" secondAttribute="top" id="zQ8-Mw-o3b"/>
                                                                         </constraints>
                                                                     </view>
@@ -362,9 +364,14 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="MCT-kM-Aai"/>
             <connections>
+                <outlet property="author" destination="psa-zd-d4w" id="D85-g7-4Qz"/>
                 <outlet property="bottomMargin" destination="Fd3-Kj-FJV" id="0Et-mw-el4"/>
+                <outlet property="date" destination="lXK-Be-R6r" id="Ozc-60-NKG"/>
+                <outlet property="dislike" destination="6mL-cO-che" id="73f-kC-pWN"/>
                 <outlet property="leftMargin" destination="waE-Bm-bLb" id="wox-Uc-jbj"/>
+                <outlet property="like" destination="klT-gH-OTd" id="X5m-sM-EgB"/>
                 <outlet property="rightMargin" destination="9KK-0d-wdg" id="nsz-Cg-pNL"/>
+                <outlet property="title" destination="egI-hv-PG2" id="G0Y-Hw-udw"/>
                 <outlet property="topMargin" destination="4Pe-2l-OJN" id="qJD-oT-WGQ"/>
             </connections>
             <point key="canvasLocation" x="139" y="130"/>
