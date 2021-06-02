@@ -3,6 +3,7 @@
 import UIKit
 
 enum AssetsColor: String {
+    case primary = "App Primary Color"
     case secondaryFill = "App Secondary Fill Color"
 }
 

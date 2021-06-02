@@ -7,19 +7,19 @@ class TextFieldInput: UITextField {
     
     // MARK: - Measures
     
-    private var overrideHeight: CGFloat = CGFloat(ViewSize.normal.rawValue) {
+    private var overrideHeight: CGFloat = ViewSize.normal.rawValue {
         didSet {
             updateLayer()
         }
     }
     
-    @IBInspectable var topPadding: CGFloat = CGFloat(ViewIndent.normal.rawValue)
+    @IBInspectable var topPadding: CGFloat = ViewIndent.normal.rawValue
 
-    @IBInspectable var bottomPadding: CGFloat = CGFloat(ViewIndent.normal.rawValue)
+    @IBInspectable var bottomPadding: CGFloat = ViewIndent.normal.rawValue
 
-    @IBInspectable var leftPadding: CGFloat = CGFloat(ViewIndent.normal.rawValue)
+    @IBInspectable var leftPadding: CGFloat = ViewIndent.normal.rawValue
 
-    @IBInspectable var rightPadding: CGFloat = CGFloat(ViewIndent.normal.rawValue)
+    @IBInspectable var rightPadding: CGFloat = ViewIndent.normal.rawValue
     
     private var padding: UIEdgeInsets {
         get {
@@ -46,7 +46,7 @@ class TextFieldInput: UITextField {
     
     // MARK: - Border
     
-    private var cornerRadius: CGFloat = CGFloat(ViewIndent.normal.rawValue) {
+    private var cornerRadius: CGFloat = ViewIndent.normal.rawValue {
         didSet {
             updateLayer()
         }
@@ -77,7 +77,7 @@ class TextFieldInput: UITextField {
     // MARK: - Text
     
     private var overrideTextFont: UIFont = UIFont.systemFont(
-        ofSize: CGFloat(FontSize.small.rawValue),
+        ofSize: FontSize.small.rawValue,
         weight: UIFont.Weight.semibold
     )
     

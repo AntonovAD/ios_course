@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostListViewController">
             <connections>
+                <outlet property="tableView" destination="Z2x-g8-kVk" id="I80-an-Ndt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,11 +20,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hu8-sw-3Vl">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z2x-g8-kVk">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z2x-g8-kVk">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,7 +39,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="hu8-sw-3Vl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="B5g-kD-iQD"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hu8-sw-3Vl" secondAttribute="bottom" id="EhJ-S5-JF5"/>
+                <constraint firstAttribute="bottom" secondItem="hu8-sw-3Vl" secondAttribute="bottom" id="EhJ-S5-JF5"/>
                 <constraint firstItem="hu8-sw-3Vl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kQX-Pq-bGe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hu8-sw-3Vl" secondAttribute="trailing" id="vaq-U9-OBA"/>
             </constraints>
