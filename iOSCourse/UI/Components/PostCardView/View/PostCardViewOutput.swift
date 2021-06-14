@@ -2,6 +2,6 @@
 
 import Foundation
 
-protocol PostCardViewOutput: AnyObject {
-    func viewIsReady()
+protocol PostCardViewOutput: AnyObject, ViewOutput {
+    
 }

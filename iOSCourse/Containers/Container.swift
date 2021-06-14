@@ -16,7 +16,7 @@ class ConfiguratorAssembly: Assembly {
         container.register(PostListConfigurator.self) { resolver in
             PostListConfigurator(
                 postProvider: resolver.resolve(PostProviderProtocol.self)!,
-                tableDataProviderFactory: resolver.resolve(PostListTableDataProviderFactoryProtocol.self)!,
+                postListTableDataProviderFactory: resolver.resolve(TableDataProviderFactory<PostCardViewPresenter>.self)!,
                 cellPresenterFactory: resolver.resolve(PostCardViewPresenterFactoryProtocol.self)!
             )
         }
@@ -25,8 +25,8 @@ class ConfiguratorAssembly: Assembly {
 
 class FactoryAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(PostListTableDataProviderFactoryProtocol.self) { _ in
-            PostListTableDataProviderFactory()
+        container.register(TableDataProviderFactory<PostCardViewPresenter>.self) { _ in
+            TableDataProviderFactory<PostCardViewPresenter>()
         }
         
         container.register(PostCardViewPresenterFactoryProtocol.self) { _ in

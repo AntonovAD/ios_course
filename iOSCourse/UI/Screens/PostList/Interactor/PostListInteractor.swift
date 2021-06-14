@@ -18,7 +18,7 @@ private extension PostListInteractor {
     func processPosts(posts: [Post]) {
         let cellPresenters = posts.map { cellPresenterFactory.createPostCardViewPresenter(post: $0) }
         
-        presenter?.updateCellPresenters(cellPresenters)
+        presenter?.updatePostListCellPresenters(cellPresenters)
     }
     
     func handleError(_ error: Error) {

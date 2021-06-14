@@ -5,33 +5,33 @@ import UIKit
 
 class PostListConfigurator: Configurator {
     private let postProvider: PostProviderProtocol
-    private let tableDataProviderFactory: PostListTableDataProviderFactoryProtocol
+    private let postListTableDataProviderFactory: TableDataProviderFactory<PostCardViewPresenter>
     private let cellPresenterFactory: PostCardViewPresenterFactoryProtocol
     
     init(
         postProvider: PostProviderProtocol,
-        tableDataProviderFactory: PostListTableDataProviderFactoryProtocol,
+        postListTableDataProviderFactory: TableDataProviderFactory<PostCardViewPresenter>,
         cellPresenterFactory: PostCardViewPresenterFactoryProtocol
     ) {
         self.postProvider = postProvider
-        self.tableDataProviderFactory = tableDataProviderFactory
+        self.postListTableDataProviderFactory = postListTableDataProviderFactory
         self.cellPresenterFactory = cellPresenterFactory
     }
     
     func configure() -> UIViewController {
-        let dataProvider = tableDataProviderFactory.createDataProvider()
+        let postListTableDataProvider = postListTableDataProviderFactory.createDataProvider()
         
         let interactor = PostListInteractor(
             postProvider: postProvider,
             cellPresenterFactory: cellPresenterFactory
         )
         let presenter = PostListPresenter(
-            tableData: dataProvider,
+            postListTableData: postListTableDataProvider,
             interactor: interactor
         )
         let viewController = PostListViewController(
             presenter: presenter,
-            dataProvider: dataProvider
+            postListDataProvider: postListTableDataProvider
         )
         
         interactor.presenter = presenter

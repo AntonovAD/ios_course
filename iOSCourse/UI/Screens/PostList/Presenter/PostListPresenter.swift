@@ -3,7 +3,7 @@
 import Foundation
 
 class PostListPresenter {
-    private let tableData: PostListTableDataProtocol
+    private let postListTableData: TableDataProvider<PostCardViewPresenter>
     private let interactor: PostListInteractorInput
     
     private var presenters: [PostCardViewPresenter] = []
@@ -11,8 +11,11 @@ class PostListPresenter {
     
     weak var viewController: PostListViewControllerInput?
     
-    init(tableData: PostListTableDataProtocol, interactor: PostListInteractorInput) {
-        self.tableData = tableData
+    init(
+        postListTableData: TableDataProvider<PostCardViewPresenter>,
+        interactor: PostListInteractorInput
+    ) {
+        self.postListTableData = postListTableData
         self.interactor = interactor
         
         interactor.requestPosts()
@@ -24,17 +27,17 @@ private extension PostListPresenter {
         viewController?.updateTitle(title)
     }
     
-    func updateCellPresenters() {
-        tableData.updateCellPresenters(presenters)
+    func updatePostListCellPresenters() {
+        postListTableData.updateCellPresenters(presenters)
         viewController?.reloadTable()
     }
 }
 
 extension PostListPresenter: PostListInteractorOutput {
-    func updateCellPresenters(_ presenters: [PostCardViewPresenter]) {
+    func updatePostListCellPresenters(_ presenters: [PostCardViewPresenter]) {
         self.presenters = presenters
         
-        updateCellPresenters()
+        updatePostListCellPresenters()
     }
     
     func handleError(_ error: Error) {
@@ -44,7 +47,7 @@ extension PostListPresenter: PostListInteractorOutput {
 
 extension PostListPresenter: PostListViewControllerOutput {
     func viewIsReady() {
-        updateCellPresenters()
+        updatePostListCellPresenters()
         updateTitle()
     }
     

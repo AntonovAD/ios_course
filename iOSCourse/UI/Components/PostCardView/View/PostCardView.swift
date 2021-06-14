@@ -2,7 +2,7 @@
 
 import UIKit
 
-class PostCardView: UITableViewCell, NibReusable {
+class PostCardView: UITableViewCell, NibReusable, ViewSetup {
     private var presenter: PostCardViewOutput?
     
     @IBOutlet weak var topMargin: NSLayoutConstraint!
@@ -16,6 +16,20 @@ class PostCardView: UITableViewCell, NibReusable {
     
     @IBOutlet weak var like: UILabel!
     @IBOutlet weak var dislike: UILabel!
+    
+    @IBOutlet weak var tagsCollectionView: UICollectionView!
+    private var tagsCollectionData: (
+        source: CollectionDataSource<TagView, TagViewPresenter>?,
+        delegate: CollectionViewDelegate?
+    )
+    
+    func setup(with presenter: ViewOutput) {
+        if let castedPresenter = presenter as? PostCardViewPresenter {
+            self.presenter = castedPresenter
+            castedPresenter.view = self
+            castedPresenter.viewIsReady()
+        }
+    }
     
     func setup(
         with presenter: PostCardViewPresenter,
@@ -53,6 +67,13 @@ extension PostCardView: PostCardViewInput {
     }
     
     func updateTags(tags: [String]) {
-        
+        //TODO updateTags
+    }
+}
+
+private extension PostCardView {
+    func didSelectTag(at indexPath: IndexPath) {
+        //TODO didSelectTag
+        //presenter?.didSelectCell(with: indexPath)
     }
 }

@@ -218,7 +218,17 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLX-aY-KOV" userLabel="Tags View">
                                                                         <rect key="frame" x="0.0" y="43.5" width="184" height="43.5"/>
                                                                         <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="B8B-A2-fr5">
+                                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="M2e-I2-KlR">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="184" height="43.5"/>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9gf-or-sLO">
+                                                                                    <size key="itemSize" width="50" height="50"/>
+                                                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                </collectionViewFlowLayout>
+                                                                            </collectionView>
+                                                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="B8B-A2-fr5">
                                                                                 <rect key="frame" x="10" y="0.0" width="174" height="32"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoD-9u-s48" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
@@ -283,8 +293,12 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
+                                                                            <constraint firstItem="M2e-I2-KlR" firstAttribute="leading" secondItem="SLX-aY-KOV" secondAttribute="leading" id="4y5-k2-uFK"/>
                                                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="B8B-A2-fr5" secondAttribute="bottom" id="6b0-Yr-4pD"/>
                                                                             <constraint firstItem="B8B-A2-fr5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SLX-aY-KOV" secondAttribute="leading" id="6sR-gO-vt1"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="M2e-I2-KlR" secondAttribute="trailing" id="g44-3z-CrW"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="M2e-I2-KlR" secondAttribute="bottom" id="ktP-Qd-nvp"/>
+                                                                            <constraint firstItem="M2e-I2-KlR" firstAttribute="top" secondItem="SLX-aY-KOV" secondAttribute="top" id="qCw-vL-ocA"/>
                                                                             <constraint firstAttribute="trailing" secondItem="B8B-A2-fr5" secondAttribute="trailing" id="xaa-GQ-wy3"/>
                                                                             <constraint firstItem="B8B-A2-fr5" firstAttribute="top" secondItem="SLX-aY-KOV" secondAttribute="top" id="zQ8-Mw-o3b"/>
                                                                         </constraints>
@@ -371,6 +385,7 @@
                 <outlet property="leftMargin" destination="waE-Bm-bLb" id="wox-Uc-jbj"/>
                 <outlet property="like" destination="klT-gH-OTd" id="X5m-sM-EgB"/>
                 <outlet property="rightMargin" destination="9KK-0d-wdg" id="nsz-Cg-pNL"/>
+                <outlet property="tagsCollectionView" destination="M2e-I2-KlR" id="FiF-iv-wtV"/>
                 <outlet property="title" destination="egI-hv-PG2" id="G0Y-Hw-udw"/>
                 <outlet property="topMargin" destination="4Pe-2l-OJN" id="qJD-oT-WGQ"/>
             </connections>
