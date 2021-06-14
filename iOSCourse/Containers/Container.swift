@@ -8,6 +8,9 @@ class ServiceAssembly: Assembly {
         container.register(PostProviderProtocol.self) { _ in
             PostProviderMock()
         }
+        container.register(ReactivePostProviderProtocol.self) { _ in
+            PostProviderMock()
+        }
     }
 }
 
@@ -16,6 +19,7 @@ class ConfiguratorAssembly: Assembly {
         container.register(PostListConfigurator.self) { resolver in
             PostListConfigurator(
                 postProvider: resolver.resolve(PostProviderProtocol.self)!,
+                reactivePostProvider: resolver.resolve(ReactivePostProviderProtocol.self)!,
                 postListTableDataProviderFactory: resolver.resolve(TableDataProviderFactory<PostCardViewPresenter>.self)!,
                 cellPresenterFactory: resolver.resolve(PostCardViewPresenterFactoryProtocol.self)!
             )

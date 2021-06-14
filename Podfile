@@ -7,5 +7,7 @@ target 'iOSCourse' do
 
   # Pods for iOSCourse
   pod 'Swinject'
+  pod 'RealmSwift'
+  pod 'ReactiveSwift'
 
 end

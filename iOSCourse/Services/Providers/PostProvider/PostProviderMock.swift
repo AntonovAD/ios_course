@@ -1,8 +1,17 @@
 //
 
 import Foundation
+import ReactiveSwift
 
-class PostProviderMock: PostProviderProtocol {
+class PostProviderMock: PostProviderProtocol, ReactivePostProviderProtocol {
+    private let mutablePosts = MutableProperty<[Post]>([])
+    let posts: Property<[Post]>
+    
+    init() {
+        posts = Property(mutablePosts)
+        mutablePosts <~ requestAll().flatMapError { _ in .init(value: []) }
+    }
+    
     func requestAll(completion: @escaping (Result<[Post], PostProviderError>) -> Void) {
         DispatchQueue.main.async {
             let data = postsMockJson.data(using: .utf8)!
@@ -10,6 +19,18 @@ class PostProviderMock: PostProviderProtocol {
             let posts = try! jsonDecoder.decode([Post].self, from: data)
             
             completion(.success((posts)))
+        }
+    }
+    
+    func requestAll() -> SignalProducer<[Post], PostProviderError> {
+        return SignalProducer { observer, lifetime in
+            DispatchQueue.main.async {
+                let data = postsMockJson.data(using: .utf8)!
+                let jsonDecoder = JSONDecoder()
+                let posts = try! jsonDecoder.decode([Post].self, from: data)
+                
+                observer.send(value: posts)
+            }
         }
     }
 }

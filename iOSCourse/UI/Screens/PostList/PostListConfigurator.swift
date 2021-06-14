@@ -5,15 +5,18 @@ import UIKit
 
 class PostListConfigurator: Configurator {
     private let postProvider: PostProviderProtocol
+    private let reactivePostProvider: ReactivePostProviderProtocol
     private let postListTableDataProviderFactory: TableDataProviderFactory<PostCardViewPresenter>
     private let cellPresenterFactory: PostCardViewPresenterFactoryProtocol
     
     init(
         postProvider: PostProviderProtocol,
+        reactivePostProvider: ReactivePostProviderProtocol,
         postListTableDataProviderFactory: TableDataProviderFactory<PostCardViewPresenter>,
         cellPresenterFactory: PostCardViewPresenterFactoryProtocol
     ) {
         self.postProvider = postProvider
+        self.reactivePostProvider = reactivePostProvider
         self.postListTableDataProviderFactory = postListTableDataProviderFactory
         self.cellPresenterFactory = cellPresenterFactory
     }
@@ -23,6 +26,7 @@ class PostListConfigurator: Configurator {
         
         let interactor = PostListInteractor(
             postProvider: postProvider,
+            reactivePostProvider: reactivePostProvider,
             cellPresenterFactory: cellPresenterFactory
         )
         let presenter = PostListPresenter(
