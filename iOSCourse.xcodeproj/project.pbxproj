@@ -58,6 +58,10 @@
 		49D7502B26778468008E48D3 /* TagViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7502A26778468008E48D3 /* TagViewOutput.swift */; };
 		49D7502D26778DF0008E48D3 /* TagViewPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7502C26778DF0008E48D3 /* TagViewPresenterFactory.swift */; };
 		49D7502F26778EA4008E48D3 /* PostCardConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7502E26778EA4008E48D3 /* PostCardConfigurator.swift */; };
+		49E397842677AB010051AE3A /* KeyValueDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E397832677AB010051AE3A /* KeyValueDataStorage.swift */; };
+		49E397892677AC420051AE3A /* UserDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E397882677AC420051AE3A /* UserDataStorage.swift */; };
+		49E3978C2677AF7E0051AE3A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3978B2677AF7E0051AE3A /* User.swift */; };
+		49E3978F2677B0B10051AE3A /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3978E2677B0B10051AE3A /* Author.swift */; };
 		49F05167265D59640069C1DB /* AuthScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49F05166265D59640069C1DB /* AuthScreenViewController.xib */; };
 		49F05169265D59C30069C1DB /* AuthScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F05168265D59C30069C1DB /* AuthScreenViewController.swift */; };
 		49F0516D265D61B20069C1DB /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0516B265D61B20069C1DB /* PostListViewController.swift */; };
@@ -121,6 +125,10 @@
 		49D7502A26778468008E48D3 /* TagViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewOutput.swift; sourceTree = "<group>"; };
 		49D7502C26778DF0008E48D3 /* TagViewPresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewPresenterFactory.swift; sourceTree = "<group>"; };
 		49D7502E26778EA4008E48D3 /* PostCardConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardConfigurator.swift; sourceTree = "<group>"; };
+		49E397832677AB010051AE3A /* KeyValueDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueDataStorage.swift; sourceTree = "<group>"; };
+		49E397882677AC420051AE3A /* UserDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStorage.swift; sourceTree = "<group>"; };
+		49E3978B2677AF7E0051AE3A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		49E3978E2677B0B10051AE3A /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		49F05166265D59640069C1DB /* AuthScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthScreenViewController.xib; sourceTree = "<group>"; };
 		49F05168265D59C30069C1DB /* AuthScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewController.swift; sourceTree = "<group>"; };
 		49F0516B265D61B20069C1DB /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
@@ -306,7 +314,8 @@
 		497A21C02666B01B00D9CF7C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				497A21C12666B05D00D9CF7C /* PostProvider */,
+				49E397862677AC190051AE3A /* DataStorages */,
+				49E397852677AC0F0051AE3A /* Providers */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -323,6 +332,8 @@
 		497A21C42666B0AC00D9CF7C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				49E3978D2677B0A70051AE3A /* Author */,
+				49E3978A2677AF740051AE3A /* User */,
 				497A21C52666B0B500D9CF7C /* Post */,
 			);
 			path = Models;
@@ -426,6 +437,55 @@
 				49D7502C26778DF0008E48D3 /* TagViewPresenterFactory.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		49E397822677AAEE0051AE3A /* KeyValueDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				49E397832677AB010051AE3A /* KeyValueDataStorage.swift */,
+			);
+			path = KeyValueDataStorage;
+			sourceTree = "<group>";
+		};
+		49E397852677AC0F0051AE3A /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				497A21C12666B05D00D9CF7C /* PostProvider */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		49E397862677AC190051AE3A /* DataStorages */ = {
+			isa = PBXGroup;
+			children = (
+				49E397872677AC320051AE3A /* UserDataStorage */,
+				49E397822677AAEE0051AE3A /* KeyValueDataStorage */,
+			);
+			path = DataStorages;
+			sourceTree = "<group>";
+		};
+		49E397872677AC320051AE3A /* UserDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				49E397882677AC420051AE3A /* UserDataStorage.swift */,
+			);
+			path = UserDataStorage;
+			sourceTree = "<group>";
+		};
+		49E3978A2677AF740051AE3A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				49E3978B2677AF7E0051AE3A /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		49E3978D2677B0A70051AE3A /* Author */ = {
+			isa = PBXGroup;
+			children = (
+				49E3978E2677B0B10051AE3A /* Author.swift */,
+			);
+			path = Author;
 			sourceTree = "<group>";
 		};
 		49F05164265D591C0069C1DB /* Screens */ = {
@@ -634,9 +694,13 @@
 				495E4A6526678D00006B3331 /* PostListViewControllerOutput.swift in Sources */,
 				49D7502F26778EA4008E48D3 /* PostCardConfigurator.swift in Sources */,
 				49D7502526778301008E48D3 /* CollectionDataProviderFactory.swift in Sources */,
+				49E397842677AB010051AE3A /* KeyValueDataStorage.swift in Sources */,
 				496E20DC26594C5E00EB5824 /* RoundedView.swift in Sources */,
+				49E3978F2677B0B10051AE3A /* Author.swift in Sources */,
 				49D7500926773934008E48D3 /* TableDataSource.swift in Sources */,
+				49E397892677AC420051AE3A /* UserDataStorage.swift in Sources */,
 				499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */,
+				49E3978C2677AF7E0051AE3A /* User.swift in Sources */,
 				497A21C32666B08E00D9CF7C /* PostProviderProtocol.swift in Sources */,
 				49D7501A26777B0A008E48D3 /* CollectionViewDelegate.swift in Sources */,
 				497A21B92666AF7600D9CF7C /* CellPresenter.swift in Sources */,
