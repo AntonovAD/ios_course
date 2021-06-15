@@ -7,13 +7,13 @@ class PostListViewController: UIViewController {
     
     @IBOutlet weak var postListTableView: UITableView!
     private var postListTableData: (
-        source: TableDataSource<PostCardView, PostCardViewPresenter>?,
+        source: TableDataSource?,
         delegate: TableViewDelegate?
     )
     
     convenience init(
         presenter: PostListViewControllerOutput,
-        postListDataProvider: TableDataProvider<PostCardViewPresenter>
+        postListDataProvider: TableDataProviderProtocol
     ) {
         self.init()
         
@@ -23,17 +23,19 @@ class PostListViewController: UIViewController {
             source: TableDataSource(
                 dataProvider: postListDataProvider,
                 cellSetup: { cell, presenter in
-                    if let postCell = cell as? PostCardView {
-                        postCell.setup(
-                            with: presenter,
-                            margin: UIEdgeInsets(
-                                top: ViewIndent.small.rawValue,
-                                left: ViewIndent.small.rawValue,
-                                bottom: ViewIndent.small.rawValue,
-                                right: ViewIndent.small.rawValue
-                            )
-                        )
+                    guard let cell = cell as? PostCardView else {
+                        return
                     }
+                    
+                    cell.setup(
+                        with: presenter,
+                        margin: UIEdgeInsets(
+                            top: ViewIndent.small.rawValue,
+                            left: ViewIndent.small.rawValue,
+                            bottom: ViewIndent.small.rawValue,
+                            right: ViewIndent.small.rawValue
+                        )
+                    )
                 }
             ),
             delegate: TableViewDelegate(didSelectRow: didSelectRow(at:))

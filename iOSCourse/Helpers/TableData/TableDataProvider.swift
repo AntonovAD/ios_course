@@ -4,31 +4,25 @@ import Foundation
 
 // MARK: - Protocols
 protocol TableDataProviderProtocol {
-    associatedtype TableCellViewPresenter
-    
     var numberOfSections: Int { get }
     
     func numberOfRows(in section: Int) -> Int
     
-    func cellForRow(at indexPath: IndexPath) -> TableCellViewPresenter
+    func cellForRow(at indexPath: IndexPath) -> CellPresenter
 }
 
 protocol TableDataProtocol {
-    associatedtype TableCellViewPresenter
-    
-    func updateCellPresenters(_ presenters: [TableCellViewPresenter])
+    func updateCellPresenters(_ presenters: [CellPresenter])
 }
 
 // MARK: - Class
-class TableDataProvider<P: CellPresenter> {
-    typealias TableCellViewPresenter = P
-    
-    private var presenters: [P] = []
+class TableDataProvider {
+    private var presenters: [CellPresenter] = []
 }
 
 // MARK: - Extensions
 extension TableDataProvider: TableDataProtocol {
-    func updateCellPresenters(_ presenters: [P]) {
+    func updateCellPresenters(_ presenters: [CellPresenter]) {
         self.presenters = presenters
     }
 }
@@ -42,7 +36,7 @@ extension TableDataProvider: TableDataProviderProtocol {
         return presenters.count
     }
     
-    func cellForRow(at indexPath: IndexPath) -> P {
+    func cellForRow(at indexPath: IndexPath) -> CellPresenter {
         return presenters[indexPath.row]
     }
 }

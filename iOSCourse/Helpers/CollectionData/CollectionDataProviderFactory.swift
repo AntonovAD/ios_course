@@ -3,15 +3,11 @@
 import Foundation
 
 protocol CollectionDataProviderFactoryProtocol {
-    associatedtype CollectionItemViewPresenter: CellPresenter
-    
-    func createDataProvider() -> CollectionDataProvider<CollectionItemViewPresenter>
+    func createDataProvider() -> CollectionDataProvider
 }
 
-class CollectionDataProviderFactory<P: CellPresenter>: CollectionDataProviderFactoryProtocol {
-    typealias CollectionItemViewPresenter = P
-    
-    func createDataProvider() -> CollectionDataProvider<P> {
+class CollectionDataProviderFactory: CollectionDataProviderFactoryProtocol {
+    func createDataProvider() -> CollectionDataProvider {
         return CollectionDataProvider()
     }
 }

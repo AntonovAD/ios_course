@@ -3,19 +3,15 @@
 import Foundation
 import UIKit
 
-class TableDataSource<V, P>: NSObject, UITableViewDataSource
-where
-    V:UITableViewCell, V:ViewSetup,
-    P:CellPresenter, P:ViewOutput
-{
-    private let dataProvider: TableDataProvider<P>
-    private let cellSetup: (_ cell: inout UITableViewCell, _ presenter: P) -> Void
+class TableDataSource: NSObject, UITableViewDataSource {
+    private let dataProvider: TableDataProviderProtocol
+    private let cellSetup: (inout UITableViewCell, CellPresenter) -> Void
     
     init(
-        dataProvider: TableDataProvider<P>,
-        cellSetup: @escaping (_ cell: inout UITableViewCell, _ presenter: P) -> Void = { cell, presenter in
-            if let genericCell = cell as? V {
-                genericCell.setup(with: presenter)
+        dataProvider: TableDataProviderProtocol,
+        cellSetup: @escaping (inout UITableViewCell, CellPresenter) -> Void = { cell, presenter in
+            if let cell = cell as? ViewSetup {
+                cell.setup(with: presenter)
             }
         }
     ) {

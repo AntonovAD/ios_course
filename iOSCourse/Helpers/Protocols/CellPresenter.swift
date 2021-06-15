@@ -2,6 +2,6 @@
 
 import Foundation
 
-protocol CellPresenter {
+protocol CellPresenter: ViewOutput {
     var reusableType: Reusable.Type { get }
 }

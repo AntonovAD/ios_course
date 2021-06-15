@@ -21,7 +21,7 @@ class TagView: UICollectionViewCell, NibReusable, ViewSetup {
         super.init(coder: coder)
     }
     
-    func setup(with presenter: ViewOutput) {
+    func setup(with presenter: CellPresenter) {
         if let castedPresenter = presenter as? TagViewPresenter {
             self.presenter = castedPresenter
             castedPresenter.view = self

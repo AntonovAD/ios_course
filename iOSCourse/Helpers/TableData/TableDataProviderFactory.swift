@@ -3,15 +3,11 @@
 import Foundation
 
 protocol TableDataProviderFactoryProtocol {
-    associatedtype TableCellViewPresenter: CellPresenter
-    
-    func createDataProvider() -> TableDataProvider<TableCellViewPresenter>
+    func createDataProvider() -> TableDataProvider
 }
 
-class TableDataProviderFactory<P: CellPresenter>: TableDataProviderFactoryProtocol {
-    typealias TableCellViewPresenter = P
-    
-    func createDataProvider() -> TableDataProvider<P> {
+class TableDataProviderFactory: TableDataProviderFactoryProtocol {
+    func createDataProvider() -> TableDataProvider {
         return TableDataProvider()
     }
 }

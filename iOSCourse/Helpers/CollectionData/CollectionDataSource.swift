@@ -3,19 +3,15 @@
 import Foundation
 import UIKit
 
-class CollectionDataSource<V, P>: NSObject, UICollectionViewDataSource
-where
-    V:UICollectionViewCell, V:ViewSetup,
-    P:CellPresenter, P:ViewOutput
-{
-    private let dataProvider: CollectionDataProvider<P>
-    private let cellSetup: (_ cell: inout UICollectionViewCell, _ presenter: P) -> Void
+class CollectionDataSource: NSObject, UICollectionViewDataSource {
+    private let dataProvider: CollectionDataProviderProtocol
+    private let cellSetup: (inout UICollectionViewCell, CellPresenter) -> Void
     
     init(
-        dataProvider: CollectionDataProvider<P>,
-        cellSetup: @escaping (_ cell: inout UICollectionViewCell, _ presenter: P) -> Void = { cell, presenter in
-            if let genericCell = cell as? V {
-                genericCell.setup(with: presenter)
+        dataProvider: CollectionDataProviderProtocol,
+        cellSetup: @escaping (inout UICollectionViewCell, CellPresenter) -> Void = { cell, presenter in
+            if let cell = cell as? ViewSetup {
+                cell.setup(with: presenter)
             }
         }
     ) {

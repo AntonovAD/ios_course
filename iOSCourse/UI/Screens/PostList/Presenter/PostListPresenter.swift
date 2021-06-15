@@ -3,7 +3,7 @@
 import Foundation
 
 class PostListPresenter {
-    private let postListTableData: TableDataProvider<PostCardViewPresenter>
+    private let postListTableData: TableDataProtocol
     private let interactor: PostListInteractorInput
     
     private var presenters: [PostCardViewPresenter] = []
@@ -12,7 +12,7 @@ class PostListPresenter {
     weak var viewController: PostListViewControllerInput?
     
     init(
-        postListTableData: TableDataProvider<PostCardViewPresenter>,
+        postListTableData: TableDataProtocol,
         interactor: PostListInteractorInput
     ) {
         self.postListTableData = postListTableData

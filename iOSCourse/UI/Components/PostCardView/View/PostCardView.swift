@@ -19,32 +19,34 @@ class PostCardView: UITableViewCell, NibReusable, ViewSetup {
     
     @IBOutlet weak var tagsCollectionView: UICollectionView!
     private var tagsCollectionData: (
-        source: CollectionDataSource<TagView, TagViewPresenter>?,
+        source: CollectionDataSource?,
         delegate: CollectionViewDelegate?
     )
     
-    func setup(with presenter: ViewOutput) {
-        if let castedPresenter = presenter as? PostCardViewPresenter {
-            self.presenter = castedPresenter
-            castedPresenter.view = self
-            castedPresenter.viewIsReady()
+    func setup(with presenter: CellPresenter) {
+        guard let presenter = presenter as? PostCardViewPresenter else {
+            return
         }
+        
+        self.presenter = presenter
+        presenter.view = self
+        presenter.viewIsReady()
     }
     
     func setup(
-        with presenter: PostCardViewPresenter,
+        with presenter: CellPresenter,
         margin: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     ) {
-        self.presenter = presenter
+        setMeasures(margin: margin)
         
+        setup(with: presenter)
+    }
+    
+    private func setMeasures(margin: UIEdgeInsets) {
         topMargin.constant = margin.top
         rightMargin.constant = margin.right
         bottomMargin.constant = margin.bottom
         leftMargin.constant = margin.left
-        
-        presenter.view = self
-        
-        presenter.viewIsReady()
     }
 }
 

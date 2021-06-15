@@ -7,5 +7,5 @@ protocol ViewOutput {
 }
 
 protocol ViewSetup {
-    func setup(with presenter: ViewOutput)
+    func setup(with presenter: CellPresenter)
 }
