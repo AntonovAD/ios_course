@@ -58,7 +58,7 @@ extension PostListPresenter: PostListViewControllerOutput {
         
         let presenter = presenters[indexPath.row]
         
-        print(presenter.post)
+        print("Post:", presenter.post.title)
         
         //presenter.doSomething()
         

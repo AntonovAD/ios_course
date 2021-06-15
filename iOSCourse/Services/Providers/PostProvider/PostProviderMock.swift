@@ -86,7 +86,40 @@ private let postsMockJson = """
           "post_id": 2,
           "tag_id": 2
         }
-      }
+      },
+      {
+        "id": 3,
+        "name": "tag3124125125",
+        "created_at": "2021-05-17 14:10:00",
+        "updated_at": "2021-05-17 14:10:00",
+        "deleted_at": null,
+        "pivot": {
+          "post_id": 2,
+          "tag_id": 2
+        }
+      },
+      {
+        "id": 4,
+        "name": "tag4",
+        "created_at": "2021-05-17 14:10:00",
+        "updated_at": "2021-05-17 14:10:00",
+        "deleted_at": null,
+        "pivot": {
+          "post_id": 2,
+          "tag_id": 2
+        }
+      },
+      {
+        "id": 5,
+        "name": "tag5",
+        "created_at": "2021-05-17 14:10:00",
+        "updated_at": "2021-05-17 14:10:00",
+        "deleted_at": null,
+        "pivot": {
+          "post_id": 2,
+          "tag_id": 2
+        }
+      },
     ],
     "comments": [],
     "popular_comment": []

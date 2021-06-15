@@ -13,13 +13,13 @@ class TextFieldInput: UITextField {
         }
     }
     
-    @IBInspectable var topPadding: CGFloat = ViewIndent.normal.rawValue
+    @IBInspectable var topPadding: CGFloat = ViewIndent.large.rawValue
 
-    @IBInspectable var bottomPadding: CGFloat = ViewIndent.normal.rawValue
+    @IBInspectable var bottomPadding: CGFloat = ViewIndent.large.rawValue
 
-    @IBInspectable var leftPadding: CGFloat = ViewIndent.normal.rawValue
+    @IBInspectable var leftPadding: CGFloat = ViewIndent.large.rawValue
 
-    @IBInspectable var rightPadding: CGFloat = ViewIndent.normal.rawValue
+    @IBInspectable var rightPadding: CGFloat = ViewIndent.large.rawValue
     
     private var padding: UIEdgeInsets {
         get {
@@ -46,7 +46,7 @@ class TextFieldInput: UITextField {
     
     // MARK: - Border
     
-    private var cornerRadius: CGFloat = ViewIndent.normal.rawValue {
+    private var cornerRadius: CGFloat = ViewIndent.large.rawValue {
         didSet {
             updateLayer()
         }

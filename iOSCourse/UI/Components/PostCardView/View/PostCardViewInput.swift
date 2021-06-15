@@ -7,5 +7,5 @@ protocol PostCardViewInput: AnyObject {
     func updateAuthor(text: String)
     func updateDate(text: String)
     func updateLikes(like: Int, dislike: Int)
-    func updateTags(tags: [String])
+    func reloadTags()
 }

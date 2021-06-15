@@ -1,12 +1,15 @@
 //
 
-import UIKit
+import CoreGraphics
 
 enum ViewIndent: CGFloat {
     case tiny = 4
-    case small = 8
-    case normal = 16
-    case medium = 32
+    case small = 6
+    case normal = 8
+    case medium = 10
+    case big = 12
+    case large = 16
+    case giant = 32
 }
 
 enum ViewSize: CGFloat {

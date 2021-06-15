@@ -6,8 +6,19 @@ protocol PostCardViewPresenterFactoryProtocol {
     func createPostCardViewPresenter(post: Post) -> PostCardViewPresenter
 }
 
-class namePostCardViewPresenterFactory: PostCardViewPresenterFactoryProtocol {
+class PostCardViewPresenterFactory: PostCardViewPresenterFactoryProtocol {
+    private let tagsCollectionDataProviderFactory: CollectionDataProviderFactoryProtocol
+    
+    init(tagsCollectionDataProviderFactory: CollectionDataProviderFactoryProtocol) {
+        self.tagsCollectionDataProviderFactory = tagsCollectionDataProviderFactory
+    }
+    
     func createPostCardViewPresenter(post: Post) -> PostCardViewPresenter {
-        return PostCardViewPresenter(post: post)
+        let tagsCollectionDataProvider = tagsCollectionDataProviderFactory.createDataProvider()
+        
+        return PostCardViewPresenter(
+            post: post,
+            tagsCollectionDataProvider: tagsCollectionDataProvider
+        )
     }
 }

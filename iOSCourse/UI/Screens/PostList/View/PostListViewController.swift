@@ -30,10 +30,10 @@ class PostListViewController: UIViewController {
                     cell.setup(
                         with: presenter,
                         margin: UIEdgeInsets(
-                            top: ViewIndent.small.rawValue,
-                            left: ViewIndent.small.rawValue,
-                            bottom: ViewIndent.small.rawValue,
-                            right: ViewIndent.small.rawValue
+                            top: ViewIndent.normal.rawValue,
+                            left: ViewIndent.normal.rawValue,
+                            bottom: ViewIndent.normal.rawValue,
+                            right: ViewIndent.normal.rawValue
                         )
                     )
                 }
@@ -50,9 +50,9 @@ class PostListViewController: UIViewController {
         postListTableView.registerReusableCell(PostCardView.self)
         
         postListTableView.contentInset = UIEdgeInsets(
-            top: ViewIndent.normal.rawValue,
+            top: ViewIndent.large.rawValue,
             left: 0,
-            bottom: ViewIndent.normal.rawValue,
+            bottom: ViewIndent.large.rawValue,
             right: 0
         )
         

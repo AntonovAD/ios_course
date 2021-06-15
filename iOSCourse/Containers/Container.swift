@@ -33,8 +33,14 @@ class FactoryAssembly: Assembly {
             TableDataProviderFactory()
         }
         
-        container.register(PostCardViewPresenterFactoryProtocol.self) { _ in
-            namePostCardViewPresenterFactory()
+        container.register(CollectionDataProviderFactoryProtocol.self) { _ in
+            CollectionDataProviderFactory()
+        }
+        
+        container.register(PostCardViewPresenterFactoryProtocol.self) { resolver in
+            PostCardViewPresenterFactory(
+                tagsCollectionDataProviderFactory: resolver.resolve(CollectionDataProviderFactoryProtocol.self)!
+            )
         }
     }
 }

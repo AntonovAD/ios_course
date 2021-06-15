@@ -40,6 +40,7 @@
 		499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A8D6D26524202007543E7 /* AppDelegate.swift */; };
 		499A8D7726524203007543E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7626524203007543E7 /* Assets.xcassets */; };
 		499A8D7A26524203007543E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7826524203007543E7 /* LaunchScreen.storyboard */; };
+		49AFF5F2267931800031CD23 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AFF5F1267931800031CD23 /* PaddingLabel.swift */; };
 		49C7A5E22667D443002D4583 /* BubbleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C7A5E12667D443002D4583 /* BubbleLabel.swift */; };
 		49D39E51265E60110050C9E9 /* MeasureConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D39E50265E60110050C9E9 /* MeasureConst.swift */; };
 		49D39E53265E68A00050C9E9 /* TextFieldInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D39E52265E68A00050C9E9 /* TextFieldInput.swift */; };
@@ -111,6 +112,7 @@
 		499A8D7626524203007543E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		499A8D7926524203007543E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		499A8D7B26524203007543E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49AFF5F1267931800031CD23 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		49C7A5E12667D443002D4583 /* BubbleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleLabel.swift; sourceTree = "<group>"; };
 		49D39E50265E60110050C9E9 /* MeasureConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureConst.swift; sourceTree = "<group>"; };
 		49D39E52265E68A00050C9E9 /* TextFieldInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldInput.swift; sourceTree = "<group>"; };
@@ -172,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				495E4A6026678820006B3331 /* PostCardViewPresenterFactory.swift */,
-				495E4A5326678227006B3331 /* View */,
 				495E4A5226678222006B3331 /* Presenter */,
+				495E4A5326678227006B3331 /* View */,
 			);
 			path = PostCardView;
 			sourceTree = "<group>";
@@ -283,6 +285,7 @@
 				496E20DB26594C5E00EB5824 /* RoundedView.swift */,
 				496E20DD26594C6A00EB5824 /* RoundView.swift */,
 				496E20DF26594C7E00EB5824 /* ShadowView.swift */,
+				49AFF5F1267931800031CD23 /* PaddingLabel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				49E3978F2677B0B10051AE3A /* Author.swift in Sources */,
 				49D7500926773934008E48D3 /* TableDataSource.swift in Sources */,
 				49E397892677AC420051AE3A /* UserDataStorage.swift in Sources */,
+				49AFF5F2267931800031CD23 /* PaddingLabel.swift in Sources */,
 				499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */,
 				49E3978C2677AF7E0051AE3A /* User.swift in Sources */,
 				497A21C32666B08E00D9CF7C /* PostProviderProtocol.swift in Sources */,

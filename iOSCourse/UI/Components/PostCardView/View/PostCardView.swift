@@ -18,6 +18,7 @@ class PostCardView: UITableViewCell, NibReusable, ViewSetup {
     @IBOutlet weak var dislike: UILabel!
     
     @IBOutlet weak var tagsCollectionView: UICollectionView!
+    @IBOutlet weak var tagsCollectionViewFlowLayout: UICollectionViewFlowLayout!
     private var tagsCollectionData: (
         source: CollectionDataSource?,
         delegate: CollectionViewDelegate?
@@ -28,9 +29,7 @@ class PostCardView: UITableViewCell, NibReusable, ViewSetup {
             return
         }
         
-        self.presenter = presenter
-        presenter.view = self
-        presenter.viewIsReady()
+        setup(with: presenter)
     }
     
     func setup(
@@ -42,11 +41,38 @@ class PostCardView: UITableViewCell, NibReusable, ViewSetup {
         setup(with: presenter)
     }
     
+    private func setup(with presenter: PostCardViewPresenter) {
+        setTagsData(with: presenter.tagsCollectionDataProvider)
+        
+        self.presenter = presenter
+        presenter.view = self
+        presenter.viewIsReady()
+    }
+    
     private func setMeasures(margin: UIEdgeInsets) {
         topMargin.constant = margin.top
         rightMargin.constant = margin.right
         bottomMargin.constant = margin.bottom
         leftMargin.constant = margin.left
+    }
+    
+    private func setTagsData(with provider: CollectionDataProvider) {
+        tagsCollectionData = (
+            source: CollectionDataSource(
+                dataProvider: provider
+            ),
+            delegate: CollectionViewDelegate(
+                itemSpacing: ViewIndent.normal.rawValue,
+                didSelectItem: didSelectTag(at:)
+            )
+        )
+        
+        tagsCollectionView.register(TagView.self, forCellWithReuseIdentifier: TagView.reuseIdentifier)
+        
+        tagsCollectionView.dataSource = tagsCollectionData.source
+        tagsCollectionView.delegate = tagsCollectionData.delegate
+        
+        tagsCollectionViewFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     }
 }
 
@@ -68,14 +94,13 @@ extension PostCardView: PostCardViewInput {
         self.dislike.text = "\(dislike)"
     }
     
-    func updateTags(tags: [String]) {
-        //TODO updateTags
+    func reloadTags() {
+        self.tagsCollectionView.reloadData()
     }
 }
 
 private extension PostCardView {
     func didSelectTag(at indexPath: IndexPath) {
-        //TODO didSelectTag
-        //presenter?.didSelectCell(with: indexPath)
+        presenter?.didSelectTag(with: indexPath)
     }
 }

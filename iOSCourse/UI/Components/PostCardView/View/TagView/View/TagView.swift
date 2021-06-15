@@ -2,15 +2,16 @@
 
 import UIKit
 
-class TagView: UICollectionViewCell, NibReusable, ViewSetup {
+class TagView: UICollectionViewCell, Reusable, ViewSetup {
     private var presenter: TagViewOutput?
     
     private let customView = BubbleLabel()
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: .zero)
         
         addSubview(customView)
+        customView.translatesAutoresizingMaskIntoConstraints = false
         customView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         customView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         customView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
@@ -22,11 +23,17 @@ class TagView: UICollectionViewCell, NibReusable, ViewSetup {
     }
     
     func setup(with presenter: CellPresenter) {
-        if let castedPresenter = presenter as? TagViewPresenter {
-            self.presenter = castedPresenter
-            castedPresenter.view = self
-            castedPresenter.viewIsReady()
+        guard let presenter = presenter as? TagViewPresenter else {
+            return
         }
+        
+        setup(with: presenter)
+    }
+    
+    private func setup(with presenter: TagViewPresenter) {
+        self.presenter = presenter
+        presenter.view = self
+        presenter.viewIsReady()
     }
 }
 

@@ -6,11 +6,18 @@ class PostCardViewPresenter: CellPresenter {
     let reusableType: Reusable.Type = PostCardView.self
     
     private(set) var post: Post
+    private(set) var tagsCollectionDataProvider: CollectionDataProvider
+    private(set) var tagsPresenters: [TagViewPresenter]
     
     weak var view: PostCardViewInput?
     
-    init(post: Post) {
+    init(
+        post: Post,
+        tagsCollectionDataProvider: CollectionDataProvider
+    ) {
         self.post = post
+        self.tagsCollectionDataProvider = tagsCollectionDataProvider
+        self.tagsPresenters = post.tags.map { TagViewPresenter(tag: $0) }
     }
 }
 
@@ -21,6 +28,16 @@ extension PostCardViewPresenter: PostCardViewOutput {
         updateDate()
         updateLikes()
         updateTags()
+    }
+    
+    func didSelectTag(with indexPath: IndexPath) {
+        guard tagsPresenters.indices.contains(indexPath.row) else {
+            return
+        }
+        
+        let tagPresenter = tagsPresenters[indexPath.row]
+        
+        print("Tag:", tagPresenter.tag.name)
     }
 }
 
@@ -42,6 +59,7 @@ private extension PostCardViewPresenter {
     }
     
     func updateTags() {
-        view?.updateTags(tags: post.tags.map { $0.name })
+        tagsCollectionDataProvider.updateItemPresenters(tagsPresenters)
+        view?.reloadTags()
     }
 }

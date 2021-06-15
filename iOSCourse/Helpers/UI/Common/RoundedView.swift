@@ -6,7 +6,7 @@ import UIKit
 class RoundedView: UIView {
     
     /// Определяет радиус срезания угла
-    @IBInspectable var cornerRadius: CGFloat = ViewIndent.small.rawValue
+    @IBInspectable var cornerRadius: CGFloat = ViewIndent.normal.rawValue
     
     /// Определяет, будет ли срезаться правый верхний угол view
     @IBInspectable var topRightCorner: Bool = true {
