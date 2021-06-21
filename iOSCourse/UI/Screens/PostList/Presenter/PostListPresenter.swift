@@ -38,6 +38,10 @@ extension PostListPresenter: PostListInteractorOutput {
         updatePostListCellPresenters()
     }
     
+    func updateUserInfo(_ name: String, _ email: String) {
+        viewController?.updateUserInfo(name, email)
+    }
+    
     func handleError(_ error: Error) {
         
     }
@@ -49,6 +53,7 @@ extension PostListPresenter: PostListViewControllerOutput {
         updateTitle()
         
         interactor.requestPosts()
+        interactor.requestUser()
     }
     
     func didSelectCell(with indexPath: IndexPath) {

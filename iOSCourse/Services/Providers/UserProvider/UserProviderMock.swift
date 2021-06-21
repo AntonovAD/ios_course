@@ -26,10 +26,11 @@ class UserProviderMock: UserProviderProtocol, ReactiveUserProviderProtocol {
         }
     }
     
-    func getById(
-        id: Int,
+    func getUser(
         completion: @escaping (Result<User, UserProviderError>) -> Void
     ) {
+        //let userId = storage.getUserId()
+        
         DispatchQueue.main.async {
             let data = userMockJson.data(using: .utf8)!
             let jsonDecoder = JSONDecoder()
@@ -56,9 +57,9 @@ class UserProviderMock: UserProviderProtocol, ReactiveUserProviderProtocol {
         .dematerializeResults()
     }
     
-    func getById(id: Int) -> SignalProducer<User, UserProviderError> {
+    func getUser() -> SignalProducer<User, UserProviderError> {
         return SignalProducer { [weak self] observer, lifetime in
-            self?.getById(id: id) { result in
+            self?.getUser() { result in
                 observer.send(value: result)
                 observer.sendCompleted()
             }

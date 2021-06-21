@@ -49,6 +49,9 @@ class ServiceAssembly: Assembly {
         container.register(UserProviderProtocol.self) { _ in
             UserProviderMock()
         }
+        container.register(ReactiveUserProviderProtocol.self) { _ in
+            UserProviderMock()
+        }
         
         container.register(RouterProtocol.self) { resolver in
             Router(
@@ -69,7 +72,7 @@ class ConfiguratorAssembly: Assembly {
                 reactivePostProvider: resolver.resolve(ReactivePostProviderProtocol.self)!,
                 postListTableDataProviderFactory: resolver.resolve(TableDataProviderFactoryProtocol.self)!,
                 cellPresenterFactory: resolver.resolve(PostCardViewPresenterFactoryProtocol.self)!,
-                navigationControllerFactory: resolver.resolve(MainNavigationFactoryProtocol.self)!
+                userProvider: resolver.resolve(ReactiveUserProviderProtocol.self)!
             )
         }
     }
@@ -93,10 +96,6 @@ class FactoryAssembly: Assembly {
             PostCardViewPresenterFactory(
                 tagsCollectionDataProviderFactory: resolver.resolve(CollectionDataProviderFactoryProtocol.self)!
             )
-        }
-        
-        container.register(MainNavigationFactoryProtocol.self) { _ in
-            MainNavigationFactory()
         }
     }
 }

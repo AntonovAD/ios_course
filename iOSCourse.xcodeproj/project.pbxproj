@@ -51,15 +51,7 @@
 		49873C492680C46300143EEC /* UserProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C482680C46300143EEC /* UserProviderMock.swift */; };
 		49873C4B2680C46F00143EEC /* UserProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C4A2680C46F00143EEC /* UserProviderProtocol.swift */; };
 		49873C4D2680CB1000143EEC /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C4C2680CB1000143EEC /* Auth.swift */; };
-		49873C502680CFAB00143EEC /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C4F2680CFAB00143EEC /* MainNavigationController.swift */; };
-		49873C542680D05F00143EEC /* MainNavigationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C532680D05F00143EEC /* MainNavigationFactory.swift */; };
-		49873C582680D0A800143EEC /* MainNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C572680D0A800143EEC /* MainNavigationPresenter.swift */; };
-		49873C5A2680D0F200143EEC /* MainNavigationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C592680D0F200143EEC /* MainNavigationInteractor.swift */; };
-		49873C5C2680D0FB00143EEC /* MainNavigationInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C5B2680D0FB00143EEC /* MainNavigationInteractorOutput.swift */; };
-		49873C5E2680D10500143EEC /* MainNavigationInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C5D2680D10500143EEC /* MainNavigationInteractorInput.swift */; };
 		49873C612680D15F00143EEC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C602680D15F00143EEC /* Router.swift */; };
-		49873C632680DC2700143EEC /* MainNavigationControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C622680DC2700143EEC /* MainNavigationControllerOutput.swift */; };
-		49873C652680DC3000143EEC /* MainNavigationControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C642680DC3000143EEC /* MainNavigationControllerInput.swift */; };
 		499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A8D6D26524202007543E7 /* AppDelegate.swift */; };
 		499A8D7726524203007543E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7626524203007543E7 /* Assets.xcassets */; };
 		499A8D7A26524203007543E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7826524203007543E7 /* LaunchScreen.storyboard */; };
@@ -144,15 +136,7 @@
 		49873C482680C46300143EEC /* UserProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderMock.swift; sourceTree = "<group>"; };
 		49873C4A2680C46F00143EEC /* UserProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderProtocol.swift; sourceTree = "<group>"; };
 		49873C4C2680CB1000143EEC /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		49873C4F2680CFAB00143EEC /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		49873C532680D05F00143EEC /* MainNavigationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationFactory.swift; sourceTree = "<group>"; };
-		49873C572680D0A800143EEC /* MainNavigationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationPresenter.swift; sourceTree = "<group>"; };
-		49873C592680D0F200143EEC /* MainNavigationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationInteractor.swift; sourceTree = "<group>"; };
-		49873C5B2680D0FB00143EEC /* MainNavigationInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationInteractorOutput.swift; sourceTree = "<group>"; };
-		49873C5D2680D10500143EEC /* MainNavigationInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationInteractorInput.swift; sourceTree = "<group>"; };
 		49873C602680D15F00143EEC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		49873C622680DC2700143EEC /* MainNavigationControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationControllerOutput.swift; sourceTree = "<group>"; };
-		49873C642680DC3000143EEC /* MainNavigationControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationControllerInput.swift; sourceTree = "<group>"; };
 		499A8D6A26524202007543E7 /* iOSCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499A8D6D26524202007543E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499A8D7626524203007543E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -313,7 +297,6 @@
 		497A21B02666AD6300D9CF7C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				49873C4E2680CF9800143EEC /* Navigators */,
 				49F05164265D591C0069C1DB /* Screens */,
 				4957597326540D7100DF4CED /* Components */,
 			);
@@ -484,53 +467,6 @@
 				49873C482680C46300143EEC /* UserProviderMock.swift */,
 			);
 			path = UserProvider;
-			sourceTree = "<group>";
-		};
-		49873C4E2680CF9800143EEC /* Navigators */ = {
-			isa = PBXGroup;
-			children = (
-				49873C512680D00200143EEC /* Main */,
-			);
-			path = Navigators;
-			sourceTree = "<group>";
-		};
-		49873C512680D00200143EEC /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				49873C562680D08400143EEC /* Presenter */,
-				49873C552680D07E00143EEC /* Interactor */,
-				49873C522680D03F00143EEC /* View */,
-				49873C532680D05F00143EEC /* MainNavigationFactory.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		49873C522680D03F00143EEC /* View */ = {
-			isa = PBXGroup;
-			children = (
-				49873C642680DC3000143EEC /* MainNavigationControllerInput.swift */,
-				49873C622680DC2700143EEC /* MainNavigationControllerOutput.swift */,
-				49873C4F2680CFAB00143EEC /* MainNavigationController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		49873C552680D07E00143EEC /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				49873C5D2680D10500143EEC /* MainNavigationInteractorInput.swift */,
-				49873C5B2680D0FB00143EEC /* MainNavigationInteractorOutput.swift */,
-				49873C592680D0F200143EEC /* MainNavigationInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		49873C562680D08400143EEC /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				49873C572680D0A800143EEC /* MainNavigationPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		49873C5F2680D15000143EEC /* Router */ = {
@@ -894,7 +830,6 @@
 				49D7502726778336008E48D3 /* TableDataProviderFactory.swift in Sources */,
 				49873C492680C46300143EEC /* UserProviderMock.swift in Sources */,
 				497A21BC2666AF7600D9CF7C /* NibLoadable.swift in Sources */,
-				49873C5A2680D0F200143EEC /* MainNavigationInteractor.swift in Sources */,
 				4957597526540E7600DF4CED /* PostCardView.swift in Sources */,
 				497A21BF2666B00400D9CF7C /* UITabelView+dequeueReusableCell.swift in Sources */,
 				49873C422680A83F00143EEC /* PostTagRealm.swift in Sources */,
@@ -903,10 +838,8 @@
 				497A21CE2666B6B400D9CF7C /* Configurator.swift in Sources */,
 				495E4A4F2667813F006B3331 /* PostListPresenter.swift in Sources */,
 				49E397952677BBE30051AE3A /* PostRealm.swift in Sources */,
-				49873C5C2680D0FB00143EEC /* MainNavigationInteractorOutput.swift in Sources */,
 				497C6FAC2678F837008A9239 /* CollectionCell.swift in Sources */,
 				49D39E51265E60110050C9E9 /* MeasureConst.swift in Sources */,
-				49873C5E2680D10500143EEC /* MainNavigationInteractorInput.swift in Sources */,
 				49873C462680BC4F00143EEC /* DeleteMigration.swift in Sources */,
 				496E20DE26594C6A00EB5824 /* RoundView.swift in Sources */,
 				49873C3E2680A82000143EEC /* PostStatusRealm.swift in Sources */,
@@ -915,24 +848,20 @@
 				49873C2A2680873F00143EEC /* RealmFactory.swift in Sources */,
 				49D7500D26773C90008E48D3 /* TableDataProvider.swift in Sources */,
 				49873C372680922A00143EEC /* PostMigrationService.swift in Sources */,
-				49873C582680D0A800143EEC /* MainNavigationPresenter.swift in Sources */,
 				49F0516D265D61B20069C1DB /* PostListViewController.swift in Sources */,
 				49D7500B26773981008E48D3 /* TableViewDelegate.swift in Sources */,
 				49873C442680A84A00143EEC /* PostCommentRealm.swift in Sources */,
 				49C7A5E22667D443002D4583 /* BubbleLabel.swift in Sources */,
 				49D750292677845B008E48D3 /* TagViewInput.swift in Sources */,
-				49873C542680D05F00143EEC /* MainNavigationFactory.swift in Sources */,
 				49873C402680A82E00143EEC /* PostAuthorRealm.swift in Sources */,
 				49D7501C26777FBA008E48D3 /* UICollectionView+dequeueReusableCell.swift in Sources */,
 				49D7501826777AFE008E48D3 /* CollectionDataProvider.swift in Sources */,
 				496E20DA26594C4C00EB5824 /* GradientView.swift in Sources */,
 				495E4A6526678D00006B3331 /* PostListViewControllerOutput.swift in Sources */,
 				49D7502526778301008E48D3 /* CollectionDataProviderFactory.swift in Sources */,
-				49873C652680DC3000143EEC /* MainNavigationControllerInput.swift in Sources */,
 				49E397842677AB010051AE3A /* KeyValueDataStorage.swift in Sources */,
 				497C6FA82678F105008A9239 /* TableCell.swift in Sources */,
 				49E397912677B5920051AE3A /* PostProviderRealm.swift in Sources */,
-				49873C502680CFAB00143EEC /* MainNavigationController.swift in Sources */,
 				496E20DC26594C5E00EB5824 /* RoundedView.swift in Sources */,
 				49E3978F2677B0B10051AE3A /* Author.swift in Sources */,
 				49D7500926773934008E48D3 /* TableDataSource.swift in Sources */,
@@ -956,7 +885,6 @@
 				495E4A6726678D0A006B3331 /* PostListViewControllerInput.swift in Sources */,
 				495E4A55266783C5006B3331 /* PostCardViewOutput.swift in Sources */,
 				496E20E32659592800EB5824 /* Utils.swift in Sources */,
-				49873C632680DC2700143EEC /* MainNavigationControllerOutput.swift in Sources */,
 				49873C612680D15F00143EEC /* Router.swift in Sources */,
 				49873C4B2680C46F00143EEC /* UserProviderProtocol.swift in Sources */,
 				49F05172265D64E70069C1DB /* PostViewController.swift in Sources */,

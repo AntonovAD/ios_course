@@ -8,20 +8,20 @@ class PostListScreenConfigurator: Configurator {
     private let reactivePostProvider: ReactivePostProviderProtocol
     private let postListTableDataProviderFactory: TableDataProviderFactoryProtocol
     private let cellPresenterFactory: PostCardViewPresenterFactoryProtocol
-    private let navigationControllerFactory: MainNavigationFactoryProtocol
+    private let userProvider: ReactiveUserProviderProtocol
     
     init(
         postProvider: PostProviderProtocol,
         reactivePostProvider: ReactivePostProviderProtocol,
         postListTableDataProviderFactory: TableDataProviderFactoryProtocol,
         cellPresenterFactory: PostCardViewPresenterFactoryProtocol,
-        navigationControllerFactory: MainNavigationFactoryProtocol
+        userProvider: ReactiveUserProviderProtocol
     ) {
         self.postProvider = postProvider
         self.reactivePostProvider = reactivePostProvider
         self.postListTableDataProviderFactory = postListTableDataProviderFactory
         self.cellPresenterFactory = cellPresenterFactory
-        self.navigationControllerFactory = navigationControllerFactory
+        self.userProvider = userProvider
     }
     
     func configure() -> UIViewController {
@@ -30,7 +30,8 @@ class PostListScreenConfigurator: Configurator {
         let interactor = PostListInteractor(
             postProvider: postProvider,
             reactivePostProvider: reactivePostProvider,
-            cellPresenterFactory: cellPresenterFactory
+            cellPresenterFactory: cellPresenterFactory,
+            userProvider: userProvider
         )
         let presenter = PostListPresenter(
             postListTableData: postListTableDataProvider,
@@ -44,8 +45,7 @@ class PostListScreenConfigurator: Configurator {
         interactor.presenter = presenter
         presenter.viewController = viewController
         
-        let navigationController = navigationControllerFactory
-            .createMainNavigationController(rootViewController: viewController)
+        let navigationController = UINavigationController(rootViewController: viewController)
         
         return navigationController
     }

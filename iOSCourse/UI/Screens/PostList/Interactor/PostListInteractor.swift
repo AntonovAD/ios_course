@@ -7,17 +7,20 @@ class PostListInteractor {
     private let postProvider: PostProviderProtocol
     private let reactivePostProvider: ReactivePostProviderProtocol
     private let cellPresenterFactory: PostCardViewPresenterFactoryProtocol
+    private let userProvider: ReactiveUserProviderProtocol
     
     weak var presenter: PostListInteractorOutput?
     
     init(
         postProvider: PostProviderProtocol,
         reactivePostProvider: ReactivePostProviderProtocol,
-        cellPresenterFactory: PostCardViewPresenterFactoryProtocol
+        cellPresenterFactory: PostCardViewPresenterFactoryProtocol,
+        userProvider: ReactiveUserProviderProtocol
     ) {
         self.postProvider = postProvider
         self.reactivePostProvider = reactivePostProvider
         self.cellPresenterFactory = cellPresenterFactory
+        self.userProvider = userProvider
     }
 }
 
@@ -26,6 +29,10 @@ private extension PostListInteractor {
         let cellPresenters = posts.map { cellPresenterFactory.createPostCardViewPresenter(post: $0) }
         
         presenter?.updatePostListCellPresenters(cellPresenters)
+    }
+    
+    func processUser(user: User) {
+        presenter?.updateUserInfo(user.name, user.email)
     }
     
     func handleError(_ error: Error) {
@@ -66,6 +73,24 @@ extension PostListInteractor: PostListInteractorInput {
                 case .failure(let error):
                     self?.handleError(error)
                 }
+            }
+        }
+    }
+    
+    func requestUser() {
+        var producer = userProvider.getUser()
+        producer = producer
+            .flatMap(.latest) { user in
+                return SignalProducer(value: user)
+            }
+        
+        producer.startWithResult { [weak self] result in
+            switch result {
+            case .success(let user):
+                self?.processUser(user: user)
+                
+            case .failure(let error):
+                self?.handleError(error)
             }
         }
     }
