@@ -11,11 +11,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let configurator = appService.start()
+        let router = appService.start()
         
         window = UIWindow()
-        window?.rootViewController = configurator.configure()
-        window?.makeKeyAndVisible()
+        
+        router.setWindow(window)
+        router.push(.postList)
         
         return true
     }

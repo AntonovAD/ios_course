@@ -45,17 +45,31 @@ class ServiceAssembly: Assembly {
                 dataStorage: resolver.resolve(PostMigrationDataStorage.self)!
             )
         }*/
+        
+        container.register(UserProviderProtocol.self) { _ in
+            UserProviderMock()
+        }
+        
+        container.register(RouterProtocol.self) { resolver in
+            Router(
+                authScreen: resolver.resolve(PostListScreenConfigurator.self)!,
+                postListScreen: resolver.resolve(PostListScreenConfigurator.self)!,
+                postScreen: resolver.resolve(PostListScreenConfigurator.self)!,
+                userProvider: resolver.resolve(UserProviderProtocol.self)!
+            )
+        }
     }
 }
 
 class ConfiguratorAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(PostListConfigurator.self) { resolver in
-            PostListConfigurator(
+        container.register(PostListScreenConfigurator.self) { resolver in
+            PostListScreenConfigurator(
                 postProvider: resolver.resolve(PostProviderProtocol.self)!,
                 reactivePostProvider: resolver.resolve(ReactivePostProviderProtocol.self)!,
                 postListTableDataProviderFactory: resolver.resolve(TableDataProviderFactoryProtocol.self)!,
-                cellPresenterFactory: resolver.resolve(PostCardViewPresenterFactoryProtocol.self)!
+                cellPresenterFactory: resolver.resolve(PostCardViewPresenterFactoryProtocol.self)!,
+                navigationControllerFactory: resolver.resolve(MainNavigationFactoryProtocol.self)!
             )
         }
     }
@@ -80,11 +94,15 @@ class FactoryAssembly: Assembly {
                 tagsCollectionDataProviderFactory: resolver.resolve(CollectionDataProviderFactoryProtocol.self)!
             )
         }
+        
+        container.register(MainNavigationFactoryProtocol.self) { _ in
+            MainNavigationFactory()
+        }
     }
 }
 
 protocol AppServiceProtocol {
-    func start() -> Configurator
+    func start() -> RouterProtocol
 }
 
 class AppService: AppServiceProtocol {
@@ -108,10 +126,10 @@ class AppService: AppServiceProtocol {
         ])
     }
     
-    func start() -> Configurator {
+    func start() -> RouterProtocol {
         //migration()
         
-        return resolver.resolve(PostListConfigurator.self)!
+        return resolver.resolve(RouterProtocol.self)!
     }
     
     /*private func migration() {

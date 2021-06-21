@@ -3,22 +3,25 @@
 import Foundation
 import UIKit
 
-class PostListConfigurator: Configurator {
+class PostListScreenConfigurator: Configurator {
     private let postProvider: PostProviderProtocol
     private let reactivePostProvider: ReactivePostProviderProtocol
     private let postListTableDataProviderFactory: TableDataProviderFactoryProtocol
     private let cellPresenterFactory: PostCardViewPresenterFactoryProtocol
+    private let navigationControllerFactory: MainNavigationFactoryProtocol
     
     init(
         postProvider: PostProviderProtocol,
         reactivePostProvider: ReactivePostProviderProtocol,
         postListTableDataProviderFactory: TableDataProviderFactoryProtocol,
-        cellPresenterFactory: PostCardViewPresenterFactoryProtocol
+        cellPresenterFactory: PostCardViewPresenterFactoryProtocol,
+        navigationControllerFactory: MainNavigationFactoryProtocol
     ) {
         self.postProvider = postProvider
         self.reactivePostProvider = reactivePostProvider
         self.postListTableDataProviderFactory = postListTableDataProviderFactory
         self.cellPresenterFactory = cellPresenterFactory
+        self.navigationControllerFactory = navigationControllerFactory
     }
     
     func configure() -> UIViewController {
@@ -41,7 +44,8 @@ class PostListConfigurator: Configurator {
         interactor.presenter = presenter
         presenter.viewController = viewController
         
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let navigationController = navigationControllerFactory
+            .createMainNavigationController(rootViewController: viewController)
         
         return navigationController
     }
