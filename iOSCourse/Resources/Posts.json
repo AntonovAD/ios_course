@@ -1,73 +1,3 @@
-//
-
-import Foundation
-import ReactiveSwift
-
-class PostProviderMock: PostProviderProtocol, ReactivePostProviderProtocol {
-    private let mutablePosts = MutableProperty<[Post]>([])
-    let posts: Property<[Post]>
-    
-    init() {
-        posts = Property(mutablePosts)
-        mutablePosts <~ requestAll().flatMapError { _ in .init(value: []) }
-    }
-    
-    // MARK: 🐌 Not Reactive
-    func requestAll(completion: @escaping (Result<[Post], PostProviderError>) -> Void) {
-        DispatchQueue.main.async {
-            let data = postsMockJson.data(using: .utf8)!
-            let jsonDecoder = JSONDecoder()
-            let posts = try! jsonDecoder.decode([Post].self, from: data)
-            
-            completion(.success((posts)))
-        }
-    }
-    
-    func update(post: Post, completion: @escaping (Result<(), PostProviderError>) -> Void) {
-        DispatchQueue.main.async {
-            completion(.success(()))
-        }
-    }
-    
-    func update(posts: [Post], completion: @escaping (Result<(), PostProviderError>) -> Void) {
-        DispatchQueue.main.async {
-            completion(.success(()))
-        }
-    }
-    
-    // MARK: 🚀 Reactive
-    func requestAll() -> SignalProducer<[Post], PostProviderError> {
-        return SignalProducer { [weak self] observer, lifetime in
-            self?.requestAll { result in
-                observer.send(value: result)
-                observer.sendCompleted()
-            }
-        }
-        .dematerializeResults()
-    }
-    
-    func update(post: Post) -> SignalProducer<(), PostProviderError> {
-        return SignalProducer { [weak self] observer, lifetime in
-            self?.update(post: post) { result in
-                observer.send(value: result)
-                observer.sendCompleted()
-            }
-        }
-        .dematerializeResults()
-    }
-    
-    func update(posts: [Post]) -> SignalProducer<(), PostProviderError> {
-        return SignalProducer { [weak self] observer, lifetime in
-            self?.update(posts: posts) { result in
-                observer.send(value: result)
-                observer.sendCompleted()
-            }
-        }
-        .dematerializeResults()
-    }
-}
-
-private let postsMockJson = """
 [
   {
     "id": 2,
@@ -188,4 +118,3 @@ private let postsMockJson = """
     "popular_comment": []
   }
 ]
-"""

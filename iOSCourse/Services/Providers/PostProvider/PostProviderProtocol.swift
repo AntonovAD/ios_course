@@ -4,14 +4,19 @@ import Foundation
 import ReactiveSwift
 
 enum PostProviderError: Error {
+    case databaseError(error: Error)
     case writeError(error: Error?)
+    case unknown
 }
 
 protocol PostProviderProtocol {
     func requestAll(completion: @escaping (Result<[Post], PostProviderError>) -> Void)
+    func update(post: Post, completion: @escaping (Result<(), PostProviderError>) -> Void)
+    func update(posts: [Post], completion: @escaping (Result<(), PostProviderError>) -> Void)
 }
 
 protocol ReactivePostProviderProtocol {
-    var posts: Property<[Post]> { get }
     func requestAll() -> SignalProducer<[Post], PostProviderError>
+    func update(post: Post) -> SignalProducer<(), PostProviderError>
+    func update(posts: [Post]) -> SignalProducer<(), PostProviderError>
 }

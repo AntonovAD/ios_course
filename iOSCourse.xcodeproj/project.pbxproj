@@ -37,6 +37,17 @@
 		497A21CE2666B6B400D9CF7C /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A21CD2666B6B400D9CF7C /* Configurator.swift */; };
 		497C6FA82678F105008A9239 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C6FA72678F105008A9239 /* TableCell.swift */; };
 		497C6FAC2678F837008A9239 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C6FAB2678F837008A9239 /* CollectionCell.swift */; };
+		49873C2A2680873F00143EEC /* RealmFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C292680873F00143EEC /* RealmFactory.swift */; };
+		49873C32268091A200143EEC /* MigrationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C31268091A200143EEC /* MigrationServiceProtocol.swift */; };
+		49873C34268091D600143EEC /* MigrationDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C33268091D600143EEC /* MigrationDataStorage.swift */; };
+		49873C372680922A00143EEC /* PostMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C362680922A00143EEC /* PostMigrationService.swift */; };
+		49873C3926809D7600143EEC /* PostMigrationDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C3826809D7600143EEC /* PostMigrationDataStorage.swift */; };
+		49873C3C2680A2C100143EEC /* Posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 49873C3B2680A2C100143EEC /* Posts.json */; };
+		49873C3E2680A82000143EEC /* PostStatusRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C3D2680A82000143EEC /* PostStatusRealm.swift */; };
+		49873C402680A82E00143EEC /* PostAuthorRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C3F2680A82E00143EEC /* PostAuthorRealm.swift */; };
+		49873C422680A83F00143EEC /* PostTagRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C412680A83F00143EEC /* PostTagRealm.swift */; };
+		49873C442680A84A00143EEC /* PostCommentRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C432680A84A00143EEC /* PostCommentRealm.swift */; };
+		49873C462680BC4F00143EEC /* DeleteMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C452680BC4F00143EEC /* DeleteMigration.swift */; };
 		499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A8D6D26524202007543E7 /* AppDelegate.swift */; };
 		499A8D7726524203007543E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7626524203007543E7 /* Assets.xcassets */; };
 		499A8D7A26524203007543E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7826524203007543E7 /* LaunchScreen.storyboard */; };
@@ -107,6 +118,17 @@
 		497A21CD2666B6B400D9CF7C /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		497C6FA72678F105008A9239 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		497C6FAB2678F837008A9239 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		49873C292680873F00143EEC /* RealmFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFactory.swift; sourceTree = "<group>"; };
+		49873C31268091A200143EEC /* MigrationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationServiceProtocol.swift; sourceTree = "<group>"; };
+		49873C33268091D600143EEC /* MigrationDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationDataStorage.swift; sourceTree = "<group>"; };
+		49873C362680922A00143EEC /* PostMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMigrationService.swift; sourceTree = "<group>"; };
+		49873C3826809D7600143EEC /* PostMigrationDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMigrationDataStorage.swift; sourceTree = "<group>"; };
+		49873C3B2680A2C100143EEC /* Posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Posts.json; sourceTree = "<group>"; };
+		49873C3D2680A82000143EEC /* PostStatusRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStatusRealm.swift; sourceTree = "<group>"; };
+		49873C3F2680A82E00143EEC /* PostAuthorRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAuthorRealm.swift; sourceTree = "<group>"; };
+		49873C412680A83F00143EEC /* PostTagRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTagRealm.swift; sourceTree = "<group>"; };
+		49873C432680A84A00143EEC /* PostCommentRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentRealm.swift; sourceTree = "<group>"; };
+		49873C452680BC4F00143EEC /* DeleteMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMigration.swift; sourceTree = "<group>"; };
 		499A8D6A26524202007543E7 /* iOSCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499A8D6D26524202007543E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499A8D7626524203007543E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -232,6 +254,10 @@
 		496E20D726594BF000EB5824 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				49873C302680918400143EEC /* Migrations */,
+				49873C282680872400143EEC /* Realm */,
+				49873C2C26808AF200143EEC /* Reactive */,
+				49873C2B26808A8F00143EEC /* DataStorages */,
 				49D7501426777A83008E48D3 /* CollectionData */,
 				49D750072677390B008E48D3 /* TableData */,
 				497A21BD2666AFD900D9CF7C /* Extensions */,
@@ -324,6 +350,7 @@
 		497A21C02666B01B00D9CF7C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				49873C2F2680916900143EEC /* Migrations */,
 				49E397862677AC190051AE3A /* DataStorages */,
 				49E397852677AC0F0051AE3A /* Providers */,
 			);
@@ -366,6 +393,64 @@
 			path = Containers;
 			sourceTree = "<group>";
 		};
+		49873C282680872400143EEC /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				49873C292680873F00143EEC /* RealmFactory.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		49873C2B26808A8F00143EEC /* DataStorages */ = {
+			isa = PBXGroup;
+			children = (
+				49E397822677AAEE0051AE3A /* KeyValueDataStorage */,
+			);
+			path = DataStorages;
+			sourceTree = "<group>";
+		};
+		49873C2C26808AF200143EEC /* Reactive */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reactive;
+			sourceTree = "<group>";
+		};
+		49873C2F2680916900143EEC /* Migrations */ = {
+			isa = PBXGroup;
+			children = (
+				49873C352680921000143EEC /* PostMigration */,
+			);
+			path = Migrations;
+			sourceTree = "<group>";
+		};
+		49873C302680918400143EEC /* Migrations */ = {
+			isa = PBXGroup;
+			children = (
+				49873C31268091A200143EEC /* MigrationServiceProtocol.swift */,
+				49873C33268091D600143EEC /* MigrationDataStorage.swift */,
+				49873C452680BC4F00143EEC /* DeleteMigration.swift */,
+			);
+			path = Migrations;
+			sourceTree = "<group>";
+		};
+		49873C352680921000143EEC /* PostMigration */ = {
+			isa = PBXGroup;
+			children = (
+				49873C362680922A00143EEC /* PostMigrationService.swift */,
+				49873C3826809D7600143EEC /* PostMigrationDataStorage.swift */,
+			);
+			path = PostMigration;
+			sourceTree = "<group>";
+		};
+		49873C3A2680A2AC00143EEC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49873C3B2680A2C100143EEC /* Posts.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		499A8D6126524202007543E7 = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +472,7 @@
 		499A8D6C26524202007543E7 /* iOSCourse */ = {
 			isa = PBXGroup;
 			children = (
+				49873C3A2680A2AC00143EEC /* Resources */,
 				497A21CA2666B5A100D9CF7C /* Containers */,
 				49E397922677BB910051AE3A /* RealmModels */,
 				497A21C42666B0AC00D9CF7C /* Models */,
@@ -473,7 +559,6 @@
 			isa = PBXGroup;
 			children = (
 				49E397872677AC320051AE3A /* UserDataStorage */,
-				49E397822677AAEE0051AE3A /* KeyValueDataStorage */,
 			);
 			path = DataStorages;
 			sourceTree = "<group>";
@@ -515,6 +600,10 @@
 			isa = PBXGroup;
 			children = (
 				49E397942677BBE30051AE3A /* PostRealm.swift */,
+				49873C3D2680A82000143EEC /* PostStatusRealm.swift */,
+				49873C3F2680A82E00143EEC /* PostAuthorRealm.swift */,
+				49873C412680A83F00143EEC /* PostTagRealm.swift */,
+				49873C432680A84A00143EEC /* PostCommentRealm.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -648,6 +737,7 @@
 				49F0516E265D61B20069C1DB /* PostListViewController.xib in Resources */,
 				49F05167265D59640069C1DB /* AuthScreenViewController.xib in Resources */,
 				499A8D7726524203007543E7 /* Assets.xcassets in Resources */,
+				49873C3C2680A2C100143EEC /* Posts.json in Resources */,
 				49F05173265D64E70069C1DB /* PostViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,28 +793,37 @@
 			files = (
 				495E4A5F26678776006B3331 /* PostListInteractor.swift in Sources */,
 				495E4A5926678509006B3331 /* PostCardViewPresenter.swift in Sources */,
+				49873C32268091A200143EEC /* MigrationServiceProtocol.swift in Sources */,
 				49F295A72677DF74001C1FBD /* UserRealm.swift in Sources */,
 				497A21C92666B20400D9CF7C /* PostProviderMock.swift in Sources */,
 				497A21BA2666AF7600D9CF7C /* NibReusable.swift in Sources */,
 				49D7501626777A93008E48D3 /* CollectionDataSource.swift in Sources */,
+				49873C3926809D7600143EEC /* PostMigrationDataStorage.swift in Sources */,
 				49D7502726778336008E48D3 /* TableDataProviderFactory.swift in Sources */,
 				497A21BC2666AF7600D9CF7C /* NibLoadable.swift in Sources */,
 				4957597526540E7600DF4CED /* PostCardView.swift in Sources */,
 				497A21BF2666B00400D9CF7C /* UITabelView+dequeueReusableCell.swift in Sources */,
+				49873C422680A83F00143EEC /* PostTagRealm.swift in Sources */,
 				495E4A57266783CF006B3331 /* PostCardViewInput.swift in Sources */,
 				497A21CE2666B6B400D9CF7C /* Configurator.swift in Sources */,
 				495E4A4F2667813F006B3331 /* PostListPresenter.swift in Sources */,
 				49E397952677BBE30051AE3A /* PostRealm.swift in Sources */,
 				497C6FAC2678F837008A9239 /* CollectionCell.swift in Sources */,
 				49D39E51265E60110050C9E9 /* MeasureConst.swift in Sources */,
+				49873C462680BC4F00143EEC /* DeleteMigration.swift in Sources */,
 				496E20DE26594C6A00EB5824 /* RoundView.swift in Sources */,
+				49873C3E2680A82000143EEC /* PostStatusRealm.swift in Sources */,
 				49F05169265D59C30069C1DB /* AuthScreenViewController.swift in Sources */,
 				495E4A6926678F07006B3331 /* PostListConfigurator.swift in Sources */,
+				49873C2A2680873F00143EEC /* RealmFactory.swift in Sources */,
 				49D7500D26773C90008E48D3 /* TableDataProvider.swift in Sources */,
+				49873C372680922A00143EEC /* PostMigrationService.swift in Sources */,
 				49F0516D265D61B20069C1DB /* PostListViewController.swift in Sources */,
 				49D7500B26773981008E48D3 /* TableViewDelegate.swift in Sources */,
+				49873C442680A84A00143EEC /* PostCommentRealm.swift in Sources */,
 				49C7A5E22667D443002D4583 /* BubbleLabel.swift in Sources */,
 				49D750292677845B008E48D3 /* TagViewInput.swift in Sources */,
+				49873C402680A82E00143EEC /* PostAuthorRealm.swift in Sources */,
 				49D7501C26777FBA008E48D3 /* UICollectionView+dequeueReusableCell.swift in Sources */,
 				49D7501826777AFE008E48D3 /* CollectionDataProvider.swift in Sources */,
 				496E20DA26594C4C00EB5824 /* GradientView.swift in Sources */,
@@ -758,6 +857,7 @@
 				496E20E32659592800EB5824 /* Utils.swift in Sources */,
 				49F05172265D64E70069C1DB /* PostViewController.swift in Sources */,
 				49D39E55265E81D70050C9E9 /* ColorConst.swift in Sources */,
+				49873C34268091D600143EEC /* MigrationDataStorage.swift in Sources */,
 				495E4A6126678820006B3331 /* PostCardViewPresenterFactory.swift in Sources */,
 				497A21C72666B0C100D9CF7C /* Post.swift in Sources */,
 				49D75023267782A5008E48D3 /* TagViewPresenter.swift in Sources */,

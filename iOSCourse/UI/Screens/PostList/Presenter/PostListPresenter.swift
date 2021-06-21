@@ -17,8 +17,6 @@ class PostListPresenter {
     ) {
         self.postListTableData = postListTableData
         self.interactor = interactor
-        
-        interactor.requestPosts()
     }
 }
 
@@ -49,6 +47,8 @@ extension PostListPresenter: PostListViewControllerOutput {
     func viewIsReady() {
         updatePostListCellPresenters()
         updateTitle()
+        
+        interactor.requestPosts()
     }
     
     func didSelectCell(with indexPath: IndexPath) {

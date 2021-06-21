@@ -3,6 +3,24 @@
 import Foundation
 import Swinject
 
+/*private enum Environment {
+    case development
+    case production
+}
+
+private let ENVIRONMENT: Environment = .development*/
+
+class DataStorageAssembly: Assembly {
+    private lazy var userDefaults = UserDefaults.standard
+    
+    func assemble(container: Container) {
+        container.register(KeyValueDataStorage.self) { [userDefaults] resolver in
+            KeyValueDataStorage(userDefaults: userDefaults)
+        }
+        .implements(PostMigrationDataStorage.self)
+    }
+}
+
 class ServiceAssembly: Assembly {
     func assemble(container: Container) {
         container.register(PostProviderProtocol.self) { _ in
@@ -11,6 +29,22 @@ class ServiceAssembly: Assembly {
         container.register(ReactivePostProviderProtocol.self) { _ in
             PostProviderMock()
         }
+        
+        /*container.register(PostProviderRealm.self) { resolver in
+            PostProviderRealm(
+                realmFactory: resolver.resolve(RealmFactoryProtocol.self)!
+            )
+        }
+        .inObjectScope(.container)
+        .implements(PostProviderProtocol.self)
+        .implements(ReactivePostProviderProtocol.self)
+        
+        container.register(PostMigrationServiceProtocol.self) { resolver in
+            PostMigrationService(
+                postProvider: resolver.resolve(PostProviderProtocol.self)!,
+                dataStorage: resolver.resolve(PostMigrationDataStorage.self)!
+            )
+        }*/
     }
 }
 
@@ -29,6 +63,10 @@ class ConfiguratorAssembly: Assembly {
 
 class FactoryAssembly: Assembly {
     func assemble(container: Container) {
+        container.register(RealmFactoryProtocol.self) { _ in
+            RealmFactory()
+        }
+        
         container.register(TableDataProviderFactoryProtocol.self) { _ in
             TableDataProviderFactory()
         }
@@ -57,11 +95,13 @@ class AppService: AppServiceProtocol {
     }
     
     init() {
+        let dataStorageAssembly = DataStorageAssembly()
         let serviceAssembly = ServiceAssembly()
         let factoryAssembly = FactoryAssembly()
         let configuratorAssembly = ConfiguratorAssembly()
         
         assembler = Assembler([
+            dataStorageAssembly,
             serviceAssembly,
             factoryAssembly,
             configuratorAssembly
@@ -69,6 +109,13 @@ class AppService: AppServiceProtocol {
     }
     
     func start() -> Configurator {
-        resolver.resolve(PostListConfigurator.self)!
+        //migration()
+        
+        return resolver.resolve(PostListConfigurator.self)!
     }
+    
+    /*private func migration() {
+        let postMigrationService = resolver.resolve(PostMigrationServiceProtocol.self)
+        postMigrationService?.migrateIfNeeded()
+    }*/
 }

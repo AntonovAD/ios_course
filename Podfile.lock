@@ -1,11 +1,11 @@
 PODS:
   - ReactiveSwift (6.3.0)
-  - Realm (3.17.3):
-    - Realm/Headers (= 3.17.3)
-  - Realm/Headers (3.17.3)
-  - RealmSwift (3.17.3):
-    - Realm (= 3.17.3)
-  - Swinject (2.6.2)
+  - Realm (5.2.0):
+    - Realm/Headers (= 5.2.0)
+  - Realm/Headers (5.2.0)
+  - RealmSwift (5.2.0):
+    - Realm (= 5.2.0)
+  - Swinject (2.7.1)
 
 DEPENDENCIES:
   - ReactiveSwift
@@ -21,9 +21,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   ReactiveSwift: 7937f26ec18d555e2a99352bd0a8b2817d1f042d
-  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
-  RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
-  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
+  Realm: f749c723e272f08fdf1939af5e61d2bd09b203e8
+  RealmSwift: bf0ab78b52c5bafba8b3ad73be8dfb4c1ea5cf01
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
 PODFILE CHECKSUM: 5cfec2c3796c0d34348ea5ec0df1aa76e729169a
 
