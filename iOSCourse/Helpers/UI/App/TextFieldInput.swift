@@ -27,7 +27,11 @@ class TextFieldInput: UITextField {
                 top: topPadding,
                 left: leftPadding,
                 bottom: bottomPadding,
-                right: rightPadding
+                right: rightPadding + (
+                    (clearButtonMode != .never)
+                    ? (clearButtonRect(forBounds: bounds).width + ViewIndent.normal.rawValue)
+                    : 0
+                )
             )
         }
     }
@@ -89,6 +93,18 @@ class TextFieldInput: UITextField {
         }
     }
     
+    private var overrideClearButtonMode: UITextField.ViewMode = .whileEditing
+    
+    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.clearButtonRect(forBounds: bounds)
+        return CGRect(
+            x: rect.origin.x - ViewIndent.medium.rawValue,
+            y: rect.origin.y,
+            width: rect.width,
+            height: rect.height
+        )
+    }
+    
     // MARK: - Redraw()
     
     override func layoutSubviews() {
@@ -110,10 +126,15 @@ class TextFieldInput: UITextField {
     // MARK: - Func()
     
     private func updateLayer() {
+        setClearButtonMode()
         setMeasures()
         setBorder()
         setBackground()
         setFont()
+    }
+    
+    private func setClearButtonMode() {
+        clearButtonMode = overrideClearButtonMode
     }
     
     private func setMeasures() {

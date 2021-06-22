@@ -46,6 +46,10 @@ extension PostListPresenter: PostListInteractorOutput {
         viewController?.updateUserInfo(name, email)
     }
     
+    func navigateToPost() {
+        router?.push(.post)
+    }
+    
     func handleError(_ error: Error) {
         
     }
@@ -75,6 +79,6 @@ extension PostListPresenter: PostListViewControllerOutput {
     }
     
     func didSelectAddButton() {
-        router?.push(.post)
+        interactor.didSelectAddButton()
     }
 }

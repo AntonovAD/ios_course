@@ -27,11 +27,21 @@ private extension AuthPresenter {
 }
 
 extension AuthPresenter: AuthInteractorOutput {
+    func navigateToApp() {
+        router?.replace(.postList)
+    }
     
+    func handleError(_ error: Error) {
+        
+    }
 }
 
 extension AuthPresenter: AuthScreenViewControllerOutput {
     func viewIsReady() {
         updateTitle()
+    }
+    
+    func didSelectSubmitButton(login: String, password: String) {
+        interactor.authUser(login: login, password: password)
     }
 }

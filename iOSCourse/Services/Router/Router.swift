@@ -15,9 +15,11 @@ enum NavigationMode {
 }
 
 protocol RouterProtocol {
-    func push(_ routePath: RoutePath, mode: NavigationMode)
     func setWindow(_ window: UIWindow?) -> Self
     func asRoot(_ routePath: RoutePath) -> Self
+    
+    func push(_ routePath: RoutePath, mode: NavigationMode)
+    func replace(_ routePath: RoutePath)
 }
 
 extension RouterProtocol {
@@ -79,7 +81,21 @@ class Router: RouterProtocol {
         }
     }
     
-    private func screen(by routePath: RoutePath) -> UIViewController {
+    func replace(_ routePath: RoutePath) {
+        var nextViewController: UIViewController {
+            if userIsLogin() {
+                return screen(by: routePath)
+            } else {
+                return screen(by: .auth)
+            }
+        }
+        
+        navigationController?.setViewControllers([nextViewController], animated: true)
+    }
+}
+
+private extension Router {
+    func screen(by routePath: RoutePath) -> UIViewController {
         switch routePath {
         case .auth:
             return authScreen.configure(router: self)
@@ -90,7 +106,7 @@ class Router: RouterProtocol {
         }
     }
     
-    private func userIsLogin() -> Bool {
+    func userIsLogin() -> Bool {
         return true
     }
 }

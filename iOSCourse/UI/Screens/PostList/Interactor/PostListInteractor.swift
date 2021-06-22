@@ -94,4 +94,8 @@ extension PostListInteractor: PostListInteractorInput {
             }
         }
     }
+    
+    func didSelectAddButton() {
+        presenter?.navigateToPost()
+    }
 }
