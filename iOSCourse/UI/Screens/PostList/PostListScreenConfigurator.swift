@@ -24,7 +24,7 @@ class PostListScreenConfigurator: Configurator {
         self.userProvider = userProvider
     }
     
-    func configure(router: RouterProtocol?) -> (UINavigationController, UIViewController) {
+    func configure(router: RouterProtocol?) -> UIViewController {
         let postListTableDataProvider = postListTableDataProviderFactory.createDataProvider()
         
         let interactor = PostListInteractor(
@@ -46,8 +46,6 @@ class PostListScreenConfigurator: Configurator {
         interactor.presenter = presenter
         presenter.viewController = viewController
         
-        let navigationController = UINavigationController(rootViewController: viewController)
-        
-        return (navigationController, viewController)
+        return viewController
     }
 }

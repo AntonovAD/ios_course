@@ -56,7 +56,7 @@ class Router: RouterProtocol {
     }
     
     func asRoot(_ routePath: RoutePath) -> Self {
-        self.navigationController = navigator(by: routePath)
+        self.navigationController = UINavigationController(rootViewController: screen(by: routePath))
         window?.rootViewController = self.navigationController
         window?.makeKeyAndVisible()
         return self
@@ -65,9 +65,9 @@ class Router: RouterProtocol {
     func push(_ routePath: RoutePath, mode: NavigationMode) {
         var nextViewController: UIViewController {
             if userIsLogin() {
-                return view(by: routePath)
+                return screen(by: routePath)
             } else {
-                return view(by: .auth)
+                return screen(by: .auth)
             }
         }
         
@@ -79,7 +79,7 @@ class Router: RouterProtocol {
         }
     }
     
-    private func screen(by routePath: RoutePath) -> (navigator: UINavigationController, view: UIViewController) {
+    private func screen(by routePath: RoutePath) -> UIViewController {
         switch routePath {
         case .auth:
             return authScreen.configure(router: self)
@@ -88,14 +88,6 @@ class Router: RouterProtocol {
         case .post:
             return postScreen.configure(router: self)
         }
-    }
-    
-    private func navigator(by routePath: RoutePath) -> UINavigationController {
-        return screen(by: routePath).navigator
-    }
-    
-    private func view(by routePath: RoutePath) -> UIViewController {
-        return screen(by: routePath).view
     }
     
     private func userIsLogin() -> Bool {
