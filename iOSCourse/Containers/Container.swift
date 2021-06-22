@@ -55,7 +55,7 @@ class ServiceAssembly: Assembly {
         
         container.register(RouterProtocol.self) { resolver in
             Router(
-                authScreen: resolver.resolve(PostListScreenConfigurator.self)!,
+                authScreen: resolver.resolve(AuthScreenConfigurator.self)!,
                 postListScreen: resolver.resolve(PostListScreenConfigurator.self)!,
                 postScreen: resolver.resolve(PostListScreenConfigurator.self)!,
                 userProvider: resolver.resolve(UserProviderProtocol.self)!
@@ -66,6 +66,12 @@ class ServiceAssembly: Assembly {
 
 class ConfiguratorAssembly: Assembly {
     func assemble(container: Container) {
+        container.register(AuthScreenConfigurator.self) { resolver in
+            AuthScreenConfigurator(
+                userProvider: resolver.resolve(ReactiveUserProviderProtocol.self)!
+            )
+        }
+        
         container.register(PostListScreenConfigurator.self) { resolver in
             PostListScreenConfigurator(
                 postProvider: resolver.resolve(PostProviderProtocol.self)!,

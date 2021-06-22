@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49213F8926824C96003954C8 /* AuthScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */; };
+		49213F8B26824D66003954C8 /* AuthScreenViewControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8A26824D66003954C8 /* AuthScreenViewControllerOutput.swift */; };
+		49213F8D26824D73003954C8 /* AuthScreenViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8C26824D73003954C8 /* AuthScreenViewControllerInput.swift */; };
+		49213F9126824E13003954C8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F9026824E13003954C8 /* AuthPresenter.swift */; };
+		49213F9326824E27003954C8 /* AuthInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F9226824E27003954C8 /* AuthInteractorInput.swift */; };
+		49213F9526824E37003954C8 /* AuthInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F9426824E37003954C8 /* AuthInteractorOutput.swift */; };
+		49213F9726824E4B003954C8 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F9626824E4B003954C8 /* AuthInteractor.swift */; };
+		49213F9926825384003954C8 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F9826825384003954C8 /* Navigator.swift */; };
 		4957597526540E7600DF4CED /* PostCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957597426540E7600DF4CED /* PostCardView.swift */; };
 		4957597826540EB600DF4CED /* PostCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4957597726540EB600DF4CED /* PostCardView.xib */; };
 		495E4A4F2667813F006B3331 /* PostListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E4A4E2667813F006B3331 /* PostListPresenter.swift */; };
@@ -92,6 +100,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenConfigurator.swift; sourceTree = "<group>"; };
+		49213F8A26824D66003954C8 /* AuthScreenViewControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewControllerOutput.swift; sourceTree = "<group>"; };
+		49213F8C26824D73003954C8 /* AuthScreenViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewControllerInput.swift; sourceTree = "<group>"; };
+		49213F9026824E13003954C8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		49213F9226824E27003954C8 /* AuthInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractorInput.swift; sourceTree = "<group>"; };
+		49213F9426824E37003954C8 /* AuthInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractorOutput.swift; sourceTree = "<group>"; };
+		49213F9626824E4B003954C8 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
+		49213F9826825384003954C8 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		4957597426540E7600DF4CED /* PostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardView.swift; sourceTree = "<group>"; };
 		4957597726540EB600DF4CED /* PostCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCardView.xib; sourceTree = "<group>"; };
 		495E4A4E2667813F006B3331 /* PostListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListPresenter.swift; sourceTree = "<group>"; };
@@ -192,6 +208,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49213F8726824C5C003954C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49213F8C26824D73003954C8 /* AuthScreenViewControllerInput.swift */,
+				49213F8A26824D66003954C8 /* AuthScreenViewControllerOutput.swift */,
+				49F05166265D59640069C1DB /* AuthScreenViewController.xib */,
+				49F05168265D59C30069C1DB /* AuthScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49213F8E26824E00003954C8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				49213F9226824E27003954C8 /* AuthInteractorInput.swift */,
+				49213F9426824E37003954C8 /* AuthInteractorOutput.swift */,
+				49213F9626824E4B003954C8 /* AuthInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		49213F8F26824E07003954C8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				49213F9026824E13003954C8 /* AuthPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		4957597326540D7100DF4CED /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,10 +258,10 @@
 		495E4A3C26677B9C006B3331 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				49F0516B265D61B20069C1DB /* PostListViewController.swift */,
-				49F0516C265D61B20069C1DB /* PostListViewController.xib */,
-				495E4A6426678D00006B3331 /* PostListViewControllerOutput.swift */,
 				495E4A6626678D0A006B3331 /* PostListViewControllerInput.swift */,
+				495E4A6426678D00006B3331 /* PostListViewControllerOutput.swift */,
+				49F0516C265D61B20069C1DB /* PostListViewController.xib */,
+				49F0516B265D61B20069C1DB /* PostListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,10 +296,10 @@
 			isa = PBXGroup;
 			children = (
 				49D7501D2677821B008E48D3 /* TagView */,
-				4957597426540E7600DF4CED /* PostCardView.swift */,
-				4957597726540EB600DF4CED /* PostCardView.xib */,
-				495E4A54266783C5006B3331 /* PostCardViewOutput.swift */,
 				495E4A56266783CF006B3331 /* PostCardViewInput.swift */,
+				495E4A54266783C5006B3331 /* PostCardViewOutput.swift */,
+				4957597726540EB600DF4CED /* PostCardView.xib */,
+				4957597426540E7600DF4CED /* PostCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +374,7 @@
 			children = (
 				49D39E52265E68A00050C9E9 /* TextFieldInput.swift */,
 				49C7A5E12667D443002D4583 /* BubbleLabel.swift */,
+				49213F9826825384003954C8 /* Navigator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -550,9 +596,9 @@
 		49D7501E26778240008E48D3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				49D750202677825E008E48D3 /* TagView.swift */,
-				49D7502A26778468008E48D3 /* TagViewOutput.swift */,
 				49D750282677845B008E48D3 /* TagViewInput.swift */,
+				49D7502A26778468008E48D3 /* TagViewOutput.swift */,
+				49D750202677825E008E48D3 /* TagView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -649,8 +695,10 @@
 		49F05165265D592E0069C1DB /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				49F05166265D59640069C1DB /* AuthScreenViewController.xib */,
-				49F05168265D59C30069C1DB /* AuthScreenViewController.swift */,
+				49213F8F26824E07003954C8 /* Presenter */,
+				49213F8E26824E00003954C8 /* Interactor */,
+				49213F8726824C5C003954C8 /* View */,
+				49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -824,6 +872,7 @@
 				49873C32268091A200143EEC /* MigrationServiceProtocol.swift in Sources */,
 				49F295A72677DF74001C1FBD /* UserRealm.swift in Sources */,
 				497A21C92666B20400D9CF7C /* PostProviderMock.swift in Sources */,
+				49213F9926825384003954C8 /* Navigator.swift in Sources */,
 				497A21BA2666AF7600D9CF7C /* NibReusable.swift in Sources */,
 				49D7501626777A93008E48D3 /* CollectionDataSource.swift in Sources */,
 				49873C3926809D7600143EEC /* PostMigrationDataStorage.swift in Sources */,
@@ -847,6 +896,7 @@
 				495E4A6926678F07006B3331 /* PostListScreenConfigurator.swift in Sources */,
 				49873C2A2680873F00143EEC /* RealmFactory.swift in Sources */,
 				49D7500D26773C90008E48D3 /* TableDataProvider.swift in Sources */,
+				49213F8926824C96003954C8 /* AuthScreenConfigurator.swift in Sources */,
 				49873C372680922A00143EEC /* PostMigrationService.swift in Sources */,
 				49F0516D265D61B20069C1DB /* PostListViewController.swift in Sources */,
 				49D7500B26773981008E48D3 /* TableViewDelegate.swift in Sources */,
@@ -861,6 +911,7 @@
 				49D7502526778301008E48D3 /* CollectionDataProviderFactory.swift in Sources */,
 				49E397842677AB010051AE3A /* KeyValueDataStorage.swift in Sources */,
 				497C6FA82678F105008A9239 /* TableCell.swift in Sources */,
+				49213F8D26824D73003954C8 /* AuthScreenViewControllerInput.swift in Sources */,
 				49E397912677B5920051AE3A /* PostProviderRealm.swift in Sources */,
 				496E20DC26594C5E00EB5824 /* RoundedView.swift in Sources */,
 				49E3978F2677B0B10051AE3A /* Author.swift in Sources */,
@@ -875,12 +926,17 @@
 				496E20E026594C7E00EB5824 /* ShadowView.swift in Sources */,
 				49D7502B26778468008E48D3 /* TagViewOutput.swift in Sources */,
 				495E4A5D266786FE006B3331 /* PostListInteractorOutput.swift in Sources */,
+				49213F8B26824D66003954C8 /* AuthScreenViewControllerOutput.swift in Sources */,
+				49213F9326824E27003954C8 /* AuthInteractorInput.swift in Sources */,
 				495E4A6B26679564006B3331 /* Container.swift in Sources */,
 				49D39E53265E68A00050C9E9 /* TextFieldInput.swift in Sources */,
 				495E4A5B266786EE006B3331 /* PostListInteractorInput.swift in Sources */,
 				497A21BB2666AF7600D9CF7C /* Reusable.swift in Sources */,
 				49D7502D26778DF0008E48D3 /* TagViewPresenterFactory.swift in Sources */,
+				49213F9126824E13003954C8 /* AuthPresenter.swift in Sources */,
 				49D750212677825E008E48D3 /* TagView.swift in Sources */,
+				49213F9526824E37003954C8 /* AuthInteractorOutput.swift in Sources */,
+				49213F9726824E4B003954C8 /* AuthInteractor.swift in Sources */,
 				49D7501126775F80008E48D3 /* View.swift in Sources */,
 				495E4A6726678D0A006B3331 /* PostListViewControllerInput.swift in Sources */,
 				495E4A55266783C5006B3331 /* PostCardViewOutput.swift in Sources */,

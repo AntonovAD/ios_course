@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         router = appService.start()
             .setWindow(window)
-            .asRoot(.postList)
+            .asRoot(.auth)
         
         return true
     }

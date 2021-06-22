@@ -101,15 +101,10 @@ private extension PostListViewController {
     
     //MARK: - Setup()
     func setupView() {
-        setLeftItem()
         setTitleBar()
         setRightItem()
         setMeasures()
         setObservers()
-    }
-    
-    func setLeftItem() {
-        navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     func setTitleBar() {

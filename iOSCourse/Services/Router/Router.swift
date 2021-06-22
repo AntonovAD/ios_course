@@ -56,7 +56,7 @@ class Router: RouterProtocol {
     }
     
     func asRoot(_ routePath: RoutePath) -> Self {
-        self.navigationController = UINavigationController(rootViewController: screen(by: routePath))
+        self.navigationController = Navigator(rootViewController: screen(by: routePath))
         window?.rootViewController = self.navigationController
         window?.makeKeyAndVisible()
         return self
