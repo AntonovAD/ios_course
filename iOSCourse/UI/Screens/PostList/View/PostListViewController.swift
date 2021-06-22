@@ -94,12 +94,22 @@ private extension PostListViewController {
         presenter?.didSelectCell(with: indexPath)
     }
     
+    @objc
+    func didSelectAddButton() {
+        presenter?.didSelectAddButton()
+    }
+    
     //MARK: - Setup()
     func setupView() {
+        setLeftItem()
         setTitleBar()
         setRightItem()
         setMeasures()
         setObservers()
+    }
+    
+    func setLeftItem() {
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     func setTitleBar() {
@@ -107,7 +117,7 @@ private extension PostListViewController {
     }
     
     func setRightItem() {
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: .none)
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didSelectAddButton))
         self.navigationItem.rightBarButtonItems = [addButton]
     }
     

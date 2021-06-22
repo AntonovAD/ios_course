@@ -3,6 +3,8 @@
 import Foundation
 
 class PostListPresenter {
+    private var router: RouterProtocol?
+    
     private let postListTableData: TableDataProtocol
     private let interactor: PostListInteractorInput
     
@@ -12,9 +14,11 @@ class PostListPresenter {
     weak var viewController: PostListViewControllerInput?
     
     init(
+        router: RouterProtocol?,
         postListTableData: TableDataProtocol,
         interactor: PostListInteractorInput
     ) {
+        self.router = router
         self.postListTableData = postListTableData
         self.interactor = interactor
     }
@@ -68,5 +72,9 @@ extension PostListPresenter: PostListViewControllerOutput {
         //presenter.doSomething()
         
         //interactor.updatePost(presenter.post)
+    }
+    
+    func didSelectAddButton() {
+        router?.push(.post)
     }
 }
