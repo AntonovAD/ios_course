@@ -25,7 +25,7 @@ class PostListViewController: UIViewController {
             source: TableDataSource(
                 dataProvider: postListDataProvider,
                 cellSetup: { cell, presenter in
-                    guard let cell = cell as? PostCardView else {
+                    guard let cell = cell as? ViewMeasuresSetup else {
                         return
                     }
                     

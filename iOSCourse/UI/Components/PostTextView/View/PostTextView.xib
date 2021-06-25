@@ -4,39 +4,59 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="PostTextView" customModule="iOSCourse" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BCT-QH-3o1" customClass="PostTextView" customModule="iOSCourse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWY-oP-XHw">
-                    <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
-                    <string key="text">Текст. Равным образом дальнейшее развитие различных форм деятельности играет важную роль в формировании направлений прогрессивного развития. 
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BCT-QH-3o1" id="Rmz-x9-QGh">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMJ-1K-u0A">
+                        <rect key="frame" x="0.0" y="8" width="414" height="398"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWY-oP-XHw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="398"/>
+                                <string key="text">Текст. Равным образом дальнейшее развитие различных форм деятельности играет важную роль в формировании направлений прогрессивного развития. 
 
 Идейные соображения высшего порядка, а также сложившаяся структура организации представляет собой интересный эксперимент проверки форм развития.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="uWY-oP-XHw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Sf2-6m-7Sg"/>
-                <constraint firstItem="uWY-oP-XHw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="U64-9n-WTT"/>
-                <constraint firstAttribute="trailing" secondItem="uWY-oP-XHw" secondAttribute="trailing" id="WhK-za-dNW"/>
-                <constraint firstAttribute="bottom" secondItem="uWY-oP-XHw" secondAttribute="bottom" id="zel-ox-8ZF"/>
-            </constraints>
-            <nil key="simulatedTopBarMetrics"/>
-            <nil key="simulatedBottomBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uWY-oP-XHw" firstAttribute="leading" secondItem="wMJ-1K-u0A" secondAttribute="leading" id="735-A0-dg3"/>
+                            <constraint firstItem="uWY-oP-XHw" firstAttribute="top" secondItem="wMJ-1K-u0A" secondAttribute="top" id="jpt-YV-zTx"/>
+                            <constraint firstAttribute="bottom" secondItem="uWY-oP-XHw" secondAttribute="bottom" id="pGb-6d-bUU"/>
+                            <constraint firstAttribute="trailing" secondItem="uWY-oP-XHw" secondAttribute="trailing" id="sBJ-mu-gZX"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="wMJ-1K-u0A" firstAttribute="top" secondItem="Rmz-x9-QGh" secondAttribute="top" constant="8" id="2Gm-ak-y4N"/>
+                    <constraint firstItem="wMJ-1K-u0A" firstAttribute="leading" secondItem="Rmz-x9-QGh" secondAttribute="leading" id="LIQ-4x-c62"/>
+                    <constraint firstAttribute="bottom" secondItem="wMJ-1K-u0A" secondAttribute="bottom" constant="8" id="qSI-iF-4uV"/>
+                    <constraint firstAttribute="trailing" secondItem="wMJ-1K-u0A" secondAttribute="trailing" id="uOb-Ew-d5H"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="ZXn-7J-lJF"/>
             <connections>
-                <outlet property="postText" destination="uWY-oP-XHw" id="LnE-da-brh"/>
+                <outlet property="bottomMargin" destination="qSI-iF-4uV" id="WWL-VT-DSO"/>
+                <outlet property="leftMargin" destination="LIQ-4x-c62" id="rpp-R6-ifQ"/>
+                <outlet property="postText" destination="uWY-oP-XHw" id="A6z-LX-QHg"/>
+                <outlet property="rightMargin" destination="uOb-Ew-d5H" id="ZfB-7e-Ale"/>
+                <outlet property="topMargin" destination="2Gm-ak-y4N" id="Nng-kv-5No"/>
             </connections>
-            <point key="canvasLocation" x="139" y="129"/>
-        </view>
+            <point key="canvasLocation" x="-107.24637681159422" y="-23.4375"/>
+        </tableViewCell>
     </objects>
 </document>

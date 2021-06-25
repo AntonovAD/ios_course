@@ -2,7 +2,7 @@
 
 import UIKit
 
-class PostCardView: UITableViewCell, NibReusable, ViewSetup {
+class PostCardView: UITableViewCell, NibReusable, ViewSetup, ViewMeasuresSetup {
     private var presenter: PostCardViewOutput?
     
     @IBOutlet weak var topMargin: NSLayoutConstraint!
