@@ -14,16 +14,17 @@ enum NavigationMode {
     case present
 }
 
-protocol RouterData {
-    
-}
+typealias RouteConfig = (
+    data: Any?,
+    from: RoutePath?
+)
 
 protocol RouterProtocol {
     func setWindow(_ window: UIWindow?) -> Self
     func asRoot(_ routePath: RoutePath) -> Self
     
-    func push(_ routePath: RoutePath, mode: NavigationMode, data: RouterData?)
-    func replace(_ routePath: RoutePath, data: RouterData?)
+    func push(_ routePath: RoutePath, mode: NavigationMode, config: RouteConfig?)
+    func replace(_ routePath: RoutePath, config: RouteConfig?)
 }
 
 /*extension RouterProtocol {
@@ -68,10 +69,10 @@ class Router: RouterProtocol {
         return self
     }
     
-    func push(_ routePath: RoutePath, mode: NavigationMode, data: RouterData?) {
+    func push(_ routePath: RoutePath, mode: NavigationMode, config: RouteConfig?) {
         var nextViewController: UIViewController {
             if userIsLogin() {
-                return screen(by: routePath, with: data)
+                return screen(by: routePath, with: config?.data)
             } else {
                 return screen(by: .auth, with: nil)
             }
@@ -85,10 +86,10 @@ class Router: RouterProtocol {
         }
     }
     
-    func replace(_ routePath: RoutePath, data: RouterData?) {
+    func replace(_ routePath: RoutePath, config: RouteConfig?) {
         var nextViewController: UIViewController {
             if userIsLogin() {
-                return screen(by: routePath, with: data)
+                return screen(by: routePath, with: config?.data)
             } else {
                 return screen(by: .auth, with: nil)
             }
@@ -99,7 +100,7 @@ class Router: RouterProtocol {
 }
 
 private extension Router {
-    func screen(by routePath: RoutePath, with data: RouterData?) -> UIViewController {
+    func screen(by routePath: RoutePath, with data: Any?) -> UIViewController {
         switch routePath {
             
         case .auth:

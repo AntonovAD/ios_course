@@ -37,5 +37,7 @@ private extension PostInteractor {
 }
 
 extension PostInteractor: PostInteractorInput {
-    
+    func prepareTableStructure(post: Post) {
+        processPost(post: post)
+    }
 }

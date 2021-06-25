@@ -3,7 +3,7 @@
 import Foundation
 import UIKit
 
-struct PostScreenConfiguratorData: RouterData {
+struct PostScreenConfiguratorData {
     let post: Post
 }
 

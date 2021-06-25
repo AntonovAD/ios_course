@@ -28,7 +28,7 @@ private extension AuthPresenter {
 
 extension AuthPresenter: AuthInteractorOutput {
     func navigateToApp() {
-        router?.replace(.postList, data: nil)
+        router?.replace(.postList, config: (data: nil, from: .auth))
     }
     
     func handleError(_ error: Error) {

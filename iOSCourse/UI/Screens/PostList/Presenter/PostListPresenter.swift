@@ -35,7 +35,10 @@ private extension PostListPresenter {
     }
     
     func navigateToPost(data: Post) {
-        router?.push(.post, mode: .normal, data: nil)
+        let screenData = PostScreenConfiguratorData(
+            post: data
+        )
+        router?.push(.post, mode: .normal, config: (data: screenData, from: .postList))
     }
 }
 

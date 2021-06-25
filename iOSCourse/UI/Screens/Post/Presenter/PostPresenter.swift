@@ -13,7 +13,7 @@ class PostPresenter {
     private let post: Post?
     private let defaultValues = (
         title: "Публикация",
-        ()
+        text: "Кажется, здесь ничего нет"
     )
     
     weak var viewController: PostViewControllerInput?
@@ -54,5 +54,9 @@ extension PostPresenter: PostViewControllerOutput {
     func viewIsReady() {
         updateTitle()
         updatePostCellPresenters()
+        
+        if let post = post {
+            interactor.prepareTableStructure(post: post)
+        }
     }
 }
