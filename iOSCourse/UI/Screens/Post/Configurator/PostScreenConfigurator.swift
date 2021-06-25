@@ -22,6 +22,18 @@ class PostScreenConfigurator: Configurator {
     }
     
     func configure(router: RouterProtocol?) -> UIViewController {
+        return configure(
+            router: router,
+            post: nil
+        )
+    }
+}
+
+private extension PostScreenConfigurator {
+    func configure(
+        router: RouterProtocol?,
+        post: Post?
+    ) -> UIViewController {
         let postTableDataProvider = postTableDataProviderFactory.createDataProvider()
         
         let interactor = PostInteractor(
@@ -32,7 +44,8 @@ class PostScreenConfigurator: Configurator {
         let presenter = PostPresenter(
             router: router,
             postTableData: postTableDataProvider,
-            interactor: interactor
+            interactor: interactor,
+            post: post
         )
         let viewController = PostViewController(
             presenter: presenter,
@@ -43,5 +56,17 @@ class PostScreenConfigurator: Configurator {
         presenter.viewController = viewController
         
         return viewController
+    }
+}
+
+extension PostScreenConfigurator: PostScreenConfiguratorInput {
+    func configure(
+        router: RouterProtocol?,
+        data: PostScreenConfiguratorData?
+    ) -> UIViewController {
+        return configure(
+            router: router,
+            post: data?.post
+        )
     }
 }

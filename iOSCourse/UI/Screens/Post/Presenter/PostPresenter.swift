@@ -10,27 +10,33 @@ class PostPresenter {
     private let interactor: PostInteractorInput
     
     private var presenters: [CellPresenter] = []
-    private var title = "Публикация"
+    private let post: Post?
+    private let defaultValues = (
+        title: "Публикация",
+        ()
+    )
     
     weak var viewController: PostViewControllerInput?
     
     init(
         router: RouterProtocol?,
         postTableData: TableDataProtocol,
-        interactor: PostInteractorInput
+        interactor: PostInteractorInput,
+        post: Post?
     ) {
         self.router = router
         self.postTableData = postTableData
         self.interactor = interactor
+        self.post = post
     }
 }
 
 private extension PostPresenter {
     func updateTitle() {
-        viewController?.updateTitle(title)
+        viewController?.updateTitle(post?.title ?? defaultValues.title)
     }
     
-    func updatePostListCellPresenters() {
+    func updatePostCellPresenters() {
         postTableData.updateCellPresenters(presenters)
         viewController?.reloadTable()
     }
@@ -40,13 +46,13 @@ extension PostPresenter: PostInteractorOutput {
     func updatePostCellPresenters(_ presenters: [CellPresenter]) {
         self.presenters = presenters
         
-        updatePostListCellPresenters()
+        updatePostCellPresenters()
     }
 }
 
 extension PostPresenter: PostViewControllerOutput {
     func viewIsReady() {
-        updatePostListCellPresenters()
         updateTitle()
+        updatePostCellPresenters()
     }
 }

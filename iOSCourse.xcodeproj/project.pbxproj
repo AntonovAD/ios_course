@@ -27,6 +27,7 @@
 		4910BDAE2685997100599D94 /* PostInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDAD2685997100599D94 /* PostInteractorInput.swift */; };
 		4910BDB02685997E00599D94 /* PostInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDAF2685997E00599D94 /* PostInteractorOutput.swift */; };
 		4910BDB22685998D00599D94 /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDB12685998D00599D94 /* PostInteractor.swift */; };
+		4910BDB52685A83800599D94 /* PostScreenConfiguratorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDB42685A83800599D94 /* PostScreenConfiguratorInput.swift */; };
 		49213F8926824C96003954C8 /* AuthScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */; };
 		49213F8B26824D66003954C8 /* AuthScreenViewControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8A26824D66003954C8 /* AuthScreenViewControllerOutput.swift */; };
 		49213F8D26824D73003954C8 /* AuthScreenViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8C26824D73003954C8 /* AuthScreenViewControllerInput.swift */; };
@@ -145,6 +146,7 @@
 		4910BDAD2685997100599D94 /* PostInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractorInput.swift; sourceTree = "<group>"; };
 		4910BDAF2685997E00599D94 /* PostInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractorOutput.swift; sourceTree = "<group>"; };
 		4910BDB12685998D00599D94 /* PostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
+		4910BDB42685A83800599D94 /* PostScreenConfiguratorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreenConfiguratorInput.swift; sourceTree = "<group>"; };
 		49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenConfigurator.swift; sourceTree = "<group>"; };
 		49213F8A26824D66003954C8 /* AuthScreenViewControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewControllerOutput.swift; sourceTree = "<group>"; };
 		49213F8C26824D73003954C8 /* AuthScreenViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewControllerInput.swift; sourceTree = "<group>"; };
@@ -343,6 +345,15 @@
 				4910BDAB2685995900599D94 /* PostPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4910BDB32685A81D00599D94 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				4910BDB42685A83800599D94 /* PostScreenConfiguratorInput.swift */,
+				4910BDA92685993E00599D94 /* PostScreenConfigurator.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 		49213F8726824C5C003954C8 /* View */ = {
@@ -756,8 +767,8 @@
 			isa = PBXGroup;
 			children = (
 				49D7502C26778DF0008E48D3 /* TagViewPresenterFactory.swift */,
-				49D7501E26778240008E48D3 /* View */,
 				49D7501F26778246008E48D3 /* Presenter */,
+				49D7501E26778240008E48D3 /* View */,
 			);
 			path = TagView;
 			sourceTree = "<group>";
@@ -864,8 +875,8 @@
 		49F05165265D592E0069C1DB /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				49213F8F26824E07003954C8 /* Presenter */,
 				49213F8E26824E00003954C8 /* Interactor */,
+				49213F8F26824E07003954C8 /* Presenter */,
 				49213F8726824C5C003954C8 /* View */,
 				49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */,
 			);
@@ -875,8 +886,8 @@
 		49F0516A265D616E0069C1DB /* PostList */ = {
 			isa = PBXGroup;
 			children = (
-				495E4A4D266780AC006B3331 /* Presenter */,
 				495E4A4C266780A3006B3331 /* Interactor */,
+				495E4A4D266780AC006B3331 /* Presenter */,
 				495E4A3C26677B9C006B3331 /* View */,
 				495E4A6826678F07006B3331 /* PostListScreenConfigurator.swift */,
 			);
@@ -886,10 +897,10 @@
 		49F0516F265D64CE0069C1DB /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				4910BDA82685992800599D94 /* Presenter */,
 				4910BDA72685992200599D94 /* Interactor */,
+				4910BDA82685992800599D94 /* Presenter */,
 				4910BDA62685990A00599D94 /* View */,
-				4910BDA92685993E00599D94 /* PostScreenConfigurator.swift */,
+				4910BDB32685A81D00599D94 /* Configurator */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1074,6 +1085,7 @@
 				49873C3E2680A82000143EEC /* PostStatusRealm.swift in Sources */,
 				49F05169265D59C30069C1DB /* AuthScreenViewController.swift in Sources */,
 				495E4A6926678F07006B3331 /* PostListScreenConfigurator.swift in Sources */,
+				4910BDB52685A83800599D94 /* PostScreenConfiguratorInput.swift in Sources */,
 				4910BD8C26858A5700599D94 /* PostTextViewOutput.swift in Sources */,
 				49873C2A2680873F00143EEC /* RealmFactory.swift in Sources */,
 				49D7500D26773C90008E48D3 /* TableDataProvider.swift in Sources */,

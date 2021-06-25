@@ -99,8 +99,4 @@ extension PostListInteractor: PostListInteractorInput {
         print("PostListInteractor.didSelectAddButton()")
         //presenter?.doSomething()
     }
-    
-    func didSelectPost() {
-        presenter?.navigateToPost()
-    }
 }

@@ -33,6 +33,10 @@ private extension PostListPresenter {
         postListTableData.updateCellPresenters(presenters)
         viewController?.reloadTable()
     }
+    
+    func navigateToPost(data: Post) {
+        router?.push(.post, mode: .normal, data: nil)
+    }
 }
 
 extension PostListPresenter: PostListInteractorOutput {
@@ -46,10 +50,6 @@ extension PostListPresenter: PostListInteractorOutput {
         viewController?.updateUserInfo(name, email)
     }
     
-    func navigateToPost() {
-        router?.push(.post)
-    }
-    
     func handleError(_ error: Error) {
         
     }
@@ -57,8 +57,8 @@ extension PostListPresenter: PostListInteractorOutput {
 
 extension PostListPresenter: PostListViewControllerOutput {
     func viewIsReady() {
-        updatePostListCellPresenters()
         updateTitle()
+        updatePostListCellPresenters()
         
         interactor.requestPosts()
         interactor.requestUser()
@@ -73,7 +73,7 @@ extension PostListPresenter: PostListViewControllerOutput {
         
         print("Post:", presenter.post.title)
         
-        navigateToPost()
+        navigateToPost(data: presenter.post)
         
         //presenter.doSomething()
         

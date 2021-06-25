@@ -56,6 +56,10 @@ extension PostViewController: PostViewControllerInput {
 private extension PostViewController {
     //MARK: - Setup()
     func setupView() {
-        
+        setTitleBar()
+    }
+    
+    func setTitleBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

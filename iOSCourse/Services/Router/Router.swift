@@ -14,34 +14,38 @@ enum NavigationMode {
     case present
 }
 
+protocol RouterData {
+    
+}
+
 protocol RouterProtocol {
     func setWindow(_ window: UIWindow?) -> Self
     func asRoot(_ routePath: RoutePath) -> Self
     
-    func push(_ routePath: RoutePath, mode: NavigationMode)
-    func replace(_ routePath: RoutePath)
+    func push(_ routePath: RoutePath, mode: NavigationMode, data: RouterData?)
+    func replace(_ routePath: RoutePath, data: RouterData?)
 }
 
-extension RouterProtocol {
+/*extension RouterProtocol {
     func push(_ routePath: RoutePath) {
         push(routePath, mode: .normal)
     }
-}
+}*/
 
 class Router: RouterProtocol {
     private weak var window: UIWindow?
     private var navigationController: UINavigationController?
     
-    private let authScreen: Configurator
-    private let postListScreen: Configurator
-    private let postScreen: Configurator
+    private let authScreen: AuthScreenConfigurator
+    private let postListScreen: PostListScreenConfigurator
+    private let postScreen: PostScreenConfigurator
     
     private let userProvider: UserProviderProtocol
     
     init(
-        authScreen: Configurator,
-        postListScreen: Configurator,
-        postScreen: Configurator,
+        authScreen: AuthScreenConfigurator,
+        postListScreen: PostListScreenConfigurator,
+        postScreen: PostScreenConfigurator,
         
         userProvider: UserProviderProtocol
     ) {
@@ -58,18 +62,18 @@ class Router: RouterProtocol {
     }
     
     func asRoot(_ routePath: RoutePath) -> Self {
-        self.navigationController = Navigator(rootViewController: screen(by: routePath))
+        self.navigationController = Navigator(rootViewController: screen(by: routePath, with: nil))
         window?.rootViewController = self.navigationController
         window?.makeKeyAndVisible()
         return self
     }
     
-    func push(_ routePath: RoutePath, mode: NavigationMode) {
+    func push(_ routePath: RoutePath, mode: NavigationMode, data: RouterData?) {
         var nextViewController: UIViewController {
             if userIsLogin() {
-                return screen(by: routePath)
+                return screen(by: routePath, with: data)
             } else {
-                return screen(by: .auth)
+                return screen(by: .auth, with: nil)
             }
         }
         
@@ -81,12 +85,12 @@ class Router: RouterProtocol {
         }
     }
     
-    func replace(_ routePath: RoutePath) {
+    func replace(_ routePath: RoutePath, data: RouterData?) {
         var nextViewController: UIViewController {
             if userIsLogin() {
-                return screen(by: routePath)
+                return screen(by: routePath, with: data)
             } else {
-                return screen(by: .auth)
+                return screen(by: .auth, with: nil)
             }
         }
         
@@ -95,14 +99,19 @@ class Router: RouterProtocol {
 }
 
 private extension Router {
-    func screen(by routePath: RoutePath) -> UIViewController {
+    func screen(by routePath: RoutePath, with data: RouterData?) -> UIViewController {
         switch routePath {
+            
         case .auth:
             return authScreen.configure(router: self)
+            
         case .postList:
             return postListScreen.configure(router: self)
+            
         case .post:
-            return postScreen.configure(router: self)
+            let data: PostScreenConfiguratorData? = data as? PostScreenConfiguratorData
+            return postScreen.configure(router: self, data: data)
+            
         }
     }
     
