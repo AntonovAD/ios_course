@@ -7,14 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostInfoView" customModule="iOSCourse" customModuleProvider="target">
-            <connections>
-                <outlet property="authorName" destination="JYd-tp-uBu" id="czQ-aD-Lfd"/>
-                <outlet property="postDate" destination="fva-UN-zeO" id="gbr-IL-VEN"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="PostInfoView" customModule="iOSCourse" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -48,6 +43,10 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="authorName" destination="JYd-tp-uBu" id="Bwb-3H-sY0"/>
+                <outlet property="postDate" destination="fva-UN-zeO" id="22e-21-WQk"/>
+            </connections>
             <point key="canvasLocation" x="139" y="125"/>
         </view>
     </objects>
