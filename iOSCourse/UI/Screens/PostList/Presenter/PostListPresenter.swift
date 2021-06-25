@@ -73,6 +73,8 @@ extension PostListPresenter: PostListViewControllerOutput {
         
         print("Post:", presenter.post.title)
         
+        navigateToPost()
+        
         //presenter.doSomething()
         
         //interactor.updatePost(presenter.post)

@@ -57,7 +57,7 @@ class ServiceAssembly: Assembly {
             Router(
                 authScreen: resolver.resolve(AuthScreenConfigurator.self)!,
                 postListScreen: resolver.resolve(PostListScreenConfigurator.self)!,
-                postScreen: resolver.resolve(PostListScreenConfigurator.self)!,
+                postScreen: resolver.resolve(PostScreenConfigurator.self)!,
                 userProvider: resolver.resolve(UserProviderProtocol.self)!
             )
         }
@@ -81,6 +81,15 @@ class ConfiguratorAssembly: Assembly {
                 userProvider: resolver.resolve(ReactiveUserProviderProtocol.self)!
             )
         }
+        
+        container.register(PostScreenConfigurator.self) { resolver in
+            PostScreenConfigurator(
+                postTableDataProviderFactory: resolver.resolve(TableDataProviderFactoryProtocol.self)!,
+                postInfoPresenterFactory: resolver.resolve(PostInfoViewPresenterFactoryProtocol.self)!,
+                postTextPresenterFactory: resolver.resolve(PostTextViewPresenterFactoryProtocol.self)!,
+                postRatingPresenterFactory: resolver.resolve(PostRatingViewPresenterFactoryProtocol.self)!
+            )
+        }
     }
 }
 
@@ -102,6 +111,16 @@ class FactoryAssembly: Assembly {
             PostCardViewPresenterFactory(
                 tagsCollectionDataProviderFactory: resolver.resolve(CollectionDataProviderFactoryProtocol.self)!
             )
+        }
+        
+        container.register(PostInfoViewPresenterFactoryProtocol.self) { _ in
+            PostInfoViewPresenterFactory()
+        }
+        container.register(PostTextViewPresenterFactoryProtocol.self) { _ in
+            PostTextViewPresenterFactory()
+        }
+        container.register(PostRatingViewPresenterFactoryProtocol.self) { _ in
+            PostRatingViewPresenterFactory()
         }
     }
 }

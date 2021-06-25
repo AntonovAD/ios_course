@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4910BD8626858A1900599D94 /* PostTextViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD8526858A1900599D94 /* PostTextViewPresenter.swift */; };
+		4910BD8826858A3700599D94 /* PostTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD8726858A3700599D94 /* PostTextView.swift */; };
+		4910BD8A26858A4100599D94 /* PostTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4910BD8926858A4100599D94 /* PostTextView.xib */; };
+		4910BD8C26858A5700599D94 /* PostTextViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD8B26858A5700599D94 /* PostTextViewOutput.swift */; };
+		4910BD8E26858A6200599D94 /* PostTextViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD8D26858A6200599D94 /* PostTextViewInput.swift */; };
+		4910BD9026858C4A00599D94 /* PostInfoViewPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD8F26858C4A00599D94 /* PostInfoViewPresenterFactory.swift */; };
+		4910BD9226858CB400599D94 /* PostTextViewPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD9126858CB400599D94 /* PostTextViewPresenterFactory.swift */; };
+		4910BD9526858D6700599D94 /* PostRatingViewPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD9426858D6700599D94 /* PostRatingViewPresenterFactory.swift */; };
+		4910BD9926858E7000599D94 /* PostRatingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD9826858E7000599D94 /* PostRatingViewPresenter.swift */; };
+		4910BD9B26858F8F00599D94 /* PostRatingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD9A26858F8F00599D94 /* PostRatingViewInput.swift */; };
+		4910BD9D26858F9E00599D94 /* PostRatingViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD9C26858F9E00599D94 /* PostRatingViewOutput.swift */; };
+		4910BD9F26858FAC00599D94 /* PostRatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4910BD9E26858FAC00599D94 /* PostRatingView.xib */; };
+		4910BDA126858FBA00599D94 /* PostRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDA026858FBA00599D94 /* PostRatingView.swift */; };
+		4910BDA32685985A00599D94 /* PostViewControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDA22685985A00599D94 /* PostViewControllerOutput.swift */; };
+		4910BDA52685986800599D94 /* PostViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDA42685986800599D94 /* PostViewControllerInput.swift */; };
+		4910BDAA2685993E00599D94 /* PostScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDA92685993E00599D94 /* PostScreenConfigurator.swift */; };
+		4910BDAC2685995900599D94 /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDAB2685995900599D94 /* PostPresenter.swift */; };
+		4910BDAE2685997100599D94 /* PostInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDAD2685997100599D94 /* PostInteractorInput.swift */; };
+		4910BDB02685997E00599D94 /* PostInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDAF2685997E00599D94 /* PostInteractorOutput.swift */; };
+		4910BDB22685998D00599D94 /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDB12685998D00599D94 /* PostInteractor.swift */; };
 		49213F8926824C96003954C8 /* AuthScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */; };
 		49213F8B26824D66003954C8 /* AuthScreenViewControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8A26824D66003954C8 /* AuthScreenViewControllerOutput.swift */; };
 		49213F8D26824D73003954C8 /* AuthScreenViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8C26824D73003954C8 /* AuthScreenViewControllerInput.swift */; };
@@ -45,6 +65,11 @@
 		497A21CE2666B6B400D9CF7C /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A21CD2666B6B400D9CF7C /* Configurator.swift */; };
 		497C6FA82678F105008A9239 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C6FA72678F105008A9239 /* TableCell.swift */; };
 		497C6FAC2678F837008A9239 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C6FAB2678F837008A9239 /* CollectionCell.swift */; };
+		498392E1268581040020D4BB /* PostInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498392E0268581040020D4BB /* PostInfoView.swift */; };
+		498392E3268581200020D4BB /* PostInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 498392E2268581200020D4BB /* PostInfoView.xib */; };
+		498392E5268581C70020D4BB /* PostInfoViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498392E4268581C70020D4BB /* PostInfoViewOutput.swift */; };
+		498392E7268581D30020D4BB /* PostInfoViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498392E6268581D30020D4BB /* PostInfoViewInput.swift */; };
+		498392EA2685828E0020D4BB /* PostInfoViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498392E92685828E0020D4BB /* PostInfoViewPresenter.swift */; };
 		49873C2A2680873F00143EEC /* RealmFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C292680873F00143EEC /* RealmFactory.swift */; };
 		49873C32268091A200143EEC /* MigrationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C31268091A200143EEC /* MigrationServiceProtocol.swift */; };
 		49873C34268091D600143EEC /* MigrationDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C33268091D600143EEC /* MigrationDataStorage.swift */; };
@@ -100,6 +125,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4910BD8526858A1900599D94 /* PostTextViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextViewPresenter.swift; sourceTree = "<group>"; };
+		4910BD8726858A3700599D94 /* PostTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextView.swift; sourceTree = "<group>"; };
+		4910BD8926858A4100599D94 /* PostTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTextView.xib; sourceTree = "<group>"; };
+		4910BD8B26858A5700599D94 /* PostTextViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextViewOutput.swift; sourceTree = "<group>"; };
+		4910BD8D26858A6200599D94 /* PostTextViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextViewInput.swift; sourceTree = "<group>"; };
+		4910BD8F26858C4A00599D94 /* PostInfoViewPresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfoViewPresenterFactory.swift; sourceTree = "<group>"; };
+		4910BD9126858CB400599D94 /* PostTextViewPresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextViewPresenterFactory.swift; sourceTree = "<group>"; };
+		4910BD9426858D6700599D94 /* PostRatingViewPresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRatingViewPresenterFactory.swift; sourceTree = "<group>"; };
+		4910BD9826858E7000599D94 /* PostRatingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRatingViewPresenter.swift; sourceTree = "<group>"; };
+		4910BD9A26858F8F00599D94 /* PostRatingViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRatingViewInput.swift; sourceTree = "<group>"; };
+		4910BD9C26858F9E00599D94 /* PostRatingViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRatingViewOutput.swift; sourceTree = "<group>"; };
+		4910BD9E26858FAC00599D94 /* PostRatingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostRatingView.xib; sourceTree = "<group>"; };
+		4910BDA026858FBA00599D94 /* PostRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRatingView.swift; sourceTree = "<group>"; };
+		4910BDA22685985A00599D94 /* PostViewControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewControllerOutput.swift; sourceTree = "<group>"; };
+		4910BDA42685986800599D94 /* PostViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewControllerInput.swift; sourceTree = "<group>"; };
+		4910BDA92685993E00599D94 /* PostScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreenConfigurator.swift; sourceTree = "<group>"; };
+		4910BDAB2685995900599D94 /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
+		4910BDAD2685997100599D94 /* PostInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractorInput.swift; sourceTree = "<group>"; };
+		4910BDAF2685997E00599D94 /* PostInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractorOutput.swift; sourceTree = "<group>"; };
+		4910BDB12685998D00599D94 /* PostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
 		49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenConfigurator.swift; sourceTree = "<group>"; };
 		49213F8A26824D66003954C8 /* AuthScreenViewControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewControllerOutput.swift; sourceTree = "<group>"; };
 		49213F8C26824D73003954C8 /* AuthScreenViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewControllerInput.swift; sourceTree = "<group>"; };
@@ -138,6 +183,11 @@
 		497A21CD2666B6B400D9CF7C /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		497C6FA72678F105008A9239 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		497C6FAB2678F837008A9239 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		498392E0268581040020D4BB /* PostInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfoView.swift; sourceTree = "<group>"; };
+		498392E2268581200020D4BB /* PostInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostInfoView.xib; sourceTree = "<group>"; };
+		498392E4268581C70020D4BB /* PostInfoViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfoViewOutput.swift; sourceTree = "<group>"; };
+		498392E6268581D30020D4BB /* PostInfoViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfoViewInput.swift; sourceTree = "<group>"; };
+		498392E92685828E0020D4BB /* PostInfoViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfoViewPresenter.swift; sourceTree = "<group>"; };
 		49873C292680873F00143EEC /* RealmFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFactory.swift; sourceTree = "<group>"; };
 		49873C31268091A200143EEC /* MigrationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationServiceProtocol.swift; sourceTree = "<group>"; };
 		49873C33268091D600143EEC /* MigrationDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationDataStorage.swift; sourceTree = "<group>"; };
@@ -208,6 +258,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4910BD822685897200599D94 /* PostTextView */ = {
+			isa = PBXGroup;
+			children = (
+				4910BD9126858CB400599D94 /* PostTextViewPresenterFactory.swift */,
+				4910BD8326858A0100599D94 /* Presenter */,
+				4910BD8426858A0600599D94 /* View */,
+			);
+			path = PostTextView;
+			sourceTree = "<group>";
+		};
+		4910BD8326858A0100599D94 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4910BD8526858A1900599D94 /* PostTextViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4910BD8426858A0600599D94 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4910BD8D26858A6200599D94 /* PostTextViewInput.swift */,
+				4910BD8B26858A5700599D94 /* PostTextViewOutput.swift */,
+				4910BD8926858A4100599D94 /* PostTextView.xib */,
+				4910BD8726858A3700599D94 /* PostTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4910BD9326858D0800599D94 /* PostRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				4910BD9426858D6700599D94 /* PostRatingViewPresenterFactory.swift */,
+				4910BD9726858D7300599D94 /* Presenter */,
+				4910BD9626858D6D00599D94 /* View */,
+			);
+			path = PostRatingView;
+			sourceTree = "<group>";
+		};
+		4910BD9626858D6D00599D94 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4910BD9A26858F8F00599D94 /* PostRatingViewInput.swift */,
+				4910BD9C26858F9E00599D94 /* PostRatingViewOutput.swift */,
+				4910BD9E26858FAC00599D94 /* PostRatingView.xib */,
+				4910BDA026858FBA00599D94 /* PostRatingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4910BD9726858D7300599D94 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4910BD9826858E7000599D94 /* PostRatingViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4910BDA62685990A00599D94 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4910BDA42685986800599D94 /* PostViewControllerInput.swift */,
+				4910BDA22685985A00599D94 /* PostViewControllerOutput.swift */,
+				49F05171265D64E70069C1DB /* PostViewController.xib */,
+				49F05170265D64E70069C1DB /* PostViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4910BDA72685992200599D94 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4910BDAD2685997100599D94 /* PostInteractorInput.swift */,
+				4910BDAF2685997E00599D94 /* PostInteractorOutput.swift */,
+				4910BDB12685998D00599D94 /* PostInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4910BDA82685992800599D94 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4910BDAB2685995900599D94 /* PostPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		49213F8726824C5C003954C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +377,10 @@
 		4957597326540D7100DF4CED /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4910BD9326858D0800599D94 /* PostRatingView */,
+				4910BD822685897200599D94 /* PostTextView */,
+				498392DE268580A00020D4BB /* PostInfoView */,
+				49D7501D2677821B008E48D3 /* TagView */,
 				4957597626540E8500DF4CED /* PostCardView */,
 			);
 			path = Components;
@@ -295,7 +436,6 @@
 		495E4A5326678227006B3331 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				49D7501D2677821B008E48D3 /* TagView */,
 				495E4A56266783CF006B3331 /* PostCardViewInput.swift */,
 				495E4A54266783C5006B3331 /* PostCardViewOutput.swift */,
 				4957597726540EB600DF4CED /* PostCardView.xib */,
@@ -446,6 +586,35 @@
 				495E4A6A26679564006B3331 /* Container.swift */,
 			);
 			path = Containers;
+			sourceTree = "<group>";
+		};
+		498392DE268580A00020D4BB /* PostInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				4910BD8F26858C4A00599D94 /* PostInfoViewPresenterFactory.swift */,
+				498392E8268582400020D4BB /* Presenter */,
+				498392DF268580E60020D4BB /* View */,
+			);
+			path = PostInfoView;
+			sourceTree = "<group>";
+		};
+		498392DF268580E60020D4BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				498392E6268581D30020D4BB /* PostInfoViewInput.swift */,
+				498392E4268581C70020D4BB /* PostInfoViewOutput.swift */,
+				498392E2268581200020D4BB /* PostInfoView.xib */,
+				498392E0268581040020D4BB /* PostInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		498392E8268582400020D4BB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				498392E92685828E0020D4BB /* PostInfoViewPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		49873C282680872400143EEC /* Realm */ = {
@@ -717,8 +886,10 @@
 		49F0516F265D64CE0069C1DB /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				49F05170265D64E70069C1DB /* PostViewController.swift */,
-				49F05171265D64E70069C1DB /* PostViewController.xib */,
+				4910BDA82685992800599D94 /* Presenter */,
+				4910BDA72685992200599D94 /* Interactor */,
+				4910BDA62685990A00599D94 /* View */,
+				4910BDA92685993E00599D94 /* PostScreenConfigurator.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -808,11 +979,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4910BD8A26858A4100599D94 /* PostTextView.xib in Resources */,
 				4957597826540EB600DF4CED /* PostCardView.xib in Resources */,
 				499A8D7A26524203007543E7 /* LaunchScreen.storyboard in Resources */,
 				49F0516E265D61B20069C1DB /* PostListViewController.xib in Resources */,
 				49F05167265D59640069C1DB /* AuthScreenViewController.xib in Resources */,
 				499A8D7726524203007543E7 /* Assets.xcassets in Resources */,
+				498392E3268581200020D4BB /* PostInfoView.xib in Resources */,
+				4910BD9F26858FAC00599D94 /* PostRatingView.xib in Resources */,
 				49873C3C2680A2C100143EEC /* Posts.json in Resources */,
 				49F05173265D64E70069C1DB /* PostViewController.xib in Resources */,
 			);
@@ -868,7 +1042,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				495E4A5F26678776006B3331 /* PostListInteractor.swift in Sources */,
+				4910BDAC2685995900599D94 /* PostPresenter.swift in Sources */,
 				495E4A5926678509006B3331 /* PostCardViewPresenter.swift in Sources */,
+				4910BD9B26858F8F00599D94 /* PostRatingViewInput.swift in Sources */,
 				49873C32268091A200143EEC /* MigrationServiceProtocol.swift in Sources */,
 				49F295A72677DF74001C1FBD /* UserRealm.swift in Sources */,
 				497A21C92666B20400D9CF7C /* PostProviderMock.swift in Sources */,
@@ -883,17 +1059,22 @@
 				497A21BF2666B00400D9CF7C /* UITabelView+dequeueReusableCell.swift in Sources */,
 				49873C422680A83F00143EEC /* PostTagRealm.swift in Sources */,
 				495E4A57266783CF006B3331 /* PostCardViewInput.swift in Sources */,
+				4910BDA126858FBA00599D94 /* PostRatingView.swift in Sources */,
 				49873C4D2680CB1000143EEC /* Auth.swift in Sources */,
 				497A21CE2666B6B400D9CF7C /* Configurator.swift in Sources */,
+				4910BD8E26858A6200599D94 /* PostTextViewInput.swift in Sources */,
 				495E4A4F2667813F006B3331 /* PostListPresenter.swift in Sources */,
+				498392E1268581040020D4BB /* PostInfoView.swift in Sources */,
 				49E397952677BBE30051AE3A /* PostRealm.swift in Sources */,
 				497C6FAC2678F837008A9239 /* CollectionCell.swift in Sources */,
 				49D39E51265E60110050C9E9 /* MeasureConst.swift in Sources */,
 				49873C462680BC4F00143EEC /* DeleteMigration.swift in Sources */,
 				496E20DE26594C6A00EB5824 /* RoundView.swift in Sources */,
+				4910BDAA2685993E00599D94 /* PostScreenConfigurator.swift in Sources */,
 				49873C3E2680A82000143EEC /* PostStatusRealm.swift in Sources */,
 				49F05169265D59C30069C1DB /* AuthScreenViewController.swift in Sources */,
 				495E4A6926678F07006B3331 /* PostListScreenConfigurator.swift in Sources */,
+				4910BD8C26858A5700599D94 /* PostTextViewOutput.swift in Sources */,
 				49873C2A2680873F00143EEC /* RealmFactory.swift in Sources */,
 				49D7500D26773C90008E48D3 /* TableDataProvider.swift in Sources */,
 				49213F8926824C96003954C8 /* AuthScreenConfigurator.swift in Sources */,
@@ -903,8 +1084,11 @@
 				49873C442680A84A00143EEC /* PostCommentRealm.swift in Sources */,
 				49C7A5E22667D443002D4583 /* BubbleLabel.swift in Sources */,
 				49D750292677845B008E48D3 /* TagViewInput.swift in Sources */,
+				498392E5268581C70020D4BB /* PostInfoViewOutput.swift in Sources */,
 				49873C402680A82E00143EEC /* PostAuthorRealm.swift in Sources */,
+				4910BD8626858A1900599D94 /* PostTextViewPresenter.swift in Sources */,
 				49D7501C26777FBA008E48D3 /* UICollectionView+dequeueReusableCell.swift in Sources */,
+				4910BD9D26858F9E00599D94 /* PostRatingViewOutput.swift in Sources */,
 				49D7501826777AFE008E48D3 /* CollectionDataProvider.swift in Sources */,
 				496E20DA26594C4C00EB5824 /* GradientView.swift in Sources */,
 				495E4A6526678D00006B3331 /* PostListViewControllerOutput.swift in Sources */,
@@ -915,6 +1099,7 @@
 				49E397912677B5920051AE3A /* PostProviderRealm.swift in Sources */,
 				496E20DC26594C5E00EB5824 /* RoundedView.swift in Sources */,
 				49E3978F2677B0B10051AE3A /* Author.swift in Sources */,
+				4910BD8826858A3700599D94 /* PostTextView.swift in Sources */,
 				49D7500926773934008E48D3 /* TableDataSource.swift in Sources */,
 				49E397892677AC420051AE3A /* UserDataStorage.swift in Sources */,
 				49AFF5F2267931800031CD23 /* PaddingLabel.swift in Sources */,
@@ -922,20 +1107,29 @@
 				49E3978C2677AF7E0051AE3A /* User.swift in Sources */,
 				497A21C32666B08E00D9CF7C /* PostProviderProtocol.swift in Sources */,
 				49D7501A26777B0A008E48D3 /* CollectionViewDelegate.swift in Sources */,
+				4910BDB02685997E00599D94 /* PostInteractorOutput.swift in Sources */,
 				497A21B92666AF7600D9CF7C /* CellPresenter.swift in Sources */,
+				4910BD9926858E7000599D94 /* PostRatingViewPresenter.swift in Sources */,
 				496E20E026594C7E00EB5824 /* ShadowView.swift in Sources */,
 				49D7502B26778468008E48D3 /* TagViewOutput.swift in Sources */,
 				495E4A5D266786FE006B3331 /* PostListInteractorOutput.swift in Sources */,
 				49213F8B26824D66003954C8 /* AuthScreenViewControllerOutput.swift in Sources */,
+				4910BD9526858D6700599D94 /* PostRatingViewPresenterFactory.swift in Sources */,
+				4910BDAE2685997100599D94 /* PostInteractorInput.swift in Sources */,
 				49213F9326824E27003954C8 /* AuthInteractorInput.swift in Sources */,
 				495E4A6B26679564006B3331 /* Container.swift in Sources */,
 				49D39E53265E68A00050C9E9 /* TextFieldInput.swift in Sources */,
 				495E4A5B266786EE006B3331 /* PostListInteractorInput.swift in Sources */,
 				497A21BB2666AF7600D9CF7C /* Reusable.swift in Sources */,
 				49D7502D26778DF0008E48D3 /* TagViewPresenterFactory.swift in Sources */,
+				498392E7268581D30020D4BB /* PostInfoViewInput.swift in Sources */,
 				49213F9126824E13003954C8 /* AuthPresenter.swift in Sources */,
 				49D750212677825E008E48D3 /* TagView.swift in Sources */,
+				4910BDA52685986800599D94 /* PostViewControllerInput.swift in Sources */,
+				4910BDA32685985A00599D94 /* PostViewControllerOutput.swift in Sources */,
 				49213F9526824E37003954C8 /* AuthInteractorOutput.swift in Sources */,
+				4910BD9026858C4A00599D94 /* PostInfoViewPresenterFactory.swift in Sources */,
+				4910BDB22685998D00599D94 /* PostInteractor.swift in Sources */,
 				49213F9726824E4B003954C8 /* AuthInteractor.swift in Sources */,
 				49D7501126775F80008E48D3 /* View.swift in Sources */,
 				495E4A6726678D0A006B3331 /* PostListViewControllerInput.swift in Sources */,
@@ -946,7 +1140,9 @@
 				49F05172265D64E70069C1DB /* PostViewController.swift in Sources */,
 				49D39E55265E81D70050C9E9 /* ColorConst.swift in Sources */,
 				49873C34268091D600143EEC /* MigrationDataStorage.swift in Sources */,
+				4910BD9226858CB400599D94 /* PostTextViewPresenterFactory.swift in Sources */,
 				495E4A6126678820006B3331 /* PostCardViewPresenterFactory.swift in Sources */,
+				498392EA2685828E0020D4BB /* PostInfoViewPresenter.swift in Sources */,
 				497A21C72666B0C100D9CF7C /* Post.swift in Sources */,
 				49D75023267782A5008E48D3 /* TagViewPresenter.swift in Sources */,
 			);

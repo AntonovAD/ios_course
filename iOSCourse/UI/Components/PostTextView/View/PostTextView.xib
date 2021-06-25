@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostTextView" customModule="iOSCourse" customModuleProvider="target">
+            <connections>
+                <outlet property="postText" destination="uWY-oP-XHw" id="Zrr-GK-eVx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWY-oP-XHw">
+                    <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
+                    <string key="text">Текст. Равным образом дальнейшее развитие различных форм деятельности играет важную роль в формировании направлений прогрессивного развития. 
+
+Идейные соображения высшего порядка, а также сложившаяся структура организации представляет собой интересный эксперимент проверки форм развития.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uWY-oP-XHw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Sf2-6m-7Sg"/>
+                <constraint firstItem="uWY-oP-XHw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="U64-9n-WTT"/>
+                <constraint firstAttribute="trailing" secondItem="uWY-oP-XHw" secondAttribute="trailing" id="WhK-za-dNW"/>
+                <constraint firstAttribute="bottom" secondItem="uWY-oP-XHw" secondAttribute="bottom" id="zel-ox-8ZF"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="139" y="129"/>
+        </view>
+    </objects>
+</document>

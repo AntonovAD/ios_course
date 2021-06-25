@@ -96,6 +96,7 @@ private extension PostListViewController {
     
     @objc
     func didSelectAddButton() {
+        print("PostListViewController.didSelectAddButton()")
         presenter?.didSelectAddButton()
     }
     
