@@ -29,8 +29,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTI-JN-5FN" customClass="RoundedView" customModule="iOSCourse" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1k5-lD-Xgu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1k5-lD-Xgu">
+                                                        <rect key="frame" x="20" y="12" width="16" height="32"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -38,12 +38,10 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="1k5-lD-Xgu" firstAttribute="leading" secondItem="eTI-JN-5FN" secondAttribute="leading" id="KYH-q6-Ekh"/>
-                                                    <constraint firstAttribute="width" constant="56" id="OaI-1t-Bgq"/>
-                                                    <constraint firstItem="1k5-lD-Xgu" firstAttribute="top" secondItem="eTI-JN-5FN" secondAttribute="top" id="W7Y-9A-nRC"/>
-                                                    <constraint firstAttribute="bottom" secondItem="1k5-lD-Xgu" secondAttribute="bottom" id="WwQ-zA-nue"/>
-                                                    <constraint firstAttribute="trailing" secondItem="1k5-lD-Xgu" secondAttribute="trailing" id="ikh-Hy-MCM"/>
-                                                    <constraint firstAttribute="height" constant="56" id="yTM-s6-tRD"/>
+                                                    <constraint firstItem="1k5-lD-Xgu" firstAttribute="leading" secondItem="eTI-JN-5FN" secondAttribute="leading" constant="20" id="KYH-q6-Ekh"/>
+                                                    <constraint firstItem="1k5-lD-Xgu" firstAttribute="top" secondItem="eTI-JN-5FN" secondAttribute="top" constant="12" id="W7Y-9A-nRC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1k5-lD-Xgu" secondAttribute="bottom" constant="12" id="WwQ-zA-nue"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1k5-lD-Xgu" secondAttribute="trailing" constant="20" id="ikh-Hy-MCM"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -81,7 +79,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfd-Ly-xSD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                                                        <rect key="frame" x="20" y="12" width="16" height="32"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -89,12 +87,10 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="vfd-Ly-xSD" firstAttribute="leading" secondItem="4eW-Jo-hgJ" secondAttribute="leading" id="2eD-vd-Uqz"/>
-                                                    <constraint firstAttribute="trailing" secondItem="vfd-Ly-xSD" secondAttribute="trailing" id="Pwz-iP-J4u"/>
-                                                    <constraint firstAttribute="width" constant="56" id="T6M-DU-ZnU"/>
-                                                    <constraint firstItem="vfd-Ly-xSD" firstAttribute="top" secondItem="4eW-Jo-hgJ" secondAttribute="top" id="h83-Mw-VMo"/>
-                                                    <constraint firstAttribute="bottom" secondItem="vfd-Ly-xSD" secondAttribute="bottom" id="lYV-hv-0r7"/>
-                                                    <constraint firstAttribute="height" constant="56" id="pAx-8S-kA6"/>
+                                                    <constraint firstItem="vfd-Ly-xSD" firstAttribute="leading" secondItem="4eW-Jo-hgJ" secondAttribute="leading" constant="20" id="2eD-vd-Uqz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vfd-Ly-xSD" secondAttribute="trailing" constant="20" id="Pwz-iP-J4u"/>
+                                                    <constraint firstItem="vfd-Ly-xSD" firstAttribute="top" secondItem="4eW-Jo-hgJ" secondAttribute="top" constant="12" id="h83-Mw-VMo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="vfd-Ly-xSD" secondAttribute="bottom" constant="12" id="lYV-hv-0r7"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="YES"/>

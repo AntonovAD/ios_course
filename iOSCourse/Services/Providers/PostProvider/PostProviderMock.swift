@@ -78,8 +78,8 @@ private let postsMockJson = """
       "created_at": "2021-05-17 14:10:00",
       "updated_at": "2021-05-17 14:10:00",
       "deleted_at": null,
-      "likes": 0,
-      "dislikes": 0,
+      "likes": 452,
+      "dislikes": 8,
       "status": {
         "id": 1,
         "name": "Опубликован",
@@ -165,8 +165,8 @@ private let postsMockJson = """
     "created_at": "2021-05-17 14:10:00",
     "updated_at": "2021-05-17 14:10:00",
     "deleted_at": null,
-    "likes": 0,
-    "dislikes": 0,
+    "likes": 4972,
+    "dislikes": 34,
     "status": {
       "id": 1,
       "name": "Опубликован",
@@ -252,8 +252,8 @@ private let postsMockJson = """
     "created_at": "2020-10-01 16:21:47",
     "updated_at": "2020-10-01 16:21:47",
     "deleted_at": null,
-    "likes": 1,
-    "dislikes": 0,
+    "likes": 11,
+    "dislikes": 88,
     "status": {
       "id": 1,
       "name": "Опубликован",
