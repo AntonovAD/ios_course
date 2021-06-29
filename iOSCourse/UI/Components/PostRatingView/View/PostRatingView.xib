@@ -11,17 +11,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="t0o-D1-Ia9" customClass="PostRatingView" customModule="iOSCourse" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t0o-D1-Ia9" id="gna-LC-60j">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkN-j3-ifP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Vbm-1w-7jD" userLabel="Likes Stack View">
-                                <rect key="frame" x="0.0" y="16" width="280" height="56"/>
+                                <rect key="frame" x="0.0" y="32" width="280" height="56"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emF-pO-Hgh" userLabel="Like View">
                                         <rect key="frame" x="0.0" y="0.0" width="124" height="56"/>
@@ -128,9 +128,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vbm-1w-7jD" secondAttribute="trailing" id="87J-wp-FaU"/>
-                            <constraint firstItem="Vbm-1w-7jD" firstAttribute="top" secondItem="KkN-j3-ifP" secondAttribute="top" constant="16" id="Gan-us-YoX"/>
+                            <constraint firstItem="Vbm-1w-7jD" firstAttribute="top" secondItem="KkN-j3-ifP" secondAttribute="top" constant="32" id="Gan-us-YoX"/>
                             <constraint firstItem="Vbm-1w-7jD" firstAttribute="leading" secondItem="KkN-j3-ifP" secondAttribute="leading" id="UqD-jd-92j"/>
-                            <constraint firstAttribute="bottom" secondItem="Vbm-1w-7jD" secondAttribute="bottom" constant="16" id="ng8-G7-mBB"/>
+                            <constraint firstAttribute="bottom" secondItem="Vbm-1w-7jD" secondAttribute="bottom" constant="32" id="ng8-G7-mBB"/>
                         </constraints>
                     </view>
                 </subviews>

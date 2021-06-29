@@ -28,19 +28,22 @@ class PostListViewController: UIViewController {
             source: TableDataSource(
                 dataProvider: postListDataProvider,
                 cellSetup: { cell, presenter in
-                    guard let cell = cell as? ViewMeasuresSetup else {
+                    
+                    cell.selectionStyle = .none
+                    
+                    if let cell = cell as? ViewMeasuresSetup {
+                        cell.setup(
+                            with: presenter,
+                            margin: UIEdgeInsets(
+                                top: ViewIndent.normal.rawValue,
+                                left: ViewIndent.normal.rawValue,
+                                bottom: ViewIndent.normal.rawValue,
+                                right: ViewIndent.normal.rawValue
+                            )
+                        )
+                    } else {
                         return
                     }
-                    
-                    cell.setup(
-                        with: presenter,
-                        margin: UIEdgeInsets(
-                            top: ViewIndent.normal.rawValue,
-                            left: ViewIndent.normal.rawValue,
-                            bottom: ViewIndent.normal.rawValue,
-                            right: ViewIndent.normal.rawValue
-                        )
-                    )
                 }
             ),
             delegate: TableViewDelegate(didSelectRow: didSelectRow(at:))

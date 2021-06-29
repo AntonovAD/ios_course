@@ -11,26 +11,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Yil-fw-On4" customClass="PostInfoView" customModule="iOSCourse" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yil-fw-On4" id="pnh-EA-pgT">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Z8-yT-Sqy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="iEv-8q-Slc" userLabel="Info Stack View">
-                                <rect key="frame" x="0.0" y="0.0" width="47" height="112"/>
+                                <rect key="frame" x="0.0" y="0.0" width="47" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvb-Ig-T4L">
-                                        <rect key="frame" x="0.0" y="0.0" width="7.5" height="112"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="7.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pJ-8e-kkk">
-                                        <rect key="frame" x="39.5" y="0.0" width="7.5" height="112"/>
+                                        <rect key="frame" x="39.5" y="0.0" width="7.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="iEv-8q-Slc" secondAttribute="bottom" constant="16" id="BlY-6d-U6m"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iEv-8q-Slc" secondAttribute="bottom" constant="16" id="BlY-6d-U6m"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iEv-8q-Slc" secondAttribute="trailing" id="LYj-4j-cyU"/>
                             <constraint firstItem="iEv-8q-Slc" firstAttribute="top" secondItem="3Z8-yT-Sqy" secondAttribute="top" id="d4p-Ib-NfR"/>
                             <constraint firstItem="iEv-8q-Slc" firstAttribute="leading" secondItem="3Z8-yT-Sqy" secondAttribute="leading" id="pcG-W0-PBE"/>

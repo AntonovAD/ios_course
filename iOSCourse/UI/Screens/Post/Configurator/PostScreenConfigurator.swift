@@ -7,17 +7,20 @@ class PostScreenConfigurator: Configurator {
     private let postTableDataProviderFactory: TableDataProviderFactoryProtocol
     private let postInfoPresenterFactory: PostInfoViewPresenterFactoryProtocol
     private let postTextPresenterFactory: PostTextViewPresenterFactoryProtocol
+    private let postTagsCollectionPresenterFactory: PostTagsCollectionViewPresenterFactoryProtocol
     private let postRatingPresenterFactory: PostRatingViewPresenterFactoryProtocol
     
     init(
         postTableDataProviderFactory: TableDataProviderFactoryProtocol,
         postInfoPresenterFactory: PostInfoViewPresenterFactoryProtocol,
         postTextPresenterFactory: PostTextViewPresenterFactoryProtocol,
+        postTagsCollectionPresenterFactory: PostTagsCollectionViewPresenterFactoryProtocol,
         postRatingPresenterFactory: PostRatingViewPresenterFactoryProtocol
     ) {
         self.postTableDataProviderFactory = postTableDataProviderFactory
         self.postInfoPresenterFactory = postInfoPresenterFactory
         self.postTextPresenterFactory = postTextPresenterFactory
+        self.postTagsCollectionPresenterFactory = postTagsCollectionPresenterFactory
         self.postRatingPresenterFactory = postRatingPresenterFactory
     }
     
@@ -39,6 +42,7 @@ private extension PostScreenConfigurator {
         let interactor = PostInteractor(
             postInfoPresenterFactory: postInfoPresenterFactory,
             postTextPresenterFactory: postTextPresenterFactory,
+            postTagsCollectionPresenterFactory: postTagsCollectionPresenterFactory,
             postRatingPresenterFactory: postRatingPresenterFactory
         )
         let presenter = PostPresenter(

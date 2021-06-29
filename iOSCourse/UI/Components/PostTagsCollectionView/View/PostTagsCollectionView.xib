@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HE6-YL-9Uq" customClass="PostTagsCollectionView" customModule="iOSCourse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HE6-YL-9Uq" id="3cu-UB-QgV">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="c7V-Yn-bBy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="URY-oL-CJK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OOg-kM-Mdt">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="URY-oL-CJK" firstAttribute="leading" secondItem="c7V-Yn-bBy" secondAttribute="leading" id="Q9V-5t-zSg"/>
+                            <constraint firstAttribute="bottom" secondItem="URY-oL-CJK" secondAttribute="bottom" id="RQN-FP-58g"/>
+                            <constraint firstAttribute="trailing" secondItem="URY-oL-CJK" secondAttribute="trailing" id="ozJ-na-NSH"/>
+                            <constraint firstItem="URY-oL-CJK" firstAttribute="top" secondItem="c7V-Yn-bBy" secondAttribute="top" id="z5g-yt-z4B"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="c7V-Yn-bBy" secondAttribute="bottom" id="EoH-Er-cBz"/>
+                    <constraint firstAttribute="trailing" secondItem="c7V-Yn-bBy" secondAttribute="trailing" id="d4g-q3-y5V"/>
+                    <constraint firstItem="c7V-Yn-bBy" firstAttribute="leading" secondItem="3cu-UB-QgV" secondAttribute="leading" id="jGW-v2-OgP"/>
+                    <constraint firstItem="c7V-Yn-bBy" firstAttribute="top" secondItem="3cu-UB-QgV" secondAttribute="top" id="oMM-Dn-cQT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="Qmv-bf-hxR"/>
+            <connections>
+                <outlet property="bottomMargin" destination="EoH-Er-cBz" id="otO-qn-Ons"/>
+                <outlet property="leftMargin" destination="jGW-v2-OgP" id="VBh-t8-aLc"/>
+                <outlet property="rightMargin" destination="d4g-q3-y5V" id="xIf-BP-umJ"/>
+                <outlet property="tagsCollectionView" destination="URY-oL-CJK" id="rM1-yN-WtO"/>
+                <outlet property="tagsCollectionViewFlowLayout" destination="OOg-kM-Mdt" id="8Js-gT-JXV"/>
+                <outlet property="topMargin" destination="oMM-Dn-cQT" id="uIe-zq-h7B"/>
+            </connections>
+            <point key="canvasLocation" x="130" y="5"/>
+        </tableViewCell>
+    </objects>
+</document>

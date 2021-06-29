@@ -24,19 +24,22 @@ class PostViewController: UIViewController {
             source: TableDataSource(
                 dataProvider: postDataProvider,
                 cellSetup: { cell, presenter in
-                    guard let cell = cell as? ViewMeasuresSetup else {
+                    
+                    cell.selectionStyle = .none
+                    
+                    if let cell = cell as? ViewMeasuresSetup {
+                        cell.setup(
+                            with: presenter,
+                            margin: UIEdgeInsets(
+                                top: 0,
+                                left: ViewIndent.large.rawValue,
+                                bottom: 0,
+                                right: ViewIndent.large.rawValue
+                            )
+                        )
+                    } else {
                         return
                     }
-                    
-                    cell.setup(
-                        with: presenter,
-                        margin: UIEdgeInsets(
-                            top: 0,
-                            left: ViewIndent.large.rawValue,
-                            bottom: 0,
-                            right: ViewIndent.large.rawValue
-                        )
-                    )
                 }
             ),
             delegate: TableViewDelegate(didSelectRow: { _ in })
@@ -48,6 +51,7 @@ class PostViewController: UIViewController {
         
         postTableView.registerReusableCell(PostInfoView.self)
         postTableView.registerReusableCell(PostTextView.self)
+        postTableView.registerReusableCell(PostTagsCollectionView.self)
         postTableView.registerReusableCell(PostRatingView.self)
         
         postTableView.dataSource = postTableData.source
@@ -85,6 +89,8 @@ private extension PostViewController {
     
     func setTitleBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.sizeToFit()
     }
     
     func setMeasures() {

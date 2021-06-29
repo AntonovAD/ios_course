@@ -91,6 +91,7 @@ class ConfiguratorAssembly: Assembly {
                 postTableDataProviderFactory: resolver.resolve(TableDataProviderFactoryProtocol.self)!,
                 postInfoPresenterFactory: resolver.resolve(PostInfoViewPresenterFactoryProtocol.self)!,
                 postTextPresenterFactory: resolver.resolve(PostTextViewPresenterFactoryProtocol.self)!,
+                postTagsCollectionPresenterFactory: resolver.resolve(PostTagsCollectionViewPresenterFactoryProtocol.self)!,
                 postRatingPresenterFactory: resolver.resolve(PostRatingViewPresenterFactoryProtocol.self)!
             )
         }
@@ -122,6 +123,11 @@ class FactoryAssembly: Assembly {
         }
         container.register(PostTextViewPresenterFactoryProtocol.self) { _ in
             PostTextViewPresenterFactory()
+        }
+        container.register(PostTagsCollectionViewPresenterFactoryProtocol.self) { resolver in
+            PostTagsCollectionViewPresenterFactory(
+                tagsCollectionDataProviderFactory: resolver.resolve(CollectionDataProviderFactoryProtocol.self)!
+            )
         }
         container.register(PostRatingViewPresenterFactoryProtocol.self) { _ in
             PostRatingViewPresenterFactory()
