@@ -89,6 +89,7 @@ class ConfiguratorAssembly: Assembly {
         container.register(PostScreenConfigurator.self) { resolver in
             PostScreenConfigurator(
                 postTableDataProviderFactory: resolver.resolve(TableDataProviderFactoryProtocol.self)!,
+                postTitlePresenterFactory: resolver.resolve(PostTitleViewPresenterFactoryProtocol.self)!,
                 postInfoPresenterFactory: resolver.resolve(PostInfoViewPresenterFactoryProtocol.self)!,
                 postTextPresenterFactory: resolver.resolve(PostTextViewPresenterFactoryProtocol.self)!,
                 postTagsCollectionPresenterFactory: resolver.resolve(PostTagsCollectionViewPresenterFactoryProtocol.self)!,
@@ -118,6 +119,9 @@ class FactoryAssembly: Assembly {
             )
         }
         
+        container.register(PostTitleViewPresenterFactoryProtocol.self) { _ in
+            PostTitleViewPresenterFactory()
+        }
         container.register(PostInfoViewPresenterFactoryProtocol.self) { _ in
             PostInfoViewPresenterFactory()
         }

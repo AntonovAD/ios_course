@@ -130,7 +130,7 @@ private extension PostListViewController {
     }
     
     func setTitleBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .automatic
     }
     
     func setRightItem() {

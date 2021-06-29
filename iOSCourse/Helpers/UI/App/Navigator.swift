@@ -9,6 +9,9 @@ class Navigator: UINavigationController, UIGestureRecognizerDelegate, UINavigati
         
         interactivePopGestureRecognizer?.delegate = self
         delegate = self
+        
+        navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .automatic
     }
 
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

@@ -49,6 +49,7 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        postTableView.registerReusableCell(PostTitleView.self)
         postTableView.registerReusableCell(PostInfoView.self)
         postTableView.registerReusableCell(PostTextView.self)
         postTableView.registerReusableCell(PostTagsCollectionView.self)
@@ -72,7 +73,8 @@ extension PostViewController: PostViewControllerInput {
     
     func updateTitle(_ text: String) {
         queue.async {
-            self.navigationItem.title = text
+            //self.navigationItem.title = text
+            self.navigationItem.title = nil
         }
     }
 }
@@ -88,9 +90,11 @@ private extension PostViewController {
     }
     
     func setTitleBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
+        /*navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
-        navigationController?.navigationBar.sizeToFit()
+        navigationController?.navigationBar.sizeToFit()*/
+        
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     func setMeasures() {
