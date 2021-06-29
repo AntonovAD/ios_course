@@ -40,6 +40,13 @@ private extension PostListPresenter {
         )
         router?.push(.post, mode: .normal, config: (data: screenData, from: .postList))
     }
+    
+    func presentPost(data: Post) {
+        let screenData = PostScreenConfiguratorData(
+            post: data
+        )
+        router?.push(.post, mode: .present, config: (data: screenData, from: .postList))
+    }
 }
 
 extension PostListPresenter: PostListInteractorOutput {
@@ -81,6 +88,16 @@ extension PostListPresenter: PostListViewControllerOutput {
         //presenter.doSomething()
         
         //interactor.updatePost(presenter.post)
+    }
+    
+    func didSelectCellSwipeActionRead(with indexPath: IndexPath) {
+        guard presenters.indices.contains(indexPath.row) else {
+            return
+        }
+        
+        let presenter = presenters[indexPath.row]
+        
+        presentPost(data: presenter.post)
     }
     
     func didSelectAddButton() {

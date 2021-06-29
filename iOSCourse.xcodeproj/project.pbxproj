@@ -40,6 +40,7 @@
 		491735F4268B90EC000FB208 /* PostTitleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491735F3268B90EC000FB208 /* PostTitleViewInput.swift */; };
 		491735F6268B90F4000FB208 /* PostTitleViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491735F5268B90F4000FB208 /* PostTitleViewOutput.swift */; };
 		491735F8268B90FF000FB208 /* PostTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491735F7268B90FF000FB208 /* PostTitleView.xib */; };
+		491735FA268B9F51000FB208 /* UIImage + fromLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491735F9268B9F51000FB208 /* UIImage + fromLabel.swift */; };
 		49213F8926824C96003954C8 /* AuthScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */; };
 		49213F8B26824D66003954C8 /* AuthScreenViewControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8A26824D66003954C8 /* AuthScreenViewControllerOutput.swift */; };
 		49213F8D26824D73003954C8 /* AuthScreenViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8C26824D73003954C8 /* AuthScreenViewControllerInput.swift */; };
@@ -171,6 +172,7 @@
 		491735F3268B90EC000FB208 /* PostTitleViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTitleViewInput.swift; sourceTree = "<group>"; };
 		491735F5268B90F4000FB208 /* PostTitleViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTitleViewOutput.swift; sourceTree = "<group>"; };
 		491735F7268B90FF000FB208 /* PostTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTitleView.xib; sourceTree = "<group>"; };
+		491735F9268B9F51000FB208 /* UIImage + fromLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + fromLabel.swift"; sourceTree = "<group>"; };
 		49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenConfigurator.swift; sourceTree = "<group>"; };
 		49213F8A26824D66003954C8 /* AuthScreenViewControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewControllerOutput.swift; sourceTree = "<group>"; };
 		49213F8C26824D73003954C8 /* AuthScreenViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewControllerInput.swift; sourceTree = "<group>"; };
@@ -632,6 +634,7 @@
 			children = (
 				497A21BE2666B00400D9CF7C /* UITabelView+dequeueReusableCell.swift */,
 				49D7501B26777FBA008E48D3 /* UICollectionView+dequeueReusableCell.swift */,
+				491735F9268B9F51000FB208 /* UIImage + fromLabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1238,6 +1241,7 @@
 				4910BD9026858C4A00599D94 /* PostInfoViewPresenterFactory.swift in Sources */,
 				4910BDB22685998D00599D94 /* PostInteractor.swift in Sources */,
 				49213F9726824E4B003954C8 /* AuthInteractor.swift in Sources */,
+				491735FA268B9F51000FB208 /* UIImage + fromLabel.swift in Sources */,
 				49D7501126775F80008E48D3 /* View.swift in Sources */,
 				495E4A6726678D0A006B3331 /* PostListViewControllerInput.swift in Sources */,
 				495E4A55266783C5006B3331 /* PostCardViewOutput.swift in Sources */,

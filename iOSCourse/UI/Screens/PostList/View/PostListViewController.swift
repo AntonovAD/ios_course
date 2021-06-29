@@ -46,7 +46,11 @@ class PostListViewController: UIViewController {
                     }
                 }
             ),
-            delegate: TableViewDelegate(didSelectRow: didSelectRow(at:))
+            delegate: TableViewDelegate(
+                leadingSwipeActions: leadingSwipeActions(_:),
+                trailingSwipeActions: trailingSwipeActions(_:),
+                didSelectRow: didSelectRow(at:)
+            )
         )
     }
     
@@ -104,6 +108,27 @@ private extension PostListViewController {
     //MARK: - Private Func()
     func didSelectRow(at indexPath: IndexPath) {
         presenter?.didSelectCell(with: indexPath)
+    }
+    
+    func leadingSwipeActions(_ indexPath: IndexPath) -> [UIContextualAction] {
+        return []
+    }
+    
+    func trailingSwipeActions(_ indexPath: IndexPath) -> [UIContextualAction] {
+        let presentPost = UIContextualAction(
+            style: .normal,
+            title: "Читать далее..."
+        ) { [weak self] (action, view, completionHandler) in
+            self?.didSelectCellSwipeActionRead(at: indexPath)
+            completionHandler(true)
+        }
+        presentPost.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        
+        return [presentPost]
+    }
+    
+    func didSelectCellSwipeActionRead(at indexPath: IndexPath) {
+        presenter?.didSelectCellSwipeActionRead(with: indexPath)
     }
     
     @objc
