@@ -86,4 +86,8 @@ extension PostListPresenter: PostListViewControllerOutput {
     func didSelectAddButton() {
         interactor.didSelectAddButton()
     }
+    
+    func refreshPosts() {
+        interactor.requestPosts()
+    }
 }

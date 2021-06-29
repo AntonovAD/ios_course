@@ -4,6 +4,7 @@ import UIKit
 
 class PostViewController: UIViewController {
     private var presenter: PostViewControllerOutput?
+    private let queue = DispatchQueue.main
     
     @IBOutlet weak var postTableView: UITableView!
     private var postTableData: (
@@ -60,20 +61,26 @@ class PostViewController: UIViewController {
 
 extension PostViewController: PostViewControllerInput {
     func reloadTable() {
-        postTableView.reloadData()
+        queue.async {
+            self.postTableView.reloadData()
+        }
     }
     
     func updateTitle(_ text: String) {
-        navigationItem.title = text
+        queue.async {
+            self.navigationItem.title = text
+        }
     }
 }
 
 private extension PostViewController {
     //MARK: - Setup()
     func setupView() {
-        setTitleBar()
-        setMeasures()
-        setTable()
+        queue.async {
+            self.setTitleBar()
+            self.setMeasures()
+            self.setTable()
+        }
     }
     
     func setTitleBar() {

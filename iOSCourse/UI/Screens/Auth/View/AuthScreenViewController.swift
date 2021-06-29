@@ -4,6 +4,7 @@ import UIKit
 
 class AuthScreenViewController: UIViewController {
     private var presenter: AuthScreenViewControllerOutput?
+    private let queue = DispatchQueue.main
     
     @IBOutlet weak var loginInput: TextFieldInput!
     @IBOutlet weak var passwordInput: TextFieldInput!
@@ -28,14 +29,18 @@ class AuthScreenViewController: UIViewController {
 
 extension AuthScreenViewController: AuthScreenViewControllerInput {
     func updateTitle(_ text: String) {
-        navigationItem.title = text
+        queue.async {
+            self.navigationItem.title = text
+        }
     }
 }
 
 private extension AuthScreenViewController {
     @IBAction func didSelectSubmitButton(_ sender: Any) {
         if let login: String = loginInput.text,
-            let password: String = passwordInput.text
+            let password: String = passwordInput.text,
+            !login.isEmpty,
+            !password.isEmpty
         {
             presenter?.didSelectSubmitButton(login: login, password: password)
         } else {
@@ -44,7 +49,9 @@ private extension AuthScreenViewController {
     }
     
     func setupView() {
-        setTitleBar()
+        queue.async {
+            self.setTitleBar()
+        }
     }
     
     func setTitleBar() {

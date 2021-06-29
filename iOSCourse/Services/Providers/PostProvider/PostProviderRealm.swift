@@ -6,16 +6,19 @@ import RealmSwift
 
 class PostProviderRealm: PostProviderProtocol {
     private let realmFactory: RealmFactoryProtocol
+    private let queue: DispatchQueue
     
     init(
-        realmFactory: RealmFactoryProtocol
+        realmFactory: RealmFactoryProtocol,
+        queue: DispatchQueue
     ) {
         self.realmFactory = realmFactory
+        self.queue = queue
     }
     
     // MARK: 🐌 Not Reactive
     func requestAll(completion: @escaping (Result<[Post], PostProviderError>) -> Void) {
-        DispatchQueue.main.async { [realmFactory] in
+        queue.async { [realmFactory] in
             switch realmFactory.createRealm() {
             case .success(let realm):
                 let objects = realm.objects(PostRealm.self)
@@ -31,7 +34,7 @@ class PostProviderRealm: PostProviderProtocol {
     }
     
     func update(post: Post, completion: @escaping (Result<(), PostProviderError>) -> Void) {
-        DispatchQueue.main.async { [realmFactory] in
+        queue.async { [realmFactory] in
             do {
                 let realm = try realmFactory.createRealm().get()
                 
@@ -52,7 +55,7 @@ class PostProviderRealm: PostProviderProtocol {
     }
     
     func update(posts: [Post], completion: @escaping (Result<(), PostProviderError>) -> Void) {
-        DispatchQueue.main.async { [realmFactory] in
+        queue.async { [realmFactory] in
             do {
                 let realm = try realmFactory.createRealm().get()
                 

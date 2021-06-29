@@ -1,7 +1,12 @@
 //
 
 import Foundation
+import ReactiveSwift
 
 protocol MigrationServiceProtocol {
-    func migrateIfNeeded()
+    func migrate()
+}
+
+protocol ReactiveMigrationServiceProtocol: AnyObject {
+    func migrate() -> SignalProducer<(), Never>
 }

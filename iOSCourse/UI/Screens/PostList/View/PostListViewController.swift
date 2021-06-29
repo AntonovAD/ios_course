@@ -4,6 +4,9 @@ import UIKit
 
 class PostListViewController: UIViewController {
     private var presenter: PostListViewControllerOutput?
+    private let queue = DispatchQueue.main
+    
+    private let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var postListTableView: UITableView!
     private var postListTableData: (
@@ -60,31 +63,37 @@ class PostListViewController: UIViewController {
 
 extension PostListViewController: PostListViewControllerInput {
     func reloadTable() {
-        postListTableView.reloadData()
+        queue.async {
+            self.postListTableView.reloadData()
+        }
     }
     
     func updateTitle(_ text: String) {
-        navigationItem.title = text
+        queue.async {
+            self.navigationItem.title = text
+        }
     }
     
     func updateUserInfo(_ name: String, _ email: String) {
-        let titleLabel = UILabel()
-        titleLabel.text = name
-        titleLabel.textAlignment = .center
-        titleLabel.font = .preferredFont(forTextStyle: UIFont.TextStyle.headline)
+        queue.async {
+            let titleLabel = UILabel()
+            titleLabel.text = name
+            titleLabel.textAlignment = .center
+            titleLabel.font = .preferredFont(forTextStyle: UIFont.TextStyle.headline)
 
-        let subtitleLabel = UILabel()
-        subtitleLabel.text = email
-        subtitleLabel.textAlignment = .center
-        subtitleLabel.font = .preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
+            let subtitleLabel = UILabel()
+            subtitleLabel.text = email
+            subtitleLabel.textAlignment = .center
+            subtitleLabel.font = .preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
 
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
-        stackView.distribution = .equalSpacing
-        stackView.alignment = .leading
-        stackView.axis = .vertical
+            let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+            stackView.distribution = .equalSpacing
+            stackView.alignment = .leading
+            stackView.axis = .vertical
 
-        let userInfo = UIBarButtonItem(customView: stackView)
-        self.navigationItem.leftBarButtonItems = [userInfo]
+            let userInfo = UIBarButtonItem(customView: stackView)
+            self.navigationItem.leftBarButtonItems = [userInfo]
+        }
     }
 }
 
@@ -100,12 +109,21 @@ private extension PostListViewController {
         presenter?.didSelectAddButton()
     }
     
+    @objc
+    func refreshPosts(_ sender: AnyObject) {
+        presenter?.refreshPosts()
+        refreshControl.endRefreshing()
+    }
+    
     //MARK: - Setup()
     func setupView() {
-        setTitleBar()
-        setRightItem()
-        setMeasures()
-        setObservers()
+        queue.async {
+            self.setTitleBar()
+            self.setRightItem()
+            self.setMeasures()
+            self.setObservers()
+            self.setRefresh()
+        }
     }
     
     func setTitleBar() {
@@ -147,5 +165,11 @@ private extension PostListViewController {
                 print(navHeight <= heightForCollapsedNav  ? "Collapsed" : "Large")
             }
         )*/
+    }
+    
+    func setRefresh() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Потяните чтобы обновить")
+        refreshControl.addTarget(self, action: #selector(self.refreshPosts(_:)), for: .valueChanged)
+        postListTableView.addSubview(refreshControl)
     }
 }

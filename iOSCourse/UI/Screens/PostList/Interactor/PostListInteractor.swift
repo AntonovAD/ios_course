@@ -44,7 +44,7 @@ extension PostListInteractor: PostListInteractorInput {
     func requestPosts() {
         let beReactive = true
         
-        // 🐌 Not Reactive
+        //MARK: - 🐌 Not Reactive
         if (!beReactive) {
             postProvider.requestAll { [weak self] result in
                 switch result {
@@ -57,7 +57,7 @@ extension PostListInteractor: PostListInteractorInput {
             }
         }
         
-        // 🚀 Reactive
+        //MARK: - 🚀 Reactive
         if (beReactive) {
             var producer = reactivePostProvider.requestAll()
             producer = producer

@@ -158,8 +158,8 @@ private let postsMockJson = """
     },
   {
     "id": 2,
-    "title": "теговый черновик",
-    "text": "jhgj kjh kjh jkxchk hcxkjh kxch kxchk xckj chx cjkx xck",
+    "title": "PostProviderMock",
+    "text": "PostProviderMock PostProviderMock PostProviderMock PostProviderMock PostProviderMock PostProviderMock PostProviderMock PostProviderMock",
     "status_id": 1,
     "author_id": 1,
     "created_at": "2021-05-17 14:10:00",
@@ -244,9 +244,9 @@ private let postsMockJson = """
     "popular_comment": []
   },
   {
-    "id": 1,
-    "title": "mysql",
-    "text": "top",
+    "id": 3,
+    "title": "PostProviderMock",
+    "text": "PostProviderMock",
     "status_id": 1,
     "author_id": 1,
     "created_at": "2020-10-01 16:21:47",

@@ -22,29 +22,33 @@ class DataStorageAssembly: Assembly {
 }
 
 class ServiceAssembly: Assembly {
+    private lazy var queue = DispatchQueue(label: "database-queue", attributes: .concurrent)
+    
     func assemble(container: Container) {
-        container.register(PostProviderProtocol.self) { _ in
+        /*container.register(PostProviderProtocol.self) { _ in
             PostProviderMock()
         }
         container.register(ReactivePostProviderProtocol.self) { _ in
             PostProviderMock()
-        }
+        }*/
         
-        /*container.register(PostProviderRealm.self) { resolver in
+        container.register(PostProviderRealm.self) { [queue] resolver in
             PostProviderRealm(
-                realmFactory: resolver.resolve(RealmFactoryProtocol.self)!
+                realmFactory: resolver.resolve(RealmFactoryProtocol.self)!,
+                queue: queue
             )
         }
         .inObjectScope(.container)
         .implements(PostProviderProtocol.self)
         .implements(ReactivePostProviderProtocol.self)
         
-        container.register(PostMigrationServiceProtocol.self) { resolver in
+        container.register(PostMigrationServiceProtocol.self) { [queue] resolver in
             PostMigrationService(
                 postProvider: resolver.resolve(PostProviderProtocol.self)!,
-                dataStorage: resolver.resolve(PostMigrationDataStorage.self)!
+                dataStorage: resolver.resolve(PostMigrationDataStorage.self)!,
+                queue: queue
             )
-        }*/
+        }
         
         container.register(UserProviderProtocol.self) { _ in
             UserProviderMock()
@@ -151,13 +155,13 @@ class AppService: AppServiceProtocol {
     }
     
     func start() -> RouterProtocol {
-        //migration()
+        migration()
         
         return resolver.resolve(RouterProtocol.self)!
     }
     
-    /*private func migration() {
+    private func migration() {
         let postMigrationService = resolver.resolve(PostMigrationServiceProtocol.self)
         postMigrationService?.migrateIfNeeded()
-    }*/
+    }
 }

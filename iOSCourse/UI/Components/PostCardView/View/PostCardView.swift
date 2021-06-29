@@ -4,6 +4,7 @@ import UIKit
 
 class PostCardView: UITableViewCell, NibReusable, ViewSetup, ViewMeasuresSetup {
     private var presenter: PostCardViewOutput?
+    private let queue = DispatchQueue.main
     
     @IBOutlet weak var topMargin: NSLayoutConstraint!
     @IBOutlet weak var rightMargin: NSLayoutConstraint!
@@ -29,16 +30,20 @@ class PostCardView: UITableViewCell, NibReusable, ViewSetup, ViewMeasuresSetup {
             return
         }
         
-        setup(with: presenter)
+        queue.async {
+            self.setup(with: presenter)
+        }
     }
     
     func setup(
         with presenter: CellPresenter,
         margin: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     ) {
-        setMeasures(margin: margin)
-        
-        setup(with: presenter)
+        queue.async {
+            self.setMeasures(margin: margin)
+            
+            self.setup(with: presenter)
+        }
     }
     
     private func setup(with presenter: PostCardViewPresenter) {
