@@ -25,14 +25,14 @@ class ServiceAssembly: Assembly {
     private lazy var queue = DispatchQueue(label: "database-queue", attributes: .concurrent)
     
     func assemble(container: Container) {
-        /*container.register(PostProviderProtocol.self) { _ in
+        container.register(PostProviderProtocol.self) { _ in
             PostProviderMock()
         }
         container.register(ReactivePostProviderProtocol.self) { _ in
             PostProviderMock()
-        }*/
+        }
         
-        container.register(PostProviderRealm.self) { [queue] resolver in
+        /*container.register(PostProviderRealm.self) { [queue] resolver in
             PostProviderRealm(
                 realmFactory: resolver.resolve(RealmFactoryProtocol.self)!,
                 queue: queue
@@ -48,7 +48,7 @@ class ServiceAssembly: Assembly {
                 dataStorage: resolver.resolve(PostMigrationDataStorage.self)!,
                 queue: queue
             )
-        }
+        }*/
         
         container.register(UserProviderProtocol.self) { _ in
             UserProviderMock()
@@ -155,7 +155,7 @@ class AppService: AppServiceProtocol {
     }
     
     func start() -> RouterProtocol {
-        migration()
+        //migration()
         
         return resolver.resolve(RouterProtocol.self)!
     }

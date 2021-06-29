@@ -83,24 +83,34 @@ class PostCardView: UITableViewCell, NibReusable, ViewSetup, ViewMeasuresSetup {
 
 extension PostCardView: PostCardViewInput {
     func updateTitle(text: String) {
-        title.text = text
+        queue.async {
+            self.title.text = text
+        }
     }
     
     func updateAuthor(text: String) {
-        author.text = text
+        queue.async {
+            self.author.text = text
+        }
     }
     
     func updateDate(text: String) {
-        date.text = text
+        queue.async {
+            self.date.text = text
+        }
     }
     
     func updateLikes(like: Int, dislike: Int) {
-        self.like.text = String(like)
-        self.dislike.text = "\(dislike)"
+        queue.async {
+            self.like.text = String(like)
+            self.dislike.text = "\(dislike)"
+        }
     }
     
     func reloadTags() {
-        self.tagsCollectionView.reloadData()
+        queue.async {
+            self.tagsCollectionView.reloadData()
+        }
     }
 }
 
