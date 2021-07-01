@@ -47,7 +47,7 @@ private extension AuthInteractor {
 }
 
 extension AuthInteractor: AuthInteractorInput {
-    func signIn(login: String, password: String) {
+    func signIn(login: String, password: String, fallback: Bool?) {
         var producer = userProvider.signIn(login: login, password: password)
         producer = producer
             .flatMap(.latest) { result in
@@ -66,20 +66,20 @@ extension AuthInteractor: AuthInteractorInput {
                 
             case .failure(let error):
                 print("signIn:", error)
-                self?.handleError(error)
+                (fallback ?? false) ? self?.handleError(error) : nil
             }
         }
     }
     
-    func autoLogin() {
+    func autoLogin(fallback: Bool?) {
         userProviderRealm.getUser()
         .startWithResult { [weak self] result in
             switch result {
             case .success(let user):
-                self?.signIn(login: user.name, password: user.password)
+                self?.signIn(login: user.name, password: user.password, fallback: (fallback ?? false))
                 
             case .failure(let error):
-                self?.handleError(error)
+                (fallback ?? false) ? self?.handleError(error) : nil
             }
         }
     }

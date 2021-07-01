@@ -26,7 +26,7 @@ private extension AuthPresenter {
     }
     
     func autoLogin() {
-        interactor.autoLogin()
+        interactor.autoLogin(fallback: false)
     }
 }
 
@@ -36,7 +36,7 @@ extension AuthPresenter: AuthInteractorOutput {
     }
     
     func handleError(_ error: Error) {
-        
+        viewController?.errorPulseAppTitle()
     }
 }
 
@@ -48,6 +48,6 @@ extension AuthPresenter: AuthScreenViewControllerOutput {
     }
     
     func didSelectSubmitButton(login: String, password: String) {
-        interactor.signIn(login: login, password: password)
+        interactor.signIn(login: login, password: password, fallback: true)
     }
 }

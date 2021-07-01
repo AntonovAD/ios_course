@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthScreenViewController">
             <connections>
+                <outlet property="appTitle" destination="YZf-py-jdK" id="dAz-Hw-SHE"/>
                 <outlet property="loginInput" destination="Etx-fU-dOn" id="ym5-me-ixh"/>
                 <outlet property="passwordInput" destination="qAf-gx-sfe" id="xfi-OG-1Nb"/>
                 <outlet property="submitButton" destination="xaa-do-pka" id="YVt-7Z-HzJ"/>

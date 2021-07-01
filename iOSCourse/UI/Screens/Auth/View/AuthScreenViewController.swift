@@ -6,6 +6,8 @@ class AuthScreenViewController: UIViewController {
     private var presenter: AuthScreenViewControllerOutput?
     private let queue = DispatchQueue.main
     
+    @IBOutlet weak var appTitle: UILabel!
+    
     @IBOutlet weak var loginInput: TextFieldInput!
     @IBOutlet weak var passwordInput: TextFieldInput!
     @IBOutlet weak var submitButton: UIButton!
@@ -31,6 +33,31 @@ extension AuthScreenViewController: AuthScreenViewControllerInput {
     func updateTitle(_ text: String) {
         queue.async {
             self.navigationItem.title = text
+        }
+    }
+    
+    func errorPulseAppTitle() {
+        queue.async {
+            CATransaction.begin()
+            
+            let initialTextColor = self.appTitle.textColor
+            
+            self.appTitle.textColor = .red
+            
+            let pulseAnimation = CABasicAnimation(keyPath: "opacity")
+            pulseAnimation.duration = 0.1
+            pulseAnimation.fromValue = 0
+            pulseAnimation.toValue = 1
+            pulseAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
+            pulseAnimation.autoreverses = true
+            pulseAnimation.repeatCount = 4
+            
+            CATransaction.setCompletionBlock{ [weak self] in
+                self?.appTitle.textColor = initialTextColor
+            }
+            
+            self.appTitle.layer.add(pulseAnimation, forKey: nil)
+            CATransaction.commit()
         }
     }
 }
