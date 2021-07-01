@@ -3,16 +3,19 @@
 import Foundation
 import ReactiveSwift
 
-class UserProviderMock: UserProviderProtocol, ReactiveUserProviderProtocol {
+class UserProvider: UserProviderProtocol, ReactiveUserProviderProtocol {
     private let queue: DispatchQueue
+    private let requestService: RequestServiceProtocol
     
     private let mutableUser = MutableProperty<User?>(nil)
     let user: Property<User?>
     
     init(
-        queue: DispatchQueue
+        queue: DispatchQueue,
+        requestService: RequestServiceProtocol
     ) {
         self.queue = queue
+        self.requestService = requestService
         self.user = Property(mutableUser)
     }
     
@@ -23,26 +26,27 @@ class UserProviderMock: UserProviderProtocol, ReactiveUserProviderProtocol {
         completion: @escaping (Result<APIResponse.User.SignIn, UserProviderError>) -> Void
     ) {
         queue.async {
-            let data = authMockJson.data(using: .utf8)!
-            let jsonDecoder = JSONDecoder()
-            let response = try! jsonDecoder.decode(APIResponse.User.SignIn.self, from: data)
-            
-            completion(.success((response)))
+            self.requestService.send(request: API.User.SignIn(
+                APIRequest.User.SignIn(
+                    login: login,
+                    password: password
+                )
+            )) { result in
+                switch result {
+                case .success(let response):
+                    completion(.success((response)))
+                    
+                case .failure(let error):
+                    completion(.failure(.signInError(error)))
+                }
+            }
         }
     }
     
     func getUser(
         completion: @escaping (Result<User, UserProviderError>) -> Void
     ) {
-        //let userId = storage.getUserId()
         
-        queue.async {
-            let data = userMockJson.data(using: .utf8)!
-            let jsonDecoder = JSONDecoder()
-            let user = try! jsonDecoder.decode(User.self, from: data)
-            
-            completion(.success(user))
-        }
     }
     
     func updateUser(
@@ -85,24 +89,3 @@ class UserProviderMock: UserProviderProtocol, ReactiveUserProviderProtocol {
         .dematerializeResults()
     }
 }
-
-private let authMockJson = """
-{
-    "result":true,
-    "userId":1
-}
-"""
-
-private let userMockJson = """
-{
-    "id":1,
-    "name":"antonov.ad",
-    "email":"an_42@mail.ru",
-    "email_verified_at":null,
-    "password":"antonov.ad",
-    "remember_token":null,
-    "created_at":"2020-10-01 16:21:35",
-    "updated_at":null,
-    "deleted_at":null
-}
-"""

@@ -4,28 +4,26 @@ import Foundation
 import ReactiveSwift
 
 enum UserProviderError: Error {
-    case databaseError(error: Error)
-    case writeError(error: Error?)
-    case unknown
+    case signInError(_ error: Error)
 }
 
 protocol UserProviderProtocol {
-    func auth(
+    func signIn(
         login: String,
         password: String,
-        completion: @escaping (Result<AuthResponse, UserProviderError>) -> Void
+        completion: @escaping (Result<APIResponse.User.SignIn, UserProviderError>) -> Void
     )
     func getUser(
         completion: @escaping (Result<User, UserProviderError>) -> Void
     )
-    func update(
+    func updateUser(
         user: User,
         completion: @escaping (Result<(), UserProviderError>) -> Void
     )
 }
 
 protocol ReactiveUserProviderProtocol {
-    func auth(login: String, password: String) -> SignalProducer<AuthResponse, UserProviderError>
+    func signIn(login: String, password: String) -> SignalProducer<APIResponse.User.SignIn, UserProviderError>
     func getUser() -> SignalProducer<User, UserProviderError>
-    func update(user: User) -> SignalProducer<(), UserProviderError>
+    func updateUser(user: User) -> SignalProducer<(), UserProviderError>
 }

@@ -55,6 +55,8 @@ private extension AuthScreenViewController {
     }
     
     func setTitleBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
+        queue.async {
+            self.navigationItem.largeTitleDisplayMode = .automatic
+        }
     }
 }

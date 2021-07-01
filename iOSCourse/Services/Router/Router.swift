@@ -34,6 +34,8 @@ protocol RouterProtocol {
 }*/
 
 class Router: RouterProtocol {
+    private let queue = DispatchQueue.main
+    
     private weak var window: UIWindow?
     private var navigationController: UINavigationController?
     
@@ -71,31 +73,35 @@ class Router: RouterProtocol {
     
     func push(_ routePath: RoutePath, mode: NavigationMode, config: RouteConfig?) {
         var nextViewController: UIViewController {
-            if userIsLogin() {
+            if userIsLogged() {
                 return screen(by: routePath, with: config?.data)
             } else {
                 return screen(by: .auth, with: nil)
             }
         }
         
-        switch mode {
-        case .normal:
-            navigationController?.pushViewController(nextViewController, animated: true)
-        case .present:
-            navigationController?.present(nextViewController, animated: true, completion: nil)
+        queue.async {
+            switch mode {
+            case .normal:
+                self.navigationController?.pushViewController(nextViewController, animated: true)
+            case .present:
+                self.navigationController?.present(nextViewController, animated: true, completion: nil)
+            }
         }
     }
     
     func replace(_ routePath: RoutePath, config: RouteConfig?) {
         var nextViewController: UIViewController {
-            if userIsLogin() {
+            if userIsLogged() {
                 return screen(by: routePath, with: config?.data)
             } else {
                 return screen(by: .auth, with: nil)
             }
         }
         
-        navigationController?.setViewControllers([nextViewController], animated: true)
+        queue.async {
+            self.navigationController?.setViewControllers([nextViewController], animated: true)
+        }
     }
 }
 
@@ -116,7 +122,7 @@ private extension Router {
         }
     }
     
-    func userIsLogin() -> Bool {
+    func userIsLogged() -> Bool {
         return true
     }
 }

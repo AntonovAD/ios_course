@@ -42,6 +42,6 @@ extension AuthPresenter: AuthScreenViewControllerOutput {
     }
     
     func didSelectSubmitButton(login: String, password: String) {
-        interactor.authUser(login: login, password: password)
+        interactor.signIn(login: login, password: password)
     }
 }

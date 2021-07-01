@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4904EE83268DAB030056C980 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE82268DAB030056C980 /* AsyncOperation.swift */; };
+		4904EE86268DAB7E0056C980 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE85268DAB7E0056C980 /* RequestProtocol.swift */; };
+		4904EE88268DABD70056C980 /* RequestServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE87268DABD70056C980 /* RequestServiceProtocol.swift */; };
+		4904EE8A268DABF60056C980 /* RequestServiceURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE89268DABF60056C980 /* RequestServiceURLSession.swift */; };
+		4904EE8E268DD0D20056C980 /* API+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE8D268DD0D20056C980 /* API+Post.swift */; };
+		4904EE90268DD0D90056C980 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE8F268DD0D90056C980 /* API.swift */; };
+		4904EE93268DD5E10056C980 /* API+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE92268DD5E10056C980 /* API+User.swift */; };
+		4904EE95268DD7DD0056C980 /* APIResponse+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE94268DD7DD0056C980 /* APIResponse+User.swift */; };
+		4904EE97268DD8090056C980 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE96268DD8090056C980 /* APIResponse.swift */; };
+		4904EE99268DD9A10056C980 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE98268DD9A10056C980 /* APIRequest.swift */; };
+		4904EE9B268DD9BB0056C980 /* APIRequest+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE9A268DD9BB0056C980 /* APIRequest+User.swift */; };
+		4904EE9D268DFA6B0056C980 /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE9C268DFA6B0056C980 /* UserProvider.swift */; };
 		4910BD8626858A1900599D94 /* PostTextViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD8526858A1900599D94 /* PostTextViewPresenter.swift */; };
 		4910BD8826858A3700599D94 /* PostTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BD8726858A3700599D94 /* PostTextView.swift */; };
 		4910BD8A26858A4100599D94 /* PostTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4910BD8926858A4100599D94 /* PostTextView.xib */; };
@@ -97,7 +109,6 @@
 		49873C462680BC4F00143EEC /* DeleteMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C452680BC4F00143EEC /* DeleteMigration.swift */; };
 		49873C492680C46300143EEC /* UserProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C482680C46300143EEC /* UserProviderMock.swift */; };
 		49873C4B2680C46F00143EEC /* UserProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C4A2680C46F00143EEC /* UserProviderProtocol.swift */; };
-		49873C4D2680CB1000143EEC /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C4C2680CB1000143EEC /* Auth.swift */; };
 		49873C612680D15F00143EEC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C602680D15F00143EEC /* Router.swift */; };
 		499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A8D6D26524202007543E7 /* AppDelegate.swift */; };
 		499A8D7726524203007543E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499A8D7626524203007543E7 /* Assets.xcassets */; };
@@ -139,6 +150,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4904EE82268DAB030056C980 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		4904EE85268DAB7E0056C980 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		4904EE87268DABD70056C980 /* RequestServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServiceProtocol.swift; sourceTree = "<group>"; };
+		4904EE89268DABF60056C980 /* RequestServiceURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServiceURLSession.swift; sourceTree = "<group>"; };
+		4904EE8D268DD0D20056C980 /* API+Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Post.swift"; sourceTree = "<group>"; };
+		4904EE8F268DD0D90056C980 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		4904EE92268DD5E10056C980 /* API+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+User.swift"; sourceTree = "<group>"; };
+		4904EE94268DD7DD0056C980 /* APIResponse+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIResponse+User.swift"; sourceTree = "<group>"; };
+		4904EE96268DD8090056C980 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		4904EE98268DD9A10056C980 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		4904EE9A268DD9BB0056C980 /* APIRequest+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIRequest+User.swift"; sourceTree = "<group>"; };
+		4904EE9C268DFA6B0056C980 /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
 		4910BD8526858A1900599D94 /* PostTextViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextViewPresenter.swift; sourceTree = "<group>"; };
 		4910BD8726858A3700599D94 /* PostTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextView.swift; sourceTree = "<group>"; };
 		4910BD8926858A4100599D94 /* PostTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTextView.xib; sourceTree = "<group>"; };
@@ -229,7 +252,6 @@
 		49873C452680BC4F00143EEC /* DeleteMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMigration.swift; sourceTree = "<group>"; };
 		49873C482680C46300143EEC /* UserProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderMock.swift; sourceTree = "<group>"; };
 		49873C4A2680C46F00143EEC /* UserProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderProtocol.swift; sourceTree = "<group>"; };
-		49873C4C2680CB1000143EEC /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		49873C602680D15F00143EEC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		499A8D6A26524202007543E7 /* iOSCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499A8D6D26524202007543E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -286,6 +308,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4904EE81268DAAE20056C980 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				4904EE82268DAB030056C980 /* AsyncOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		4904EE84268DAB700056C980 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				4904EE85268DAB7E0056C980 /* RequestProtocol.swift */,
+				4904EE87268DABD70056C980 /* RequestServiceProtocol.swift */,
+				4904EE89268DABF60056C980 /* RequestServiceURLSession.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		4904EE8B268DD0A70056C980 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4904EE8F268DD0D90056C980 /* API.swift */,
+				4904EE98268DD9A10056C980 /* APIRequest.swift */,
+				4904EE96268DD8090056C980 /* APIResponse.swift */,
+				4904EE91268DD5D20056C980 /* User */,
+				4904EE8C268DD0B10056C980 /* Post */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4904EE8C268DD0B10056C980 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				4904EE8D268DD0D20056C980 /* API+Post.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		4904EE91268DD5D20056C980 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				4904EE92268DD5E10056C980 /* API+User.swift */,
+				4904EE9A268DD9BB0056C980 /* APIRequest+User.swift */,
+				4904EE94268DD7DD0056C980 /* APIResponse+User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		4910BD822685897200599D94 /* PostTextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +614,8 @@
 		496E20D726594BF000EB5824 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4904EE84268DAB700056C980 /* Requests */,
+				4904EE81268DAAE20056C980 /* Operations */,
 				49873C302680918400143EEC /* Migrations */,
 				49873C282680872400143EEC /* Realm */,
 				49873C2C26808AF200143EEC /* Reactive */,
@@ -642,6 +714,7 @@
 		497A21C02666B01B00D9CF7C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4904EE8B268DD0A70056C980 /* API */,
 				49873C5F2680D15000143EEC /* Router */,
 				49873C2F2680916900143EEC /* Migrations */,
 				49E397862677AC190051AE3A /* DataStorages */,
@@ -778,6 +851,7 @@
 			children = (
 				49873C4A2680C46F00143EEC /* UserProviderProtocol.swift */,
 				49873C482680C46300143EEC /* UserProviderMock.swift */,
+				4904EE9C268DFA6B0056C980 /* UserProvider.swift */,
 			);
 			path = UserProvider;
 			sourceTree = "<group>";
@@ -915,7 +989,6 @@
 			isa = PBXGroup;
 			children = (
 				49E3978B2677AF7E0051AE3A /* User.swift */,
-				49873C4C2680CB1000143EEC /* Auth.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1160,9 +1233,9 @@
 				4957597526540E7600DF4CED /* PostCardView.swift in Sources */,
 				497A21BF2666B00400D9CF7C /* UITabelView+dequeueReusableCell.swift in Sources */,
 				49873C422680A83F00143EEC /* PostTagRealm.swift in Sources */,
+				4904EE88268DABD70056C980 /* RequestServiceProtocol.swift in Sources */,
 				495E4A57266783CF006B3331 /* PostCardViewInput.swift in Sources */,
 				4910BDA126858FBA00599D94 /* PostRatingView.swift in Sources */,
-				49873C4D2680CB1000143EEC /* Auth.swift in Sources */,
 				497A21CE2666B6B400D9CF7C /* Configurator.swift in Sources */,
 				4910BD8E26858A6200599D94 /* PostTextViewInput.swift in Sources */,
 				495E4A4F2667813F006B3331 /* PostListPresenter.swift in Sources */,
@@ -1195,6 +1268,7 @@
 				49D7501C26777FBA008E48D3 /* UICollectionView+dequeueReusableCell.swift in Sources */,
 				4910BD9D26858F9E00599D94 /* PostRatingViewOutput.swift in Sources */,
 				49D7501826777AFE008E48D3 /* CollectionDataProvider.swift in Sources */,
+				4904EE95268DD7DD0056C980 /* APIResponse+User.swift in Sources */,
 				496E20DA26594C4C00EB5824 /* GradientView.swift in Sources */,
 				495E4A6526678D00006B3331 /* PostListViewControllerOutput.swift in Sources */,
 				49D7502526778301008E48D3 /* CollectionDataProviderFactory.swift in Sources */,
@@ -1206,7 +1280,9 @@
 				496E20DC26594C5E00EB5824 /* RoundedView.swift in Sources */,
 				49E3978F2677B0B10051AE3A /* Author.swift in Sources */,
 				4910BD8826858A3700599D94 /* PostTextView.swift in Sources */,
+				4904EE8A268DABF60056C980 /* RequestServiceURLSession.swift in Sources */,
 				49D7500926773934008E48D3 /* TableDataSource.swift in Sources */,
+				4904EE9B268DD9BB0056C980 /* APIRequest+User.swift in Sources */,
 				49E397892677AC420051AE3A /* UserDataStorage.swift in Sources */,
 				49AFF5F2267931800031CD23 /* PaddingLabel.swift in Sources */,
 				499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */,
@@ -1214,18 +1290,22 @@
 				49E3978C2677AF7E0051AE3A /* User.swift in Sources */,
 				497A21C32666B08E00D9CF7C /* PostProviderProtocol.swift in Sources */,
 				49D7501A26777B0A008E48D3 /* CollectionViewDelegate.swift in Sources */,
+				4904EE93268DD5E10056C980 /* API+User.swift in Sources */,
 				4910BDB02685997E00599D94 /* PostInteractorOutput.swift in Sources */,
 				497A21B92666AF7600D9CF7C /* CellPresenter.swift in Sources */,
 				4910BD9926858E7000599D94 /* PostRatingViewPresenter.swift in Sources */,
 				496E20E026594C7E00EB5824 /* ShadowView.swift in Sources */,
 				49D7502B26778468008E48D3 /* TagViewOutput.swift in Sources */,
 				495E4A5D266786FE006B3331 /* PostListInteractorOutput.swift in Sources */,
+				4904EE83268DAB030056C980 /* AsyncOperation.swift in Sources */,
 				49213F8B26824D66003954C8 /* AuthScreenViewControllerOutput.swift in Sources */,
 				4910BD9526858D6700599D94 /* PostRatingViewPresenterFactory.swift in Sources */,
+				4904EE9D268DFA6B0056C980 /* UserProvider.swift in Sources */,
 				491735E7268B68E2000FB208 /* PostTagsCollectionViewInput.swift in Sources */,
 				4910BDAE2685997100599D94 /* PostInteractorInput.swift in Sources */,
 				49213F9326824E27003954C8 /* AuthInteractorInput.swift in Sources */,
 				495E4A6B26679564006B3331 /* Container.swift in Sources */,
+				4904EE90268DD0D90056C980 /* API.swift in Sources */,
 				491735F0268B90CB000FB208 /* PostTitleViewPresenter.swift in Sources */,
 				49D39E53265E68A00050C9E9 /* TextFieldInput.swift in Sources */,
 				495E4A5B266786EE006B3331 /* PostListInteractorInput.swift in Sources */,
@@ -1241,6 +1321,7 @@
 				4910BD9026858C4A00599D94 /* PostInfoViewPresenterFactory.swift in Sources */,
 				4910BDB22685998D00599D94 /* PostInteractor.swift in Sources */,
 				49213F9726824E4B003954C8 /* AuthInteractor.swift in Sources */,
+				4904EE99268DD9A10056C980 /* APIRequest.swift in Sources */,
 				491735FA268B9F51000FB208 /* UIImage + fromLabel.swift in Sources */,
 				49D7501126775F80008E48D3 /* View.swift in Sources */,
 				495E4A6726678D0A006B3331 /* PostListViewControllerInput.swift in Sources */,
@@ -1249,13 +1330,16 @@
 				49873C612680D15F00143EEC /* Router.swift in Sources */,
 				49873C4B2680C46F00143EEC /* UserProviderProtocol.swift in Sources */,
 				491735F2268B90DB000FB208 /* PostTitleView.swift in Sources */,
+				4904EE8E268DD0D20056C980 /* API+Post.swift in Sources */,
 				49F05172265D64E70069C1DB /* PostViewController.swift in Sources */,
 				49D39E55265E81D70050C9E9 /* ColorConst.swift in Sources */,
 				49873C34268091D600143EEC /* MigrationDataStorage.swift in Sources */,
 				4910BD9226858CB400599D94 /* PostTextViewPresenterFactory.swift in Sources */,
 				495E4A6126678820006B3331 /* PostCardViewPresenterFactory.swift in Sources */,
 				498392EA2685828E0020D4BB /* PostInfoViewPresenter.swift in Sources */,
+				4904EE86268DAB7E0056C980 /* RequestProtocol.swift in Sources */,
 				497A21C72666B0C100D9CF7C /* Post.swift in Sources */,
+				4904EE97268DD8090056C980 /* APIResponse.swift in Sources */,
 				49D75023267782A5008E48D3 /* TagViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

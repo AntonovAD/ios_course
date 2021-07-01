@@ -16,11 +16,11 @@ class AuthInteractor {
 }
 
 private extension AuthInteractor {
-    func processAuthResult(result: AuthResponse) {
+    func processSignInResult(result: APIResponse.User.SignIn) {
         if (result.result) {
             presenter?.navigateToApp()
         } else {
-            print("processAuthResult: 401")
+            print("processSignInResult: 401")
         }
     }
     
@@ -30,8 +30,8 @@ private extension AuthInteractor {
 }
 
 extension AuthInteractor: AuthInteractorInput {
-    func authUser(login: String, password: String) {
-        var producer = userProvider.auth(login: login, password: password)
+    func signIn(login: String, password: String) {
+        var producer = userProvider.signIn(login: login, password: password)
         producer = producer
             .flatMap(.latest) { result in
                 return SignalProducer(value: result)
@@ -40,9 +40,11 @@ extension AuthInteractor: AuthInteractorInput {
         producer.startWithResult { [weak self] result in
             switch result {
             case .success(let result):
-                self?.processAuthResult(result: result)
+                print("signIn:", result)
+                self?.processSignInResult(result: result)
                 
             case .failure(let error):
+                print("signIn:", error)
                 self?.handleError(error)
             }
         }

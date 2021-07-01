@@ -4,6 +4,8 @@ import Foundation
 import ReactiveSwift
 
 class PostListInteractor {
+    private let beReactive = true
+    
     private let postProvider: PostProviderProtocol
     private let reactivePostProvider: ReactivePostProviderProtocol
     private let cellPresenterFactory: PostCardViewPresenterFactoryProtocol
@@ -42,8 +44,6 @@ private extension PostListInteractor {
 
 extension PostListInteractor: PostListInteractorInput {
     func requestPosts() {
-        let beReactive = true
-        
         //MARK: - 🐌 Not Reactive
         if (!beReactive) {
             postProvider.requestAll { [weak self] result in

@@ -23,6 +23,10 @@ class DataStorageAssembly: Assembly {
 
 class ServiceAssembly: Assembly {
     private lazy var queue = DispatchQueue(label: "database-queue", attributes: .concurrent)
+    private lazy var requestService = RequestServiceURLSession(session: URLSession(configuration: .default))
+    
+    private let postProviderIsMock = true
+    private let userProviderIsMock = false
     
     func assemble(container: Container) {
         container.register(PostProviderProtocol.self) { _ in
@@ -50,11 +54,26 @@ class ServiceAssembly: Assembly {
             )
         }*/
         
-        container.register(UserProviderProtocol.self) { _ in
-            UserProviderMock()
-        }
-        container.register(ReactiveUserProviderProtocol.self) { _ in
-            UserProviderMock()
+        if (userProviderIsMock) {
+            container.register(UserProviderProtocol.self) { [queue] _ in
+                UserProviderMock(queue: queue)
+            }
+            container.register(ReactiveUserProviderProtocol.self) { [queue] _ in
+                UserProviderMock(queue: queue)
+            }
+        } else {
+            container.register(UserProviderProtocol.self) { [queue, requestService] _ in
+                UserProvider(
+                    queue: queue,
+                    requestService: requestService
+                )
+            }
+            container.register(ReactiveUserProviderProtocol.self) { [queue, requestService] _ in
+                UserProvider(
+                    queue: queue,
+                    requestService: requestService
+                )
+            }
         }
         
         container.register(RouterProtocol.self) { resolver in
