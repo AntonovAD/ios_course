@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4904EE83268DAB030056C980 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE82268DAB030056C980 /* AsyncOperation.swift */; };
 		4904EE86268DAB7E0056C980 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE85268DAB7E0056C980 /* RequestProtocol.swift */; };
 		4904EE88268DABD70056C980 /* RequestServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE87268DABD70056C980 /* RequestServiceProtocol.swift */; };
 		4904EE8A268DABF60056C980 /* RequestServiceURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904EE89268DABF60056C980 /* RequestServiceURLSession.swift */; };
@@ -52,7 +51,6 @@
 		491735F4268B90EC000FB208 /* PostTitleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491735F3268B90EC000FB208 /* PostTitleViewInput.swift */; };
 		491735F6268B90F4000FB208 /* PostTitleViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491735F5268B90F4000FB208 /* PostTitleViewOutput.swift */; };
 		491735F8268B90FF000FB208 /* PostTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491735F7268B90FF000FB208 /* PostTitleView.xib */; };
-		491735FA268B9F51000FB208 /* UIImage + fromLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491735F9268B9F51000FB208 /* UIImage + fromLabel.swift */; };
 		49213F8926824C96003954C8 /* AuthScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */; };
 		49213F8B26824D66003954C8 /* AuthScreenViewControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8A26824D66003954C8 /* AuthScreenViewControllerOutput.swift */; };
 		49213F8D26824D73003954C8 /* AuthScreenViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F8C26824D73003954C8 /* AuthScreenViewControllerInput.swift */; };
@@ -146,11 +144,11 @@
 		49F05172265D64E70069C1DB /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F05170265D64E70069C1DB /* PostViewController.swift */; };
 		49F05173265D64E70069C1DB /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49F05171265D64E70069C1DB /* PostViewController.xib */; };
 		49F295A72677DF74001C1FBD /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F295A62677DF74001C1FBD /* UserRealm.swift */; };
+		49FE5158268E14B10067DD63 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE5157268E14B10067DD63 /* APIError.swift */; };
 		A46C4415362E56D3EF9212C5 /* Pods_iOSCourse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9787B6A0DDC2388F8F8DBFE9 /* Pods_iOSCourse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4904EE82268DAB030056C980 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		4904EE85268DAB7E0056C980 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		4904EE87268DABD70056C980 /* RequestServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServiceProtocol.swift; sourceTree = "<group>"; };
 		4904EE89268DABF60056C980 /* RequestServiceURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServiceURLSession.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 		491735F3268B90EC000FB208 /* PostTitleViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTitleViewInput.swift; sourceTree = "<group>"; };
 		491735F5268B90F4000FB208 /* PostTitleViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTitleViewOutput.swift; sourceTree = "<group>"; };
 		491735F7268B90FF000FB208 /* PostTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTitleView.xib; sourceTree = "<group>"; };
-		491735F9268B9F51000FB208 /* UIImage + fromLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + fromLabel.swift"; sourceTree = "<group>"; };
 		49213F8826824C96003954C8 /* AuthScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenConfigurator.swift; sourceTree = "<group>"; };
 		49213F8A26824D66003954C8 /* AuthScreenViewControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewControllerOutput.swift; sourceTree = "<group>"; };
 		49213F8C26824D73003954C8 /* AuthScreenViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewControllerInput.swift; sourceTree = "<group>"; };
@@ -291,6 +288,7 @@
 		49F05170265D64E70069C1DB /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		49F05171265D64E70069C1DB /* PostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
 		49F295A62677DF74001C1FBD /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
+		49FE5157268E14B10067DD63 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		9787B6A0DDC2388F8F8DBFE9 /* Pods_iOSCourse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSCourse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF70F510EE20989FF46C6B98 /* Pods-iOSCourse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCourse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCourse/Pods-iOSCourse.debug.xcconfig"; sourceTree = "<group>"; };
 		FA17BD38B43399164AD5F7F2 /* Pods-iOSCourse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCourse.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCourse/Pods-iOSCourse.release.xcconfig"; sourceTree = "<group>"; };
@@ -308,14 +306,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4904EE81268DAAE20056C980 /* Operations */ = {
-			isa = PBXGroup;
-			children = (
-				4904EE82268DAB030056C980 /* AsyncOperation.swift */,
-			);
-			path = Operations;
-			sourceTree = "<group>";
-		};
 		4904EE84268DAB700056C980 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +322,7 @@
 				4904EE8F268DD0D90056C980 /* API.swift */,
 				4904EE98268DD9A10056C980 /* APIRequest.swift */,
 				4904EE96268DD8090056C980 /* APIResponse.swift */,
+				49FE5157268E14B10067DD63 /* APIError.swift */,
 				4904EE91268DD5D20056C980 /* User */,
 				4904EE8C268DD0B10056C980 /* Post */,
 			);
@@ -615,7 +606,6 @@
 			isa = PBXGroup;
 			children = (
 				4904EE84268DAB700056C980 /* Requests */,
-				4904EE81268DAAE20056C980 /* Operations */,
 				49873C302680918400143EEC /* Migrations */,
 				49873C282680872400143EEC /* Realm */,
 				49873C2C26808AF200143EEC /* Reactive */,
@@ -706,7 +696,6 @@
 			children = (
 				497A21BE2666B00400D9CF7C /* UITabelView+dequeueReusableCell.swift */,
 				49D7501B26777FBA008E48D3 /* UICollectionView+dequeueReusableCell.swift */,
-				491735F9268B9F51000FB208 /* UIImage + fromLabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1297,7 +1286,6 @@
 				496E20E026594C7E00EB5824 /* ShadowView.swift in Sources */,
 				49D7502B26778468008E48D3 /* TagViewOutput.swift in Sources */,
 				495E4A5D266786FE006B3331 /* PostListInteractorOutput.swift in Sources */,
-				4904EE83268DAB030056C980 /* AsyncOperation.swift in Sources */,
 				49213F8B26824D66003954C8 /* AuthScreenViewControllerOutput.swift in Sources */,
 				4910BD9526858D6700599D94 /* PostRatingViewPresenterFactory.swift in Sources */,
 				4904EE9D268DFA6B0056C980 /* UserProvider.swift in Sources */,
@@ -1322,7 +1310,6 @@
 				4910BDB22685998D00599D94 /* PostInteractor.swift in Sources */,
 				49213F9726824E4B003954C8 /* AuthInteractor.swift in Sources */,
 				4904EE99268DD9A10056C980 /* APIRequest.swift in Sources */,
-				491735FA268B9F51000FB208 /* UIImage + fromLabel.swift in Sources */,
 				49D7501126775F80008E48D3 /* View.swift in Sources */,
 				495E4A6726678D0A006B3331 /* PostListViewControllerInput.swift in Sources */,
 				495E4A55266783C5006B3331 /* PostCardViewOutput.swift in Sources */,
@@ -1341,6 +1328,7 @@
 				497A21C72666B0C100D9CF7C /* Post.swift in Sources */,
 				4904EE97268DD8090056C980 /* APIResponse.swift in Sources */,
 				49D75023267782A5008E48D3 /* TagViewPresenter.swift in Sources */,
+				49FE5158268E14B10067DD63 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
