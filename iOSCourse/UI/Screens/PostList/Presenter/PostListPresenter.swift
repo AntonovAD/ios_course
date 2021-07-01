@@ -47,6 +47,10 @@ private extension PostListPresenter {
         )
         router?.push(.post, mode: .present, config: (data: screenData, from: .postList))
     }
+    
+    func navigateToAuth() {
+        router?.replace(.auth, config: nil)
+    }
 }
 
 extension PostListPresenter: PostListInteractorOutput {
@@ -58,6 +62,10 @@ extension PostListPresenter: PostListInteractorOutput {
     
     func updateUserInfo(_ name: String, _ email: String) {
         viewController?.updateUserInfo(name, email)
+    }
+    
+    func logout() {
+        navigateToAuth()
     }
     
     func handleError(_ error: Error) {
@@ -98,6 +106,10 @@ extension PostListPresenter: PostListViewControllerOutput {
         let presenter = presenters[indexPath.row]
         
         presentPost(data: presenter.post)
+    }
+    
+    func didSelectLogout() {
+        interactor.didSelectLogout()
     }
     
     func didSelectAddButton() {

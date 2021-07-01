@@ -10,6 +10,7 @@ class PostListInteractor {
     private let reactivePostProvider: ReactivePostProviderProtocol
     private let cellPresenterFactory: PostCardViewPresenterFactoryProtocol
     private let userProvider: ReactiveUserProviderProtocol
+    private let userProviderRealm: ReactiveUserProviderRealmProtocol
     
     weak var presenter: PostListInteractorOutput?
     
@@ -17,12 +18,14 @@ class PostListInteractor {
         postProvider: PostProviderProtocol,
         reactivePostProvider: ReactivePostProviderProtocol,
         cellPresenterFactory: PostCardViewPresenterFactoryProtocol,
-        userProvider: ReactiveUserProviderProtocol
+        userProvider: ReactiveUserProviderProtocol,
+        userProviderRealm: ReactiveUserProviderRealmProtocol
     ) {
         self.postProvider = postProvider
         self.reactivePostProvider = reactivePostProvider
         self.cellPresenterFactory = cellPresenterFactory
         self.userProvider = userProvider
+        self.userProviderRealm = userProviderRealm
     }
 }
 
@@ -35,6 +38,10 @@ private extension PostListInteractor {
     
     func processUser(user: User) {
         presenter?.updateUserInfo(user.name, user.email)
+    }
+    
+    func processLogout() {
+        presenter?.logout()
     }
     
     func handleError(_ error: Error) {
@@ -88,6 +95,19 @@ extension PostListInteractor: PostListInteractorInput {
             switch result {
             case .success(let user):
                 self?.processUser(user: user)
+                
+            case .failure(let error):
+                self?.handleError(error)
+            }
+        }
+    }
+    
+    func didSelectLogout() {
+        userProviderRealm.deleteUser()
+        .startWithResult { [weak self] result in
+            switch result {
+            case .success:
+                self?.processLogout()
                 
             case .failure(let error):
                 self?.handleError(error)

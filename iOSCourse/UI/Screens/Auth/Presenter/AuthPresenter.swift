@@ -24,6 +24,10 @@ private extension AuthPresenter {
     func updateTitle() {
         viewController?.updateTitle(title)
     }
+    
+    func autoLogin() {
+        interactor.autoLogin()
+    }
 }
 
 extension AuthPresenter: AuthInteractorOutput {
@@ -38,6 +42,8 @@ extension AuthPresenter: AuthInteractorOutput {
 
 extension AuthPresenter: AuthScreenViewControllerOutput {
     func viewIsReady() {
+        autoLogin()
+        
         updateTitle()
     }
     

@@ -9,19 +9,22 @@ class PostListScreenConfigurator: Configurator {
     private let postListTableDataProviderFactory: TableDataProviderFactoryProtocol
     private let cellPresenterFactory: PostCardViewPresenterFactoryProtocol
     private let userProvider: ReactiveUserProviderProtocol
+    private let userProviderRealm: ReactiveUserProviderRealmProtocol
     
     init(
         postProvider: PostProviderProtocol,
         reactivePostProvider: ReactivePostProviderProtocol,
         postListTableDataProviderFactory: TableDataProviderFactoryProtocol,
         cellPresenterFactory: PostCardViewPresenterFactoryProtocol,
-        userProvider: ReactiveUserProviderProtocol
+        userProvider: ReactiveUserProviderProtocol,
+        userProviderRealm: ReactiveUserProviderRealmProtocol
     ) {
         self.postProvider = postProvider
         self.reactivePostProvider = reactivePostProvider
         self.postListTableDataProviderFactory = postListTableDataProviderFactory
         self.cellPresenterFactory = cellPresenterFactory
         self.userProvider = userProvider
+        self.userProviderRealm = userProviderRealm
     }
     
     func configure(router: RouterProtocol?) -> UIViewController {
@@ -31,7 +34,8 @@ class PostListScreenConfigurator: Configurator {
             postProvider: postProvider,
             reactivePostProvider: reactivePostProvider,
             cellPresenterFactory: cellPresenterFactory,
-            userProvider: userProvider
+            userProvider: userProvider,
+            userProviderRealm: userProviderRealm
         )
         let presenter = PostListPresenter(
             router: router,

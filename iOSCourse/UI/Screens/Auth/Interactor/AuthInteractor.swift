@@ -19,9 +19,13 @@ class AuthInteractor {
 }
 
 private extension AuthInteractor {
-    func processSignInResult(result: APIResponse.User.SignIn) {
+    func processSignInResult(
+        result: APIResponse.User.SignIn,
+        login: String,
+        password: String
+    ) {
         if (result.result) {
-            userProviderRealm.initUser(by: result.userId)
+            userProviderRealm.initUser(by: result.userId, with: login, password)
             .startWithResult { [weak self] result in
                 
                 switch result {
@@ -54,10 +58,27 @@ extension AuthInteractor: AuthInteractorInput {
             switch result {
             case .success(let result):
                 print("signIn:", result)
-                self?.processSignInResult(result: result)
+                self?.processSignInResult(
+                    result: result,
+                    login: login,
+                    password: password
+                )
                 
             case .failure(let error):
                 print("signIn:", error)
+                self?.handleError(error)
+            }
+        }
+    }
+    
+    func autoLogin() {
+        userProviderRealm.getUser()
+        .startWithResult { [weak self] result in
+            switch result {
+            case .success(let user):
+                self?.signIn(login: user.name, password: user.password)
+                
+            case .failure(let error):
                 self?.handleError(error)
             }
         }

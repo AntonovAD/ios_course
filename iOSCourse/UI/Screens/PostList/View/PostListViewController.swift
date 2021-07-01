@@ -99,7 +99,10 @@ extension PostListViewController: PostListViewControllerInput {
             stackView.axis = .vertical
 
             let userInfo = UIBarButtonItem(customView: stackView)
-            self.navigationItem.leftBarButtonItems = [userInfo]
+            
+            let logoutButton = UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: #selector(self.didSelectLogout))
+            
+            self.navigationItem.leftBarButtonItems = [logoutButton, userInfo]
         }
     }
 }
@@ -129,6 +132,12 @@ private extension PostListViewController {
     
     func didSelectCellSwipeActionRead(at indexPath: IndexPath) {
         presenter?.didSelectCellSwipeActionRead(with: indexPath)
+    }
+    
+    @objc
+    func didSelectLogout() {
+        print("PostListViewController.didSelectLogout()")
+        presenter?.didSelectLogout()
     }
     
     @objc

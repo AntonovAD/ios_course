@@ -15,16 +15,21 @@ protocol UserProviderRealmProtocol {
     )
     func initUser(
         by id: Int,
+        with login: String, _ password: String,
         completion: @escaping (Result<(), UserProviderRealmError>) -> Void
     )
     func updateUser(
         user: User,
         completion: @escaping (Result<(), UserProviderRealmError>) -> Void
     )
+    func deleteUser(
+        completion: @escaping (Result<(), UserProviderRealmError>) -> Void
+    )
 }
 
 protocol ReactiveUserProviderRealmProtocol {
     func getUser() -> SignalProducer<User, UserProviderRealmError>
-    func initUser(by id: Int) -> SignalProducer<(), UserProviderRealmError>
+    func initUser(by id: Int, with login: String, _ password: String) -> SignalProducer<(), UserProviderRealmError>
     func updateUser(user: User) -> SignalProducer<(), UserProviderRealmError>
+    func deleteUser() -> SignalProducer<(), UserProviderRealmError>
 }

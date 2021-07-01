@@ -127,7 +127,8 @@ class ConfiguratorAssembly: Assembly {
                 reactivePostProvider: resolver.resolve(ReactivePostProviderProtocol.self)!,
                 postListTableDataProviderFactory: resolver.resolve(TableDataProviderFactoryProtocol.self)!,
                 cellPresenterFactory: resolver.resolve(PostCardViewPresenterFactoryProtocol.self)!,
-                userProvider: resolver.resolve(ReactiveUserProviderProtocol.self)!
+                userProvider: resolver.resolve(ReactiveUserProviderProtocol.self)!,
+                userProviderRealm: resolver.resolve(ReactiveUserProviderRealmProtocol.self)!
             )
         }
         
