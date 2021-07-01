@@ -71,6 +71,7 @@ private extension AuthScreenViewController {
         {
             presenter?.didSelectSubmitButton(login: login, password: password)
         } else {
+            errorPulseAppTitle()
             print("didSelectSubmitButton: invalid inputs")
         }
     }
