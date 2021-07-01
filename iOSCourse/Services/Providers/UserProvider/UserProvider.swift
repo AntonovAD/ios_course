@@ -46,15 +46,18 @@ class UserProvider: UserProviderProtocol, ReactiveUserProviderProtocol {
     func getUser(
         completion: @escaping (Result<User, UserProviderError>) -> Void
     ) {
-        
-    }
-    
-    func updateUser(
-        user: User,
-        completion: @escaping (Result<(), UserProviderError>) -> Void
-    ) {
         queue.async {
-            completion(.success(()))
+            self.requestService.send(request: API.User.Get(
+                APIRequest.User.Get()
+            )) { result in
+                switch result {
+                case .success(let response):
+                    completion(.success((response)))
+
+                case .failure(let error):
+                    completion(.failure(.signInError(error)))
+                }
+            }
         }
     }
     
@@ -72,16 +75,6 @@ class UserProvider: UserProviderProtocol, ReactiveUserProviderProtocol {
     func getUser() -> SignalProducer<User, UserProviderError> {
         return SignalProducer { [weak self] observer, lifetime in
             self?.getUser() { result in
-                observer.send(value: result)
-                observer.sendCompleted()
-            }
-        }
-        .dematerializeResults()
-    }
-    
-    func updateUser(user: User) -> SignalProducer<(), UserProviderError> {
-        return SignalProducer { [weak self] observer, lifetime in
-            self?.updateUser(user: user) { result in
                 observer.send(value: result)
                 observer.sendCompleted()
             }

@@ -2,6 +2,7 @@
 
 import Foundation
 import Swinject
+import RealmSwift
 
 /*private enum Environment {
     case development
@@ -23,12 +24,23 @@ class DataStorageAssembly: Assembly {
 
 class ServiceAssembly: Assembly {
     private lazy var queue = DispatchQueue(label: "database-queue", attributes: .concurrent)
-    private lazy var requestService = RequestServiceURLSession(session: URLSession(configuration: .default))
+    private lazy var urlSession = URLSession(configuration: .default)
     
     private let postProviderIsMock = true
     private let userProviderIsMock = false
     
     func assemble(container: Container) {
+        container.register(RequestServiceProtocol.self) { [urlSession] resolver in
+            RequestServiceURLSession(
+                session: urlSession,
+                interceptors: [
+                    APIInterceptor(
+                        userProviderRealm: resolver.resolve(ReactiveUserProviderRealmProtocol.self)!
+                    )
+                ]
+            )
+        }
+        
         container.register(PostProviderProtocol.self) { _ in
             PostProviderMock()
         }
@@ -62,18 +74,31 @@ class ServiceAssembly: Assembly {
                 UserProviderMock(queue: queue)
             }
         } else {
-            container.register(UserProviderProtocol.self) { [queue, requestService] _ in
+            container.register(UserProviderProtocol.self) { [queue] resolver in
                 UserProvider(
                     queue: queue,
-                    requestService: requestService
+                    requestService: resolver.resolve(RequestServiceProtocol.self)!
                 )
             }
-            container.register(ReactiveUserProviderProtocol.self) { [queue, requestService] _ in
+            container.register(ReactiveUserProviderProtocol.self) { [queue] resolver in
                 UserProvider(
                     queue: queue,
-                    requestService: requestService
+                    requestService: resolver.resolve(RequestServiceProtocol.self)!
                 )
             }
+        }
+        
+        container.register(UserProviderRealmProtocol.self) { [queue] resolver in
+            UserProviderRealm(
+                realmFactory: resolver.resolve(RealmFactoryProtocol.self)!,
+                queue: queue
+            )
+        }
+        container.register(ReactiveUserProviderRealmProtocol.self) { [queue] resolver in
+            UserProviderRealm(
+                realmFactory: resolver.resolve(RealmFactoryProtocol.self)!,
+                queue: queue
+            )
         }
         
         container.register(RouterProtocol.self) { resolver in
@@ -91,7 +116,8 @@ class ConfiguratorAssembly: Assembly {
     func assemble(container: Container) {
         container.register(AuthScreenConfigurator.self) { resolver in
             AuthScreenConfigurator(
-                userProvider: resolver.resolve(ReactiveUserProviderProtocol.self)!
+                userProvider: resolver.resolve(ReactiveUserProviderProtocol.self)!,
+                userProviderRealm: resolver.resolve(ReactiveUserProviderRealmProtocol.self)!
             )
         }
         

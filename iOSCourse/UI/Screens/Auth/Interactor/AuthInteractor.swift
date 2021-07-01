@@ -5,20 +5,33 @@ import ReactiveSwift
 
 class AuthInteractor {
     private let userProvider: ReactiveUserProviderProtocol
+    private let userProviderRealm: ReactiveUserProviderRealmProtocol
     
     weak var presenter: AuthInteractorOutput?
     
     init(
-        userProvider: ReactiveUserProviderProtocol
+        userProvider: ReactiveUserProviderProtocol,
+        userProviderRealm: ReactiveUserProviderRealmProtocol
     ) {
         self.userProvider = userProvider
+        self.userProviderRealm = userProviderRealm
     }
 }
 
 private extension AuthInteractor {
     func processSignInResult(result: APIResponse.User.SignIn) {
         if (result.result) {
-            presenter?.navigateToApp()
+            userProviderRealm.initUser(by: result.userId)
+            .startWithResult { [weak self] result in
+                
+                switch result {
+                case .success():
+                    self?.presenter?.navigateToApp()
+                    
+                case .failure(let error):
+                    self?.handleError(error)
+                }
+            }
         } else {
             print("processSignInResult: 401")
         }

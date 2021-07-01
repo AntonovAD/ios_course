@@ -13,4 +13,6 @@ extension APIRequest.User {
         let login: String
         let password: String
     }
+    
+    struct Get: Encodable {}
 }

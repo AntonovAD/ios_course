@@ -23,7 +23,7 @@ class UserProviderMock: UserProviderProtocol, ReactiveUserProviderProtocol {
         completion: @escaping (Result<APIResponse.User.SignIn, UserProviderError>) -> Void
     ) {
         queue.async {
-            let data = authMockJson.data(using: .utf8)!
+            let data = signInUserMockJson.data(using: .utf8)!
             let jsonDecoder = JSONDecoder()
             let response = try! jsonDecoder.decode(APIResponse.User.SignIn.self, from: data)
             
@@ -34,23 +34,12 @@ class UserProviderMock: UserProviderProtocol, ReactiveUserProviderProtocol {
     func getUser(
         completion: @escaping (Result<User, UserProviderError>) -> Void
     ) {
-        //let userId = storage.getUserId()
-        
         queue.async {
-            let data = userMockJson.data(using: .utf8)!
+            let data = getUserMockJson.data(using: .utf8)!
             let jsonDecoder = JSONDecoder()
             let user = try! jsonDecoder.decode(User.self, from: data)
             
             completion(.success(user))
-        }
-    }
-    
-    func updateUser(
-        user: User,
-        completion: @escaping (Result<(), UserProviderError>) -> Void
-    ) {
-        queue.async {
-            completion(.success(()))
         }
     }
     
@@ -74,26 +63,16 @@ class UserProviderMock: UserProviderProtocol, ReactiveUserProviderProtocol {
         }
         .dematerializeResults()
     }
-    
-    func updateUser(user: User) -> SignalProducer<(), UserProviderError> {
-        return SignalProducer { [weak self] observer, lifetime in
-            self?.updateUser(user: user) { result in
-                observer.send(value: result)
-                observer.sendCompleted()
-            }
-        }
-        .dematerializeResults()
-    }
 }
 
-private let authMockJson = """
+private let signInUserMockJson = """
 {
     "result":true,
     "userId":1
 }
 """
 
-private let userMockJson = """
+private let getUserMockJson = """
 {
     "id":1,
     "name":"antonov.ad",

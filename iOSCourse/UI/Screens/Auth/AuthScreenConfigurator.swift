@@ -5,16 +5,20 @@ import UIKit
 
 class AuthScreenConfigurator: Configurator {
     private let userProvider: ReactiveUserProviderProtocol
+    private let userProviderRealm: ReactiveUserProviderRealmProtocol
     
     init(
-        userProvider: ReactiveUserProviderProtocol
+        userProvider: ReactiveUserProviderProtocol,
+        userProviderRealm: ReactiveUserProviderRealmProtocol
     ) {
         self.userProvider = userProvider
+        self.userProviderRealm = userProviderRealm
     }
     
     func configure(router: RouterProtocol?) -> UIViewController {
         let interactor = AuthInteractor(
-            userProvider: userProvider
+            userProvider: userProvider,
+            userProviderRealm: userProviderRealm
         )
         let presenter = AuthPresenter(
             router: router,

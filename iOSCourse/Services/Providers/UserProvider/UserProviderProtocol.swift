@@ -16,14 +16,9 @@ protocol UserProviderProtocol {
     func getUser(
         completion: @escaping (Result<User, UserProviderError>) -> Void
     )
-    func updateUser(
-        user: User,
-        completion: @escaping (Result<(), UserProviderError>) -> Void
-    )
 }
 
 protocol ReactiveUserProviderProtocol {
     func signIn(login: String, password: String) -> SignalProducer<APIResponse.User.SignIn, UserProviderError>
     func getUser() -> SignalProducer<User, UserProviderError>
-    func updateUser(user: User) -> SignalProducer<(), UserProviderError>
 }

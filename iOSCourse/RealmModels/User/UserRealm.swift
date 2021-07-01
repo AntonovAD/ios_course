@@ -4,6 +4,7 @@ import Foundation
 import RealmSwift
 
 class UserRealm: Object {
+    @objc dynamic var realmId = ""
     @objc dynamic var id = 0
     @objc dynamic var name = ""
     @objc dynamic var password = ""
@@ -13,11 +14,12 @@ class UserRealm: Object {
     @objc dynamic var deleted_at: String?
     
     override static func primaryKey() -> String? {
-        return "id"
+        return "realmId"
     }
     
     convenience init(from plain: User) {
         self.init()
+        self.realmId = "single"
         self.id = plain.id
         self.name = plain.name
         self.password = plain.password

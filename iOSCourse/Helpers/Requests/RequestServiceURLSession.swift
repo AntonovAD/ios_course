@@ -4,18 +4,27 @@ import Foundation
 
 class RequestServiceURLSession: RequestServiceProtocol {
     private let session: URLSession
+    private let interceptors: [RequestInterceptor]?
     
-    init(session: URLSession) {
+    init(
+        session: URLSession,
+        interceptors: [RequestInterceptor]? = []
+    ) {
         self.session = session
+        self.interceptors = interceptors
     }
     
     func send<Request: RequestProtocol>(
         request: Request,
         completion: @escaping (Result<Request.ResponseType, Request.ErrorType>) -> Void
     ) {
-        guard let urlRequest = request.urlRequest else {
+        guard var urlRequest = request.urlRequest else {
             completion(.failure(.init(code: 500, data: nil)))
             return
+        }
+        
+        interceptors?.forEach { interceptor in
+            urlRequest = interceptor.intercept(urlRequest)
         }
         
         let decoder = request.decoder ?? JSONDecoder()

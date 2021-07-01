@@ -144,7 +144,11 @@
 		49F05172265D64E70069C1DB /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F05170265D64E70069C1DB /* PostViewController.swift */; };
 		49F05173265D64E70069C1DB /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49F05171265D64E70069C1DB /* PostViewController.xib */; };
 		49F295A72677DF74001C1FBD /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F295A62677DF74001C1FBD /* UserRealm.swift */; };
+		49F41625268E3B1200FD455B /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F41624268E3B1200FD455B /* RequestInterceptor.swift */; };
+		49F41627268E3BC800FD455B /* APIInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F41626268E3BC800FD455B /* APIInterceptor.swift */; };
 		49FE5158268E14B10067DD63 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE5157268E14B10067DD63 /* APIError.swift */; };
+		49FE515A268E17490067DD63 /* UserProviderRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE5159268E17490067DD63 /* UserProviderRealm.swift */; };
+		49FE515D268E18480067DD63 /* UserProviderRealmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE515C268E18480067DD63 /* UserProviderRealmProtocol.swift */; };
 		A46C4415362E56D3EF9212C5 /* Pods_iOSCourse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9787B6A0DDC2388F8F8DBFE9 /* Pods_iOSCourse.framework */; };
 /* End PBXBuildFile section */
 
@@ -288,7 +292,11 @@
 		49F05170265D64E70069C1DB /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		49F05171265D64E70069C1DB /* PostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
 		49F295A62677DF74001C1FBD /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
+		49F41624268E3B1200FD455B /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
+		49F41626268E3BC800FD455B /* APIInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInterceptor.swift; sourceTree = "<group>"; };
 		49FE5157268E14B10067DD63 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		49FE5159268E17490067DD63 /* UserProviderRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderRealm.swift; sourceTree = "<group>"; };
+		49FE515C268E18480067DD63 /* UserProviderRealmProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderRealmProtocol.swift; sourceTree = "<group>"; };
 		9787B6A0DDC2388F8F8DBFE9 /* Pods_iOSCourse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSCourse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF70F510EE20989FF46C6B98 /* Pods-iOSCourse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCourse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCourse/Pods-iOSCourse.debug.xcconfig"; sourceTree = "<group>"; };
 		FA17BD38B43399164AD5F7F2 /* Pods-iOSCourse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCourse.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCourse/Pods-iOSCourse.release.xcconfig"; sourceTree = "<group>"; };
@@ -312,6 +320,7 @@
 				4904EE85268DAB7E0056C980 /* RequestProtocol.swift */,
 				4904EE87268DABD70056C980 /* RequestServiceProtocol.swift */,
 				4904EE89268DABF60056C980 /* RequestServiceURLSession.swift */,
+				49F41624268E3B1200FD455B /* RequestInterceptor.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -322,6 +331,7 @@
 				4904EE8F268DD0D90056C980 /* API.swift */,
 				4904EE98268DD9A10056C980 /* APIRequest.swift */,
 				4904EE96268DD8090056C980 /* APIResponse.swift */,
+				49F41626268E3BC800FD455B /* APIInterceptor.swift */,
 				49FE5157268E14B10067DD63 /* APIError.swift */,
 				4904EE91268DD5D20056C980 /* User */,
 				4904EE8C268DD0B10056C980 /* Post */,
@@ -954,6 +964,7 @@
 			children = (
 				497A21C12666B05D00D9CF7C /* PostProvider */,
 				49873C472680C44300143EEC /* UserProvider */,
+				49FE515B268E180D0067DD63 /* UserProviderRealm */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -1060,6 +1071,15 @@
 				49F295A62677DF74001C1FBD /* UserRealm.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		49FE515B268E180D0067DD63 /* UserProviderRealm */ = {
+			isa = PBXGroup;
+			children = (
+				49FE515C268E18480067DD63 /* UserProviderRealmProtocol.swift */,
+				49FE5159268E17490067DD63 /* UserProviderRealm.swift */,
+			);
+			path = UserProviderRealm;
 			sourceTree = "<group>";
 		};
 		6F4AF74E1E14A1728294D855 /* Pods */ = {
@@ -1210,6 +1230,7 @@
 				49873C32268091A200143EEC /* MigrationServiceProtocol.swift in Sources */,
 				49F295A72677DF74001C1FBD /* UserRealm.swift in Sources */,
 				491735EE268B9090000FB208 /* PostTitlePresenterFactory.swift in Sources */,
+				49F41625268E3B1200FD455B /* RequestInterceptor.swift in Sources */,
 				497A21C92666B20400D9CF7C /* PostProviderMock.swift in Sources */,
 				491735E3268B68C8000FB208 /* PostTagsCollectionView.swift in Sources */,
 				49213F9926825384003954C8 /* Navigator.swift in Sources */,
@@ -1242,6 +1263,7 @@
 				495E4A6926678F07006B3331 /* PostListScreenConfigurator.swift in Sources */,
 				4910BDB52685A83800599D94 /* PostScreenConfiguratorInput.swift in Sources */,
 				4910BD8C26858A5700599D94 /* PostTextViewOutput.swift in Sources */,
+				49FE515D268E18480067DD63 /* UserProviderRealmProtocol.swift in Sources */,
 				49873C2A2680873F00143EEC /* RealmFactory.swift in Sources */,
 				49D7500D26773C90008E48D3 /* TableDataProvider.swift in Sources */,
 				49213F8926824C96003954C8 /* AuthScreenConfigurator.swift in Sources */,
@@ -1255,6 +1277,7 @@
 				49873C402680A82E00143EEC /* PostAuthorRealm.swift in Sources */,
 				4910BD8626858A1900599D94 /* PostTextViewPresenter.swift in Sources */,
 				49D7501C26777FBA008E48D3 /* UICollectionView+dequeueReusableCell.swift in Sources */,
+				49F41627268E3BC800FD455B /* APIInterceptor.swift in Sources */,
 				4910BD9D26858F9E00599D94 /* PostRatingViewOutput.swift in Sources */,
 				49D7501826777AFE008E48D3 /* CollectionDataProvider.swift in Sources */,
 				4904EE95268DD7DD0056C980 /* APIResponse+User.swift in Sources */,
@@ -1272,6 +1295,7 @@
 				4904EE8A268DABF60056C980 /* RequestServiceURLSession.swift in Sources */,
 				49D7500926773934008E48D3 /* TableDataSource.swift in Sources */,
 				4904EE9B268DD9BB0056C980 /* APIRequest+User.swift in Sources */,
+				49FE515A268E17490067DD63 /* UserProviderRealm.swift in Sources */,
 				49E397892677AC420051AE3A /* UserDataStorage.swift in Sources */,
 				49AFF5F2267931800031CD23 /* PaddingLabel.swift in Sources */,
 				499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */,
