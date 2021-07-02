@@ -31,16 +31,20 @@ private extension PostInteractor {
         let postTitlePresenter = postTitlePresenterFactory.createPostTitleViewPresenter(post: post)
         let postInfoPresenter = postInfoPresenterFactory.createPostInfoViewPresenter(post: post)
         let postTextPresenter = postTextPresenterFactory.createPostTextViewPresenter(post: post)
-        let postTagsCollectionPresenter = postTagsCollectionPresenterFactory.createPostTagsCollectionViewPresenter(post: post)
+        let postTagsCollectionPresenter = post.tags.count > 0
+            ? postTagsCollectionPresenterFactory.createPostTagsCollectionViewPresenter(post: post)
+            : nil
         let postRatingPresenter = postRatingPresenterFactory.createPostRatingViewPresenter(post: post)
         
-        let cellPresenters: [CellPresenter] = [
-            postTitlePresenter,
-            postInfoPresenter,
-            postTextPresenter,
-            postTagsCollectionPresenter,
-            postRatingPresenter
-        ]
+        var cellPresenters: [CellPresenter] = []
+        
+        cellPresenters.append(postTitlePresenter)
+        cellPresenters.append(postInfoPresenter)
+        cellPresenters.append(postTextPresenter)
+        if let postTagsCollectionPresenter = postTagsCollectionPresenter {
+            cellPresenters.append(postTagsCollectionPresenter)
+        }
+        cellPresenters.append(postRatingPresenter)
         
         presenter?.updatePostCellPresenters(cellPresenters)
     }
