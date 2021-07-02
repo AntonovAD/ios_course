@@ -18,6 +18,8 @@ struct Post: Codable {
     let tags: [PostTag]
     let comments: [PostComment]
     let popular_comment: PostComment
+    let your_likes: Int
+    let your_dislikes: Int
 }
 
 struct PostStatus: Codable {

@@ -160,7 +160,9 @@ private let postsMockJson = """
         },
       ],
       "comments": [],
-      "popular_comment": []
+      "popular_comment": [],
+      "your_likes": 1,
+      "your_dislikes": 0
     },
   {
     "id": 2,
@@ -247,7 +249,9 @@ private let postsMockJson = """
       },
     ],
     "comments": [],
-    "popular_comment": []
+    "popular_comment": [],
+    "your_likes": 0,
+    "your_dislikes": 1
   },
   {
     "id": 3,
@@ -278,7 +282,9 @@ private let postsMockJson = """
     },
     "tags": [],
     "comments": [],
-    "popular_comment": []
+    "popular_comment": [],
+    "your_likes": 1,
+    "your_dislikes": 1
   }
 ]
 """

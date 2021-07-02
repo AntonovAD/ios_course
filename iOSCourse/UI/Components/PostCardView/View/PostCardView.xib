@@ -33,7 +33,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22u-z5-LGw" userLabel="Title View">
                                                         <rect key="frame" x="0.0" y="0.0" width="221" height="131"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egI-hv-PG2">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заголовок" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egI-hv-PG2">
                                                                 <rect key="frame" x="0.0" y="0.0" width="221" height="29"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                                 <nil key="textColor"/>
@@ -60,11 +60,11 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klT-gH-OTd">
                                                                                 <rect key="frame" x="8" y="0.0" width="34" height="32"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="App Secondary Fill Color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="32" id="3lb-gE-9Z0"/>
                                                                             <constraint firstItem="klT-gH-OTd" firstAttribute="top" secondItem="uM4-Uh-64V" secondAttribute="top" id="3z8-PB-9Wn"/>
@@ -89,11 +89,11 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mL-cO-che">
                                                                                 <rect key="frame" x="8" y="0.0" width="34" height="32"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="App Secondary Fill Color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="82M-6a-aa1"/>
                                                                             <constraint firstAttribute="height" constant="32" id="90A-lh-wYR"/>
@@ -155,7 +155,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8Q-BM-hlE" userLabel="Author View">
                                                                         <rect key="frame" x="0.0" y="0.0" width="184" height="43.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psa-zd-d4w">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Автор" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psa-zd-d4w">
                                                                                 <rect key="frame" x="0.0" y="15" width="184" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                                 <color key="textColor" name="App Primary Color"/>
@@ -173,7 +173,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3I-Ks-d6O" userLabel="Date View">
                                                                         <rect key="frame" x="0.0" y="43.5" width="184" height="43.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXK-Be-R6r">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сегодня" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXK-Be-R6r">
                                                                                 <rect key="frame" x="0.0" y="8" width="184" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -300,9 +300,11 @@
                 <outlet property="author" destination="psa-zd-d4w" id="D85-g7-4Qz"/>
                 <outlet property="bottomMargin" destination="Fd3-Kj-FJV" id="0Et-mw-el4"/>
                 <outlet property="date" destination="lXK-Be-R6r" id="Ozc-60-NKG"/>
-                <outlet property="dislike" destination="6mL-cO-che" id="73f-kC-pWN"/>
+                <outlet property="dislikeRoundedView" destination="k15-rC-g7t" id="5rc-aU-oqp"/>
+                <outlet property="dislikesNumber" destination="6mL-cO-che" id="SpW-Yf-76F"/>
                 <outlet property="leftMargin" destination="waE-Bm-bLb" id="wox-Uc-jbj"/>
-                <outlet property="like" destination="klT-gH-OTd" id="X5m-sM-EgB"/>
+                <outlet property="likeRoundedView" destination="uM4-Uh-64V" id="iBJ-R5-Ae2"/>
+                <outlet property="likesNumber" destination="klT-gH-OTd" id="X98-Md-6ty"/>
                 <outlet property="rightMargin" destination="9KK-0d-wdg" id="nsz-Cg-pNL"/>
                 <outlet property="tagsCollectionView" destination="M2e-I2-KlR" id="FiF-iv-wtV"/>
                 <outlet property="tagsCollectionViewFlowLayout" destination="9gf-or-sLO" id="nNn-vX-WGj"/>
@@ -318,6 +320,9 @@
         </namedColor>
         <namedColor name="App Primary Fill Color">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="App Secondary Fill Color">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

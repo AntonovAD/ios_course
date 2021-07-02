@@ -15,8 +15,11 @@ class PostCardView: UITableViewCell, NibReusable, ViewSetup, ViewMeasuresSetup {
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var date: UILabel!
     
-    @IBOutlet weak var like: UILabel!
-    @IBOutlet weak var dislike: UILabel!
+    @IBOutlet weak var likeRoundedView: RoundedView!
+    @IBOutlet weak var likesNumber: UILabel!
+    
+    @IBOutlet weak var dislikeRoundedView: RoundedView!
+    @IBOutlet weak var dislikesNumber: UILabel!
     
     @IBOutlet weak var tagsCollectionView: UICollectionView!
     @IBOutlet weak var tagsCollectionViewFlowLayout: UICollectionViewFlowLayout!
@@ -100,10 +103,29 @@ extension PostCardView: PostCardViewInput {
         }
     }
     
-    func updateLikes(like: Int, dislike: Int) {
+    func updateLikeColor(backgroundColor: UIColor, textColor: UIColor) {
         queue.async {
-            self.like.text = String(like)
-            self.dislike.text = "\(dislike)"
+            self.likeRoundedView.backgroundColor = backgroundColor
+            self.likesNumber.textColor = textColor
+        }
+    }
+    
+    func updateLikes(text: String) {
+        queue.async {
+            self.likesNumber.text = text
+        }
+    }
+    
+    func updateDislikeColor(backgroundColor: UIColor, textColor: UIColor) {
+        queue.async {
+            self.dislikeRoundedView.backgroundColor = backgroundColor
+            self.dislikesNumber.textColor = textColor
+        }
+    }
+    
+    func updateDislikes(text: String) {
+        queue.async {
+            self.dislikesNumber.text = text
         }
     }
     

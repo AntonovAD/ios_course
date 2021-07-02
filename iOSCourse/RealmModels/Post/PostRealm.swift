@@ -93,7 +93,10 @@ class PostRealm: Object {
             //comments: comments.map { $0.toPlain() },
             comments: [],
             //popular_comment: (popular_comment?.toPlain())!
-            popular_comment: postComment
+            popular_comment: postComment,
+            
+            your_likes: 0,
+            your_dislikes: 0
         )
     }
 }

@@ -42,7 +42,7 @@ extension AuthScreenViewController: AuthScreenViewControllerInput {
             
             let initialTextColor = self.appTitle.textColor
             
-            self.appTitle.textColor = .red
+            self.appTitle.textColor = .systemRed
             
             let pulseAnimation = CABasicAnimation(keyPath: "opacity")
             pulseAnimation.duration = 0.1

@@ -1,6 +1,7 @@
 //
 
 import Foundation
+import UIKit
 
 class PostCardViewPresenter: CellPresenter {
     let reusableType: Reusable.Type = PostCardView.self
@@ -27,6 +28,7 @@ extension PostCardViewPresenter: PostCardViewOutput {
         updateAuthor()
         updateDate()
         updateLikes()
+        updateDislikes()
         updateTags()
     }
     
@@ -55,7 +57,33 @@ private extension PostCardViewPresenter {
     }
     
     func updateLikes() {
-        view?.updateLikes(like: post.likes, dislike: post.dislikes)
+        let yourLike = post.your_likes > 0
+        
+        view?.updateLikeColor(
+            backgroundColor: yourLike
+                ? .systemGreen
+                : UIColor.appColor(.secondaryFill) ?? .clear,
+            textColor: yourLike
+                ? .white
+                : .lightGray
+        )
+        
+        view?.updateLikes(text: "\(post.likes)")
+    }
+    
+    func updateDislikes() {
+        let yourDislike = post.your_dislikes > 0
+        
+        view?.updateDislikeColor(
+            backgroundColor: yourDislike
+                ? .systemRed
+                : UIColor.appColor(.secondaryFill) ?? .clear,
+            textColor: yourDislike
+                ? .white
+                : .lightGray
+        )
+        
+        view?.updateDislikes(text: "\(post.dislikes)")
     }
     
     func updateTags() {

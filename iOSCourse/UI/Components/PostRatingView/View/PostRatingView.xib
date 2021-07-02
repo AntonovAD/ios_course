@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,11 +33,11 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1k5-lD-Xgu">
                                                         <rect key="frame" x="20" y="12" width="16" height="32"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="App Secondary Fill Color"/>
                                                 <constraints>
                                                     <constraint firstItem="1k5-lD-Xgu" firstAttribute="leading" secondItem="eTI-JN-5FN" secondAttribute="leading" constant="20" id="KYH-q6-Ekh"/>
                                                     <constraint firstItem="1k5-lD-Xgu" firstAttribute="top" secondItem="eTI-JN-5FN" secondAttribute="top" constant="12" id="W7Y-9A-nRC"/>
@@ -81,11 +82,11 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfd-Ly-xSD">
                                                         <rect key="frame" x="20" y="12" width="16" height="32"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="App Secondary Fill Color"/>
                                                 <constraints>
                                                     <constraint firstItem="vfd-Ly-xSD" firstAttribute="leading" secondItem="4eW-Jo-hgJ" secondAttribute="leading" constant="20" id="2eD-vd-Uqz"/>
                                                     <constraint firstAttribute="trailing" secondItem="vfd-Ly-xSD" secondAttribute="trailing" constant="20" id="Pwz-iP-J4u"/>
@@ -146,8 +147,10 @@
             <viewLayoutGuide key="safeArea" id="5kB-70-e0c"/>
             <connections>
                 <outlet property="bottomMargin" destination="Rdp-1C-WxD" id="EDl-Oh-X9b"/>
+                <outlet property="dislikeRoundedView" destination="4eW-Jo-hgJ" id="uUA-BO-1FW"/>
                 <outlet property="dislikesNumber" destination="vfd-Ly-xSD" id="yd9-kl-ch3"/>
                 <outlet property="leftMargin" destination="DZE-Kx-O97" id="eI1-VT-adt"/>
+                <outlet property="likeRoundedView" destination="eTI-JN-5FN" id="czb-7W-TI1"/>
                 <outlet property="likesNumber" destination="1k5-lD-Xgu" id="G5U-kG-8n4"/>
                 <outlet property="rightMargin" destination="fiX-QK-PdF" id="q96-Qj-Ymu"/>
                 <outlet property="topMargin" destination="yYz-5C-and" id="mzk-9M-R9q"/>
@@ -155,4 +158,9 @@
             <point key="canvasLocation" x="-268.1159420289855" y="-25.446428571428569"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="App Secondary Fill Color">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

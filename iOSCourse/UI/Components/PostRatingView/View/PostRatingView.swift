@@ -11,7 +11,10 @@ class PostRatingView: UITableViewCell, NibReusable, ViewSetup, ViewMeasuresSetup
     @IBOutlet weak var rightMargin: NSLayoutConstraint!
     @IBOutlet weak var topMargin: NSLayoutConstraint!
     
+    @IBOutlet weak var likeRoundedView: RoundedView!
     @IBOutlet weak var likesNumber: UILabel!
+    
+    @IBOutlet weak var dislikeRoundedView: RoundedView!
     @IBOutlet weak var dislikesNumber: UILabel!
     
     func setup(with presenter: CellPresenter) {
@@ -46,8 +49,18 @@ class PostRatingView: UITableViewCell, NibReusable, ViewSetup, ViewMeasuresSetup
 }
 
 extension PostRatingView: PostRatingViewInput {
+    func updateLikeColor(backgroundColor: UIColor, textColor: UIColor) {
+        likeRoundedView.backgroundColor = backgroundColor
+        likesNumber.textColor = textColor
+    }
+    
     func updateLikes(text: String) {
         likesNumber.text = text
+    }
+    
+    func updateDislikeColor(backgroundColor: UIColor, textColor: UIColor) {
+        dislikeRoundedView.backgroundColor = backgroundColor
+        dislikesNumber.textColor = textColor
     }
     
     func updateDislikes(text: String) {
