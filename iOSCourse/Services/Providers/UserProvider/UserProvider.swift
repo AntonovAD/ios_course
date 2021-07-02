@@ -16,7 +16,9 @@ class UserProvider: UserProviderProtocol, ReactiveUserProviderProtocol {
     ) {
         self.queue = queue
         self.requestService = requestService
+        
         self.user = Property(mutableUser)
+        //mutableUser <~ getUser().flatMapError { _ in .init(value: nil) }
     }
     
     // MARK: 🐌 Not Reactive

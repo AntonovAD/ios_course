@@ -4,7 +4,8 @@ import Foundation
 import ReactiveSwift
 
 enum UserProviderError: Error {
-    case signInError(_ error: Error)
+    case signInError(_ error: Error?)
+    case unknown
 }
 
 protocol UserProviderProtocol {

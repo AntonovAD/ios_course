@@ -59,6 +59,10 @@
 		49213F9526824E37003954C8 /* AuthInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F9426824E37003954C8 /* AuthInteractorOutput.swift */; };
 		49213F9726824E4B003954C8 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F9626824E4B003954C8 /* AuthInteractor.swift */; };
 		49213F9926825384003954C8 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F9826825384003954C8 /* Navigator.swift */; };
+		492ADA6C268EF8AC00AD8B52 /* PostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ADA6B268EF8AC00AD8B52 /* PostProvider.swift */; };
+		492ADA6F268EF96D00AD8B52 /* PostProviderRealmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ADA6E268EF96D00AD8B52 /* PostProviderRealmProtocol.swift */; };
+		492ADA71268EFBCF00AD8B52 /* APIRequest+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ADA70268EFBCF00AD8B52 /* APIRequest+Post.swift */; };
+		492ADA73268EFBDA00AD8B52 /* APIResponse+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ADA72268EFBDA00AD8B52 /* APIResponse+Post.swift */; };
 		4957597526540E7600DF4CED /* PostCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957597426540E7600DF4CED /* PostCardView.swift */; };
 		4957597826540EB600DF4CED /* PostCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4957597726540EB600DF4CED /* PostCardView.xib */; };
 		495E4A4F2667813F006B3331 /* PostListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E4A4E2667813F006B3331 /* PostListPresenter.swift */; };
@@ -205,6 +209,10 @@
 		49213F9426824E37003954C8 /* AuthInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractorOutput.swift; sourceTree = "<group>"; };
 		49213F9626824E4B003954C8 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
 		49213F9826825384003954C8 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		492ADA6B268EF8AC00AD8B52 /* PostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProvider.swift; sourceTree = "<group>"; };
+		492ADA6E268EF96D00AD8B52 /* PostProviderRealmProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProviderRealmProtocol.swift; sourceTree = "<group>"; };
+		492ADA70268EFBCF00AD8B52 /* APIRequest+Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIRequest+Post.swift"; sourceTree = "<group>"; };
+		492ADA72268EFBDA00AD8B52 /* APIResponse+Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIResponse+Post.swift"; sourceTree = "<group>"; };
 		4957597426540E7600DF4CED /* PostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardView.swift; sourceTree = "<group>"; };
 		4957597726540EB600DF4CED /* PostCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCardView.xib; sourceTree = "<group>"; };
 		495E4A4E2667813F006B3331 /* PostListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListPresenter.swift; sourceTree = "<group>"; };
@@ -343,6 +351,8 @@
 			isa = PBXGroup;
 			children = (
 				4904EE8D268DD0D20056C980 /* API+Post.swift */,
+				492ADA70268EFBCF00AD8B52 /* APIRequest+Post.swift */,
+				492ADA72268EFBDA00AD8B52 /* APIResponse+Post.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -540,6 +550,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		492ADA6D268EF8B700AD8B52 /* PostProviderRealm */ = {
+			isa = PBXGroup;
+			children = (
+				492ADA6E268EF96D00AD8B52 /* PostProviderRealmProtocol.swift */,
+				49E397902677B5920051AE3A /* PostProviderRealm.swift */,
+			);
+			path = PostProviderRealm;
+			sourceTree = "<group>";
+		};
 		4957597326540D7100DF4CED /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,7 +746,7 @@
 			children = (
 				497A21C22666B08E00D9CF7C /* PostProviderProtocol.swift */,
 				497A21C82666B20400D9CF7C /* PostProviderMock.swift */,
-				49E397902677B5920051AE3A /* PostProviderRealm.swift */,
+				492ADA6B268EF8AC00AD8B52 /* PostProvider.swift */,
 			);
 			path = PostProvider;
 			sourceTree = "<group>";
@@ -962,6 +981,7 @@
 		49E397852677AC0F0051AE3A /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				492ADA6D268EF8B700AD8B52 /* PostProviderRealm */,
 				497A21C12666B05D00D9CF7C /* PostProvider */,
 				49873C472680C44300143EEC /* UserProvider */,
 				49FE515B268E180D0067DD63 /* UserProviderRealm */,
@@ -1233,6 +1253,7 @@
 				49F41625268E3B1200FD455B /* RequestInterceptor.swift in Sources */,
 				497A21C92666B20400D9CF7C /* PostProviderMock.swift in Sources */,
 				491735E3268B68C8000FB208 /* PostTagsCollectionView.swift in Sources */,
+				492ADA6C268EF8AC00AD8B52 /* PostProvider.swift in Sources */,
 				49213F9926825384003954C8 /* Navigator.swift in Sources */,
 				497A21BA2666AF7600D9CF7C /* NibReusable.swift in Sources */,
 				49D7501626777A93008E48D3 /* CollectionDataSource.swift in Sources */,
@@ -1296,6 +1317,7 @@
 				49D7500926773934008E48D3 /* TableDataSource.swift in Sources */,
 				4904EE9B268DD9BB0056C980 /* APIRequest+User.swift in Sources */,
 				49FE515A268E17490067DD63 /* UserProviderRealm.swift in Sources */,
+				492ADA71268EFBCF00AD8B52 /* APIRequest+Post.swift in Sources */,
 				49E397892677AC420051AE3A /* UserDataStorage.swift in Sources */,
 				49AFF5F2267931800031CD23 /* PaddingLabel.swift in Sources */,
 				499A8D6E26524202007543E7 /* AppDelegate.swift in Sources */,
@@ -1332,6 +1354,7 @@
 				491735E1268B67B1000FB208 /* PostTagsCollectionViewPresenter.swift in Sources */,
 				4910BD9026858C4A00599D94 /* PostInfoViewPresenterFactory.swift in Sources */,
 				4910BDB22685998D00599D94 /* PostInteractor.swift in Sources */,
+				492ADA73268EFBDA00AD8B52 /* APIResponse+Post.swift in Sources */,
 				49213F9726824E4B003954C8 /* AuthInteractor.swift in Sources */,
 				4904EE99268DD9A10056C980 /* APIRequest.swift in Sources */,
 				49D7501126775F80008E48D3 /* View.swift in Sources */,
@@ -1340,6 +1363,7 @@
 				496E20E32659592800EB5824 /* Utils.swift in Sources */,
 				49873C612680D15F00143EEC /* Router.swift in Sources */,
 				49873C4B2680C46F00143EEC /* UserProviderProtocol.swift in Sources */,
+				492ADA6F268EF96D00AD8B52 /* PostProviderRealmProtocol.swift in Sources */,
 				491735F2268B90DB000FB208 /* PostTitleView.swift in Sources */,
 				4904EE8E268DD0D20056C980 /* API+Post.swift in Sources */,
 				49F05172265D64E70069C1DB /* PostViewController.swift in Sources */,

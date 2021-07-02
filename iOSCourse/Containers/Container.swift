@@ -26,7 +26,7 @@ class ServiceAssembly: Assembly {
     private lazy var queue = DispatchQueue(label: "database-queue", attributes: .concurrent)
     private lazy var urlSession = URLSession(configuration: .default)
     
-    private let postProviderIsMock = true
+    private let postProviderIsMock = false
     private let userProviderIsMock = false
     
     func assemble(container: Container) {
@@ -41,11 +41,30 @@ class ServiceAssembly: Assembly {
             )
         }
         
-        container.register(PostProviderProtocol.self) { _ in
-            PostProviderMock()
-        }
-        container.register(ReactivePostProviderProtocol.self) { _ in
-            PostProviderMock()
+        if (postProviderIsMock) {
+            container.register(PostProviderProtocol.self) { [queue] _ in
+                PostProviderMock(
+                    queue: queue
+                )
+            }
+            container.register(ReactivePostProviderProtocol.self) { [queue] _ in
+                PostProviderMock(
+                    queue: queue
+                )
+            }
+        } else {
+            container.register(PostProviderProtocol.self) { [queue] resolver in
+                PostProvider(
+                    queue: queue,
+                    requestService: resolver.resolve(RequestServiceProtocol.self)!
+                )
+            }
+            container.register(ReactivePostProviderProtocol.self) { [queue] resolver in
+                PostProvider(
+                    queue: queue,
+                    requestService: resolver.resolve(RequestServiceProtocol.self)!
+                )
+            }
         }
         
         /*container.register(PostProviderRealm.self) { [queue] resolver in

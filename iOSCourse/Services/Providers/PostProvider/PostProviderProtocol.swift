@@ -4,8 +4,7 @@ import Foundation
 import ReactiveSwift
 
 enum PostProviderError: Error {
-    case databaseError(error: Error)
-    case writeError(error: Error?)
+    case noContent(_ error: Error?)
     case unknown
 }
 

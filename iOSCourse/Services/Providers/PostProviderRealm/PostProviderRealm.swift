@@ -4,7 +4,7 @@ import Foundation
 import ReactiveSwift
 import RealmSwift
 
-class PostProviderRealm: PostProviderProtocol {
+class PostProviderRealm: PostProviderRealmProtocol {
     private let realmFactory: RealmFactoryProtocol
     private let queue: DispatchQueue
     
@@ -17,7 +17,7 @@ class PostProviderRealm: PostProviderProtocol {
     }
     
     // MARK: 🐌 Not Reactive
-    func requestAll(completion: @escaping (Result<[Post], PostProviderError>) -> Void) {
+    func requestAll(completion: @escaping (Result<[Post], PostProviderRealmError>) -> Void) {
         queue.async { [realmFactory] in
             switch realmFactory.createRealm() {
             case .success(let realm):
@@ -33,7 +33,7 @@ class PostProviderRealm: PostProviderProtocol {
         }
     }
     
-    func update(post: Post, completion: @escaping (Result<(), PostProviderError>) -> Void) {
+    func update(post: Post, completion: @escaping (Result<(), PostProviderRealmError>) -> Void) {
         queue.async { [realmFactory] in
             do {
                 let realm = try realmFactory.createRealm().get()
@@ -54,7 +54,7 @@ class PostProviderRealm: PostProviderProtocol {
         }
     }
     
-    func update(posts: [Post], completion: @escaping (Result<(), PostProviderError>) -> Void) {
+    func update(posts: [Post], completion: @escaping (Result<(), PostProviderRealmError>) -> Void) {
         queue.async { [realmFactory] in
             do {
                 let realm = try realmFactory.createRealm().get()
@@ -76,9 +76,9 @@ class PostProviderRealm: PostProviderProtocol {
     }
 }
 
-extension PostProviderRealm: ReactivePostProviderProtocol {
+extension PostProviderRealm: ReactivePostProviderRealmProtocol {
     // MARK: 🚀 Reactive
-    func requestAll() -> SignalProducer<[Post], PostProviderError> {
+    func requestAll() -> SignalProducer<[Post], PostProviderRealmError> {
         return SignalProducer { [weak self] observer, _ in
             self?.requestAll { result in
                 observer.send(value: result)
@@ -88,7 +88,7 @@ extension PostProviderRealm: ReactivePostProviderProtocol {
         .dematerializeResults()
     }
     
-    func update(post: Post) -> SignalProducer<(), PostProviderError> {
+    func update(post: Post) -> SignalProducer<(), PostProviderRealmError> {
         return SignalProducer { [weak self] observer, _ in
             self?.update(post: post) { result in
                 observer.send(value: result)
@@ -98,7 +98,7 @@ extension PostProviderRealm: ReactivePostProviderProtocol {
         .dematerializeResults()
     }
     
-    func update(posts: [Post]) -> SignalProducer<(), PostProviderError> {
+    func update(posts: [Post]) -> SignalProducer<(), PostProviderRealmError> {
         return SignalProducer { [weak self] observer, _ in
             self?.update(posts: posts) { result in
                 observer.send(value: result)

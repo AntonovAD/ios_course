@@ -4,17 +4,23 @@ import Foundation
 import ReactiveSwift
 
 class PostProviderMock: PostProviderProtocol, ReactivePostProviderProtocol {
+    private let queue: DispatchQueue
+    
     private let mutablePosts = MutableProperty<[Post]>([])
     let posts: Property<[Post]>
     
-    init() {
+    init(
+        queue: DispatchQueue
+    ) {
+        self.queue = queue
+        
         posts = Property(mutablePosts)
         mutablePosts <~ requestAll().flatMapError { _ in .init(value: []) }
     }
     
     // MARK: 🐌 Not Reactive
     func requestAll(completion: @escaping (Result<[Post], PostProviderError>) -> Void) {
-        DispatchQueue.main.async {
+        queue.async {
             let data = postsMockJson.data(using: .utf8)!
             let jsonDecoder = JSONDecoder()
             let posts = try! jsonDecoder.decode([Post].self, from: data)
@@ -24,13 +30,13 @@ class PostProviderMock: PostProviderProtocol, ReactivePostProviderProtocol {
     }
     
     func update(post: Post, completion: @escaping (Result<(), PostProviderError>) -> Void) {
-        DispatchQueue.main.async {
+        queue.async {
             completion(.success(()))
         }
     }
     
     func update(posts: [Post], completion: @escaping (Result<(), PostProviderError>) -> Void) {
-        DispatchQueue.main.async {
+        queue.async {
             completion(.success(()))
         }
     }
