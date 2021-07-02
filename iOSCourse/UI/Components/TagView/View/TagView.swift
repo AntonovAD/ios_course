@@ -8,7 +8,9 @@ class TagView: UICollectionViewCell, Reusable, ViewSetup {
     private let customView = BubbleLabel()
     
     override init(frame: CGRect) {
-        super.init(frame: .zero)
+        super.init(frame: frame)
+        
+        translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(customView)
         customView.translatesAutoresizingMaskIntoConstraints = false
