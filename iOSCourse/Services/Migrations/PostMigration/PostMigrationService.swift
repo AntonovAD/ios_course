@@ -30,26 +30,11 @@ class PostMigrationService: PostMigrationServiceProtocol {
     func migrateIfNeeded() {
         print("PostMigrationService - migrationVersion:", dataStorage.migrationVersion)
         
-        rollback()
-        
         // 🐌 Not Reactive
         let _: Void = migrate()
         
         // 🚀 Reactive
         //migrate().start()
-    }
-    
-    private func rollback() {
-        print("PostMigrationService - rollback()")
-        
-        dataStorage.migrationVersion = 0
-        
-        let realm = try! Realm()
-        try! realm.write {
-          realm.deleteAll()
-        }
-        
-        try! FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
     }
 
     //MARK: - 🐌 Not Reactive

@@ -26,7 +26,15 @@ class ServiceAssembly: Assembly {
     private lazy var queue = DispatchQueue(label: "database-queue", attributes: .concurrent)
     private lazy var urlSession = URLSession(configuration: .default)
     
-    private let postProviderIsMock = false
+    private enum ProviderType {
+        case common
+        case realm
+    }
+    
+    private let postProviderIsMock = (
+        status: false,
+        type: ProviderType.common
+    )
     private let userProviderIsMock = false
     
     func assemble(container: Container) {
@@ -41,16 +49,30 @@ class ServiceAssembly: Assembly {
             )
         }
         
-        if (postProviderIsMock) {
-            container.register(PostProviderProtocol.self) { [queue] _ in
-                PostProviderMock(
-                    queue: queue
-                )
-            }
-            container.register(ReactivePostProviderProtocol.self) { [queue] _ in
-                PostProviderMock(
-                    queue: queue
-                )
+        if (postProviderIsMock.status) {
+            switch postProviderIsMock.type {
+            case .common:
+                container.register(PostProviderProtocol.self) { [queue] _ in
+                    PostProviderMock(
+                        queue: queue
+                    )
+                }
+                container.register(ReactivePostProviderProtocol.self) { [queue] _ in
+                    PostProviderMock(
+                        queue: queue
+                    )
+                }
+                
+            case .realm:
+                container.register(PostProviderRealmMock.self) { [queue] resolver in
+                    PostProviderRealmMock(
+                        realmFactory: resolver.resolve(RealmFactoryProtocol.self)!,
+                        queue: queue
+                    )
+                }
+                .inObjectScope(.container)
+                .implements(PostProviderProtocol.self)
+                .implements(ReactivePostProviderProtocol.self)
             }
         } else {
             container.register(PostProviderProtocol.self) { [queue] resolver in
@@ -67,23 +89,13 @@ class ServiceAssembly: Assembly {
             }
         }
         
-        /*container.register(PostProviderRealm.self) { [queue] resolver in
-            PostProviderRealm(
-                realmFactory: resolver.resolve(RealmFactoryProtocol.self)!,
-                queue: queue
-            )
-        }
-        .inObjectScope(.container)
-        .implements(PostProviderProtocol.self)
-        .implements(ReactivePostProviderProtocol.self)
-        
         container.register(PostMigrationServiceProtocol.self) { [queue] resolver in
             PostMigrationService(
                 postProvider: resolver.resolve(PostProviderProtocol.self)!,
                 dataStorage: resolver.resolve(PostMigrationDataStorage.self)!,
                 queue: queue
             )
-        }*/
+        }
         
         if (userProviderIsMock) {
             container.register(UserProviderProtocol.self) { [queue] _ in
@@ -230,7 +242,7 @@ class AppService: AppServiceProtocol {
     }
     
     func start() -> RouterProtocol {
-        //migration()
+        migration()
         
         return resolver.resolve(RouterProtocol.self)!
     }

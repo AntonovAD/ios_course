@@ -4,7 +4,7 @@ import Foundation
 import ReactiveSwift
 import RealmSwift
 
-class PostProviderRealm: PostProviderRealmProtocol {
+class PostProviderRealmMock: PostProviderProtocol {
     private let realmFactory: RealmFactoryProtocol
     private let queue: DispatchQueue
     
@@ -17,7 +17,7 @@ class PostProviderRealm: PostProviderRealmProtocol {
     }
     
     // MARK: 🐌 Not Reactive
-    func requestAll(completion: @escaping (Result<[Post], PostProviderRealmError>) -> Void) {
+    func requestAll(completion: @escaping (Result<[Post], PostProviderError>) -> Void) {
         queue.async { [realmFactory] in
             switch realmFactory.createRealm() {
             case .success(let realm):
@@ -27,13 +27,13 @@ class PostProviderRealm: PostProviderRealmProtocol {
                 
                 completion(.success(posts))
                 
-            case .failure(let error):
-                completion(.failure(.databaseError(error: error)))
+            case .failure:
+                completion(.failure(.unknown))
             }
         }
     }
     
-    func update(post: Post, completion: @escaping (Result<(), PostProviderRealmError>) -> Void) {
+    func update(post: Post, completion: @escaping (Result<(), PostProviderError>) -> Void) {
         queue.async { [realmFactory] in
             do {
                 let realm = try realmFactory.createRealm().get()
@@ -49,12 +49,12 @@ class PostProviderRealm: PostProviderRealmProtocol {
                 completion(.success(()))
             }
             catch {
-                completion(.failure(.writeError(error: error)))
+                completion(.failure(.unknown))
             }
         }
     }
     
-    func update(posts: [Post], completion: @escaping (Result<(), PostProviderRealmError>) -> Void) {
+    func update(posts: [Post], completion: @escaping (Result<(), PostProviderError>) -> Void) {
         queue.async { [realmFactory] in
             do {
                 let realm = try realmFactory.createRealm().get()
@@ -70,15 +70,15 @@ class PostProviderRealm: PostProviderRealmProtocol {
                 completion(.success(()))
             }
             catch {
-                completion(.failure(.writeError(error: error)))
+                completion(.failure(.unknown))
             }
         }
     }
 }
 
-extension PostProviderRealm: ReactivePostProviderRealmProtocol {
+extension PostProviderRealmMock: ReactivePostProviderProtocol {
     // MARK: 🚀 Reactive
-    func requestAll() -> SignalProducer<[Post], PostProviderRealmError> {
+    func requestAll() -> SignalProducer<[Post], PostProviderError> {
         return SignalProducer { [weak self] observer, _ in
             self?.requestAll { result in
                 observer.send(value: result)
@@ -88,7 +88,7 @@ extension PostProviderRealm: ReactivePostProviderRealmProtocol {
         .dematerializeResults()
     }
     
-    func update(post: Post) -> SignalProducer<(), PostProviderRealmError> {
+    func update(post: Post) -> SignalProducer<(), PostProviderError> {
         return SignalProducer { [weak self] observer, _ in
             self?.update(post: post) { result in
                 observer.send(value: result)
@@ -98,7 +98,7 @@ extension PostProviderRealm: ReactivePostProviderRealmProtocol {
         .dematerializeResults()
     }
     
-    func update(posts: [Post]) -> SignalProducer<(), PostProviderRealmError> {
+    func update(posts: [Post]) -> SignalProducer<(), PostProviderError> {
         return SignalProducer { [weak self] observer, _ in
             self?.update(posts: posts) { result in
                 observer.send(value: result)

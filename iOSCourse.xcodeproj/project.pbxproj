@@ -39,6 +39,7 @@
 		4910BDB02685997E00599D94 /* PostInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDAF2685997E00599D94 /* PostInteractorOutput.swift */; };
 		4910BDB22685998D00599D94 /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDB12685998D00599D94 /* PostInteractor.swift */; };
 		4910BDB52685A83800599D94 /* PostScreenConfiguratorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910BDB42685A83800599D94 /* PostScreenConfiguratorInput.swift */; };
+		4913E09A268F067300236C27 /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913E099268F067300236C27 /* RealmDBManager.swift */; };
 		491735DD268B672C000FB208 /* PostTagsCollectionViewPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491735DC268B672C000FB208 /* PostTagsCollectionViewPresenterFactory.swift */; };
 		491735E1268B67B1000FB208 /* PostTagsCollectionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491735E0268B67B1000FB208 /* PostTagsCollectionViewPresenter.swift */; };
 		491735E3268B68C8000FB208 /* PostTagsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491735E2268B68C8000FB208 /* PostTagsCollectionView.swift */; };
@@ -60,7 +61,6 @@
 		49213F9726824E4B003954C8 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F9626824E4B003954C8 /* AuthInteractor.swift */; };
 		49213F9926825384003954C8 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49213F9826825384003954C8 /* Navigator.swift */; };
 		492ADA6C268EF8AC00AD8B52 /* PostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ADA6B268EF8AC00AD8B52 /* PostProvider.swift */; };
-		492ADA6F268EF96D00AD8B52 /* PostProviderRealmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ADA6E268EF96D00AD8B52 /* PostProviderRealmProtocol.swift */; };
 		492ADA71268EFBCF00AD8B52 /* APIRequest+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ADA70268EFBCF00AD8B52 /* APIRequest+Post.swift */; };
 		492ADA73268EFBDA00AD8B52 /* APIResponse+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ADA72268EFBDA00AD8B52 /* APIResponse+Post.swift */; };
 		4957597526540E7600DF4CED /* PostCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957597426540E7600DF4CED /* PostCardView.swift */; };
@@ -108,7 +108,6 @@
 		49873C402680A82E00143EEC /* PostAuthorRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C3F2680A82E00143EEC /* PostAuthorRealm.swift */; };
 		49873C422680A83F00143EEC /* PostTagRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C412680A83F00143EEC /* PostTagRealm.swift */; };
 		49873C442680A84A00143EEC /* PostCommentRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C432680A84A00143EEC /* PostCommentRealm.swift */; };
-		49873C462680BC4F00143EEC /* DeleteMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C452680BC4F00143EEC /* DeleteMigration.swift */; };
 		49873C492680C46300143EEC /* UserProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C482680C46300143EEC /* UserProviderMock.swift */; };
 		49873C4B2680C46F00143EEC /* UserProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C4A2680C46F00143EEC /* UserProviderProtocol.swift */; };
 		49873C612680D15F00143EEC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49873C602680D15F00143EEC /* Router.swift */; };
@@ -139,7 +138,7 @@
 		49E397892677AC420051AE3A /* UserDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E397882677AC420051AE3A /* UserDataStorage.swift */; };
 		49E3978C2677AF7E0051AE3A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3978B2677AF7E0051AE3A /* User.swift */; };
 		49E3978F2677B0B10051AE3A /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3978E2677B0B10051AE3A /* Author.swift */; };
-		49E397912677B5920051AE3A /* PostProviderRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E397902677B5920051AE3A /* PostProviderRealm.swift */; };
+		49E397912677B5920051AE3A /* PostProviderRealmMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E397902677B5920051AE3A /* PostProviderRealmMock.swift */; };
 		49E397952677BBE30051AE3A /* PostRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E397942677BBE30051AE3A /* PostRealm.swift */; };
 		49F05167265D59640069C1DB /* AuthScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49F05166265D59640069C1DB /* AuthScreenViewController.xib */; };
 		49F05169265D59C30069C1DB /* AuthScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F05168265D59C30069C1DB /* AuthScreenViewController.swift */; };
@@ -189,6 +188,7 @@
 		4910BDAF2685997E00599D94 /* PostInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractorOutput.swift; sourceTree = "<group>"; };
 		4910BDB12685998D00599D94 /* PostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
 		4910BDB42685A83800599D94 /* PostScreenConfiguratorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreenConfiguratorInput.swift; sourceTree = "<group>"; };
+		4913E099268F067300236C27 /* RealmDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBManager.swift; sourceTree = "<group>"; };
 		491735DC268B672C000FB208 /* PostTagsCollectionViewPresenterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTagsCollectionViewPresenterFactory.swift; sourceTree = "<group>"; };
 		491735E0268B67B1000FB208 /* PostTagsCollectionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTagsCollectionViewPresenter.swift; sourceTree = "<group>"; };
 		491735E2268B68C8000FB208 /* PostTagsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTagsCollectionView.swift; sourceTree = "<group>"; };
@@ -210,7 +210,6 @@
 		49213F9626824E4B003954C8 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
 		49213F9826825384003954C8 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		492ADA6B268EF8AC00AD8B52 /* PostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProvider.swift; sourceTree = "<group>"; };
-		492ADA6E268EF96D00AD8B52 /* PostProviderRealmProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProviderRealmProtocol.swift; sourceTree = "<group>"; };
 		492ADA70268EFBCF00AD8B52 /* APIRequest+Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIRequest+Post.swift"; sourceTree = "<group>"; };
 		492ADA72268EFBDA00AD8B52 /* APIResponse+Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIResponse+Post.swift"; sourceTree = "<group>"; };
 		4957597426540E7600DF4CED /* PostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardView.swift; sourceTree = "<group>"; };
@@ -258,7 +257,6 @@
 		49873C3F2680A82E00143EEC /* PostAuthorRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAuthorRealm.swift; sourceTree = "<group>"; };
 		49873C412680A83F00143EEC /* PostTagRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTagRealm.swift; sourceTree = "<group>"; };
 		49873C432680A84A00143EEC /* PostCommentRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentRealm.swift; sourceTree = "<group>"; };
-		49873C452680BC4F00143EEC /* DeleteMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMigration.swift; sourceTree = "<group>"; };
 		49873C482680C46300143EEC /* UserProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderMock.swift; sourceTree = "<group>"; };
 		49873C4A2680C46F00143EEC /* UserProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderProtocol.swift; sourceTree = "<group>"; };
 		49873C602680D15F00143EEC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -291,7 +289,7 @@
 		49E397882677AC420051AE3A /* UserDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStorage.swift; sourceTree = "<group>"; };
 		49E3978B2677AF7E0051AE3A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		49E3978E2677B0B10051AE3A /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
-		49E397902677B5920051AE3A /* PostProviderRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProviderRealm.swift; sourceTree = "<group>"; };
+		49E397902677B5920051AE3A /* PostProviderRealmMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProviderRealmMock.swift; sourceTree = "<group>"; };
 		49E397942677BBE30051AE3A /* PostRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRealm.swift; sourceTree = "<group>"; };
 		49F05166265D59640069C1DB /* AuthScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthScreenViewController.xib; sourceTree = "<group>"; };
 		49F05168265D59C30069C1DB /* AuthScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewController.swift; sourceTree = "<group>"; };
@@ -550,15 +548,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		492ADA6D268EF8B700AD8B52 /* PostProviderRealm */ = {
-			isa = PBXGroup;
-			children = (
-				492ADA6E268EF96D00AD8B52 /* PostProviderRealmProtocol.swift */,
-				49E397902677B5920051AE3A /* PostProviderRealm.swift */,
-			);
-			path = PostProviderRealm;
-			sourceTree = "<group>";
-		};
 		4957597326540D7100DF4CED /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -746,6 +735,7 @@
 			children = (
 				497A21C22666B08E00D9CF7C /* PostProviderProtocol.swift */,
 				497A21C82666B20400D9CF7C /* PostProviderMock.swift */,
+				49E397902677B5920051AE3A /* PostProviderRealmMock.swift */,
 				492ADA6B268EF8AC00AD8B52 /* PostProvider.swift */,
 			);
 			path = PostProvider;
@@ -810,6 +800,7 @@
 			isa = PBXGroup;
 			children = (
 				49873C292680873F00143EEC /* RealmFactory.swift */,
+				4913E099268F067300236C27 /* RealmDBManager.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -842,7 +833,6 @@
 			children = (
 				49873C31268091A200143EEC /* MigrationServiceProtocol.swift */,
 				49873C33268091D600143EEC /* MigrationDataStorage.swift */,
-				49873C452680BC4F00143EEC /* DeleteMigration.swift */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -981,7 +971,6 @@
 		49E397852677AC0F0051AE3A /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				492ADA6D268EF8B700AD8B52 /* PostProviderRealm */,
 				497A21C12666B05D00D9CF7C /* PostProvider */,
 				49873C472680C44300143EEC /* UserProvider */,
 				49FE515B268E180D0067DD63 /* UserProviderRealm */,
@@ -1275,7 +1264,6 @@
 				497C6FAC2678F837008A9239 /* CollectionCell.swift in Sources */,
 				491735F4268B90EC000FB208 /* PostTitleViewInput.swift in Sources */,
 				49D39E51265E60110050C9E9 /* MeasureConst.swift in Sources */,
-				49873C462680BC4F00143EEC /* DeleteMigration.swift in Sources */,
 				491735E5268B68D6000FB208 /* PostTagsCollectionViewOutput.swift in Sources */,
 				496E20DE26594C6A00EB5824 /* RoundView.swift in Sources */,
 				4910BDAA2685993E00599D94 /* PostScreenConfigurator.swift in Sources */,
@@ -1308,7 +1296,7 @@
 				49E397842677AB010051AE3A /* KeyValueDataStorage.swift in Sources */,
 				497C6FA82678F105008A9239 /* TableCell.swift in Sources */,
 				49213F8D26824D73003954C8 /* AuthScreenViewControllerInput.swift in Sources */,
-				49E397912677B5920051AE3A /* PostProviderRealm.swift in Sources */,
+				49E397912677B5920051AE3A /* PostProviderRealmMock.swift in Sources */,
 				491735DD268B672C000FB208 /* PostTagsCollectionViewPresenterFactory.swift in Sources */,
 				496E20DC26594C5E00EB5824 /* RoundedView.swift in Sources */,
 				49E3978F2677B0B10051AE3A /* Author.swift in Sources */,
@@ -1333,6 +1321,7 @@
 				49D7502B26778468008E48D3 /* TagViewOutput.swift in Sources */,
 				495E4A5D266786FE006B3331 /* PostListInteractorOutput.swift in Sources */,
 				49213F8B26824D66003954C8 /* AuthScreenViewControllerOutput.swift in Sources */,
+				4913E09A268F067300236C27 /* RealmDBManager.swift in Sources */,
 				4910BD9526858D6700599D94 /* PostRatingViewPresenterFactory.swift in Sources */,
 				4904EE9D268DFA6B0056C980 /* UserProvider.swift in Sources */,
 				491735E7268B68E2000FB208 /* PostTagsCollectionViewInput.swift in Sources */,
@@ -1363,7 +1352,6 @@
 				496E20E32659592800EB5824 /* Utils.swift in Sources */,
 				49873C612680D15F00143EEC /* Router.swift in Sources */,
 				49873C4B2680C46F00143EEC /* UserProviderProtocol.swift in Sources */,
-				492ADA6F268EF96D00AD8B52 /* PostProviderRealmProtocol.swift in Sources */,
 				491735F2268B90DB000FB208 /* PostTitleView.swift in Sources */,
 				4904EE8E268DD0D20056C980 /* API+Post.swift in Sources */,
 				49F05172265D64E70069C1DB /* PostViewController.swift in Sources */,
