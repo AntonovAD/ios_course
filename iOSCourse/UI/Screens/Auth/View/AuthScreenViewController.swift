@@ -52,11 +52,21 @@ extension AuthScreenViewController: AuthScreenViewControllerInput {
             pulseAnimation.autoreverses = true
             pulseAnimation.repeatCount = 4
             
+            let shakeAnimation = CABasicAnimation(keyPath: "position")
+            shakeAnimation.duration = 0.05
+            shakeAnimation.fromValue = NSValue(cgPoint: CGPoint(x: self.appTitle.center.x - 5, y: self.appTitle.center.y))
+            shakeAnimation.toValue = NSValue(cgPoint: CGPoint(x: self.appTitle.center.x + 5, y: self.appTitle.center.y))
+            shakeAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
+            shakeAnimation.autoreverses = true
+            shakeAnimation.repeatCount = 8
+            
             CATransaction.setCompletionBlock{ [weak self] in
                 self?.appTitle.textColor = initialTextColor
             }
             
             self.appTitle.layer.add(pulseAnimation, forKey: nil)
+            self.appTitle.layer.add(shakeAnimation, forKey: nil)
+            
             CATransaction.commit()
         }
     }
