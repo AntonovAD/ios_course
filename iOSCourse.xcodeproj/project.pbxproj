@@ -260,7 +260,7 @@
 		49873C482680C46300143EEC /* UserProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderMock.swift; sourceTree = "<group>"; };
 		49873C4A2680C46F00143EEC /* UserProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderProtocol.swift; sourceTree = "<group>"; };
 		49873C602680D15F00143EEC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		499A8D6A26524202007543E7 /* iOSCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		499A8D6A26524202007543E7 /* ~ Пикабу ~.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "~ Пикабу ~.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		499A8D6D26524202007543E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499A8D7626524203007543E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		499A8D7926524203007543E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -885,7 +885,7 @@
 		499A8D6B26524202007543E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				499A8D6A26524202007543E7 /* iOSCourse.app */,
+				499A8D6A26524202007543E7 /* ~ Пикабу ~.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1127,7 +1127,7 @@
 			);
 			name = iOSCourse;
 			productName = iOSCourse;
-			productReference = 499A8D6A26524202007543E7 /* iOSCourse.app */;
+			productReference = 499A8D6A26524202007543E7 /* ~ Пикабу ~.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1511,7 +1511,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = info.goodline.iOSCourse;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "~ Пикабу ~";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1531,7 +1531,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = info.goodline.iOSCourse;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "~ Пикабу ~";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
