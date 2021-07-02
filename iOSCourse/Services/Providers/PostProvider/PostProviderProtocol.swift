@@ -12,10 +12,12 @@ protocol PostProviderProtocol {
     func requestAll(completion: @escaping (Result<[Post], PostProviderError>) -> Void)
     func update(post: Post, completion: @escaping (Result<(), PostProviderError>) -> Void)
     func update(posts: [Post], completion: @escaping (Result<(), PostProviderError>) -> Void)
+    func rate(post: Post, value: Int, completion: @escaping (Result<Post, PostProviderError>) -> Void)
 }
 
 protocol ReactivePostProviderProtocol {
     func requestAll() -> SignalProducer<[Post], PostProviderError>
     func update(post: Post) -> SignalProducer<(), PostProviderError>
     func update(posts: [Post]) -> SignalProducer<(), PostProviderError>
+    func rate(post: Post, value: Int) -> SignalProducer<Post, PostProviderError>
 }

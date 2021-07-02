@@ -33,18 +33,37 @@ class PostRatingView: UITableViewCell, NibReusable, ViewSetup, ViewMeasuresSetup
         
         setup(with: presenter)
     }
-    
-    private func setup(with presenter: PostRatingViewPresenter) {
+}
+
+private extension PostRatingView {
+    func setup(with presenter: PostRatingViewPresenter) {
+        setOnClickListeners()
+        
         self.presenter = presenter
         presenter.view = self
         presenter.viewIsReady()
     }
     
-    private func setMeasures(margin: UIEdgeInsets) {
+    func setMeasures(margin: UIEdgeInsets) {
         topMargin.constant = margin.top
         rightMargin.constant = margin.right
         bottomMargin.constant = margin.bottom
         leftMargin.constant = margin.left
+    }
+    
+    func setOnClickListeners() {
+        likeRoundedView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(self.likeRoundedViewDidSelect (_:))))
+        dislikeRoundedView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(self.dislikeRoundedViewDidSelect (_:))))
+    }
+    
+    @objc
+    func likeRoundedViewDidSelect(_ sender:UITapGestureRecognizer) {
+        presenter?.likeDidSelect()
+    }
+    
+    @objc
+    func dislikeRoundedViewDidSelect(_ sender:UITapGestureRecognizer) {
+        presenter?.dislikeDidSelect()
     }
 }
 

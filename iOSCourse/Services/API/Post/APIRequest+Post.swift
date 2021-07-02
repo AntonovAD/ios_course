@@ -10,4 +10,9 @@ extension APIRequest {
 
 extension APIRequest.Post {
     struct GetRecent: Encodable {}
+    
+    struct Rate: Encodable {
+        let postId: Int
+        let value: Int
+    }
 }

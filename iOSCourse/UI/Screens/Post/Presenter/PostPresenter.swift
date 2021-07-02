@@ -48,6 +48,10 @@ extension PostPresenter: PostInteractorOutput {
         
         updatePostCellPresenters()
     }
+    
+    func handleError(_ error: Error) {
+        print(error)
+    }
 }
 
 extension PostPresenter: PostViewControllerOutput {

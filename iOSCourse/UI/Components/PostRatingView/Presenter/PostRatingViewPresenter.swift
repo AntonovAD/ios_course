@@ -8,12 +8,19 @@ class PostRatingViewPresenter: CellPresenter {
     
     private(set) var post: Post
     
+    private let likeAction: (_ post: Post) -> Void
+    private let dislikeAction: (_ post: Post) -> Void
+    
     weak var view: PostRatingViewInput?
     
     init(
-        post: Post
+        post: Post,
+        likeAction: @escaping (_ post: Post) -> Void = { _ in return },
+        dislikeAction: @escaping (_ post: Post) -> Void = { _ in return }
     ) {
         self.post = post
+        self.likeAction = likeAction
+        self.dislikeAction = dislikeAction
     }
 }
 
@@ -24,6 +31,14 @@ extension PostRatingViewPresenter: PostRatingViewOutput {
         
         updateDislikeColor()
         updateDislikes()
+    }
+    
+    func likeDidSelect() {
+        likeAction(post)
+    }
+    
+    func dislikeDidSelect() {
+        dislikeAction(post)
     }
 }
 

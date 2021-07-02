@@ -41,6 +41,12 @@ class PostProviderMock: PostProviderProtocol, ReactivePostProviderProtocol {
         }
     }
     
+    func rate(post: Post, value: Int, completion: @escaping (Result<Post, PostProviderError>) -> Void) {
+        queue.async {
+            completion(.success(post))
+        }
+    }
+    
     // MARK: 🚀 Reactive
     func requestAll() -> SignalProducer<[Post], PostProviderError> {
         return SignalProducer { [weak self] observer, lifetime in
@@ -65,6 +71,16 @@ class PostProviderMock: PostProviderProtocol, ReactivePostProviderProtocol {
     func update(posts: [Post]) -> SignalProducer<(), PostProviderError> {
         return SignalProducer { [weak self] observer, lifetime in
             self?.update(posts: posts) { result in
+                observer.send(value: result)
+                observer.sendCompleted()
+            }
+        }
+        .dematerializeResults()
+    }
+    
+    func rate(post: Post, value: Int) -> SignalProducer<Post, PostProviderError> {
+        return SignalProducer { [weak self] observer, lifetime in
+            self?.rate(post: post, value: value) { result in
                 observer.send(value: result)
                 observer.sendCompleted()
             }

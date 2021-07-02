@@ -165,6 +165,7 @@ class ConfiguratorAssembly: Assembly {
         
         container.register(PostScreenConfigurator.self) { resolver in
             PostScreenConfigurator(
+                postProvider: resolver.resolve(ReactivePostProviderProtocol.self)!,
                 postTableDataProviderFactory: resolver.resolve(TableDataProviderFactoryProtocol.self)!,
                 postTitlePresenterFactory: resolver.resolve(PostTitleViewPresenterFactoryProtocol.self)!,
                 postInfoPresenterFactory: resolver.resolve(PostInfoViewPresenterFactoryProtocol.self)!,

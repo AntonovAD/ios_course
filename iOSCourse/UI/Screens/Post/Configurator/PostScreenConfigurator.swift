@@ -4,6 +4,8 @@ import Foundation
 import UIKit
 
 class PostScreenConfigurator: Configurator {
+    private let postProvider: ReactivePostProviderProtocol
+    
     private let postTableDataProviderFactory: TableDataProviderFactoryProtocol
     private let postTitlePresenterFactory: PostTitleViewPresenterFactoryProtocol
     private let postInfoPresenterFactory: PostInfoViewPresenterFactoryProtocol
@@ -12,6 +14,7 @@ class PostScreenConfigurator: Configurator {
     private let postRatingPresenterFactory: PostRatingViewPresenterFactoryProtocol
     
     init(
+        postProvider: ReactivePostProviderProtocol,
         postTableDataProviderFactory: TableDataProviderFactoryProtocol,
         postTitlePresenterFactory: PostTitleViewPresenterFactoryProtocol,
         postInfoPresenterFactory: PostInfoViewPresenterFactoryProtocol,
@@ -19,6 +22,7 @@ class PostScreenConfigurator: Configurator {
         postTagsCollectionPresenterFactory: PostTagsCollectionViewPresenterFactoryProtocol,
         postRatingPresenterFactory: PostRatingViewPresenterFactoryProtocol
     ) {
+        self.postProvider = postProvider
         self.postTableDataProviderFactory = postTableDataProviderFactory
         self.postTitlePresenterFactory = postTitlePresenterFactory
         self.postInfoPresenterFactory = postInfoPresenterFactory
@@ -43,6 +47,7 @@ private extension PostScreenConfigurator {
         let postTableDataProvider = postTableDataProviderFactory.createDataProvider()
         
         let interactor = PostInteractor(
+            postProvider: postProvider,
             postTitlePresenterFactory: postTitlePresenterFactory,
             postInfoPresenterFactory: postInfoPresenterFactory,
             postTextPresenterFactory: postTextPresenterFactory,
